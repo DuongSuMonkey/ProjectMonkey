@@ -6,14 +6,19 @@ using UnityEngine;
 
 public class ChangeTextColor : MonoBehaviour
 {
-   // [SerializeField]private List<string> content;
+    public static ChangeTextColor Instance;
     [SerializeField] private List<TextMeshProUGUI> txtContent;
     [SerializeField] private Color color;
     [SerializeField] private float TimeChange;
     [SerializeField] private float timer;
-    [SerializeField] private int i = 0;
+    [SerializeField] private int textIndex = 0;
+    [SerializeField] private bool isFinal=false;
+
+    public bool IsFinal { get => isFinal; }
+
     void Start()
     {
+        Instance= this;
         timer = TimeChange;
     }
     private void Reset()
@@ -25,19 +30,21 @@ public class ChangeTextColor : MonoBehaviour
     {
        
        ChangeText();
-        if(i== txtContent.Count)
+        if(textIndex== txtContent.Count && IsFinal==false)
         {
-            StartCoroutine(ChangeTextFinal());
+            Invoke(nameof(ChangeTextColorFinal), 0.5f);
+            return;
         }
     } 
-   IEnumerator ChangeTextFinal()
+    public void ChangeTextColorFinal()
     {
-        yield return new WaitForSeconds(TimeChange);
-        txtContent[i-1].color = Color.black;
+        txtContent[textIndex - 1].color = Color.black;
+        isFinal = true;
+
     }
     public void ChangeText()
     {
-        if (i < txtContent.Count)
+        if (textIndex < txtContent.Count)
         {
             timer += Time.deltaTime;
         }
@@ -45,14 +52,14 @@ public class ChangeTextColor : MonoBehaviour
         {
             return;
         }
-        if (timer >= TimeChange && i < txtContent.Count)
+        if (timer >= TimeChange && textIndex < txtContent.Count)
         {
-            for (int j = 0; j < txtContent.Count; j++)
+            foreach(var txtContent in txtContent)
             {
-                txtContent[j].color = Color.black;
+                txtContent.color = Color.black;
             }
-            txtContent[i].color = color;
-            i++;
+            txtContent[textIndex].color = color;
+            textIndex++;
             timer = 0.0f;
         }
     }

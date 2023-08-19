@@ -4,33 +4,27 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ChangeTextColor : MonoBehaviour
+public class ChangeTextColor : Texts
 {
     public static ChangeTextColor Instance;
-    [SerializeField] private List<TextMeshProUGUI> txtContent;
     [SerializeField] private Color color;
-    [SerializeField] private float TimeChange;
-    [SerializeField] private float timer;
-    [SerializeField] private int textIndex = 0;
     [SerializeField] private bool isFinal=false;
-
     public bool IsFinal { get => isFinal; }
-
     void Start()
     {
         Instance= this;
-        timer = TimeChange;
+        timer = timeChange;
     }
     private void Reset()
     {
         TextMeshProUGUI[] texts = GetComponentsInChildren<TextMeshProUGUI>();
-        txtContent.AddRange(texts);
+        txtsContent.AddRange(texts);
     }
     private void Update()
     {
-       
-       ChangeText();
-        if(textIndex== txtContent.Count && IsFinal==false)
+        ChangeTime();
+        ChangeColor();
+        if(currentIndex== txtsContent.Count && IsFinal==false)
         {
             Invoke(nameof(ChangeTextColorFinal), 0.5f);
             return;
@@ -38,13 +32,13 @@ public class ChangeTextColor : MonoBehaviour
     } 
     public void ChangeTextColorFinal()
     {
-        txtContent[textIndex - 1].color = Color.black;
+        txtsContent[currentIndex - 1].color = Color.black;
         isFinal = true;
 
     }
-    public void ChangeText()
+    public void ChangeTime()
     {
-        if (textIndex < txtContent.Count)
+        if (currentIndex < txtsContent.Count)
         {
             timer += Time.deltaTime;
         }
@@ -52,14 +46,18 @@ public class ChangeTextColor : MonoBehaviour
         {
             return;
         }
-        if (timer >= TimeChange && textIndex < txtContent.Count)
+    }
+    public void ChangeColor()
+    {
+        
+        if (timer >= timeChange && currentIndex < txtsContent.Count)
         {
-            foreach(var txtContent in txtContent)
+            foreach(var txtContent in txtsContent)
             {
                 txtContent.color = Color.black;
             }
-            txtContent[textIndex].color = color;
-            textIndex++;
+            txtsContent[currentIndex].color = color;
+            currentIndex++;
             timer = 0.0f;
         }
     }

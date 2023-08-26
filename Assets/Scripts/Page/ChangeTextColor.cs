@@ -1,32 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ChangeTextColor : Texts
+public class ChangeTextColor :Texts
 {
-    public static ChangeTextColor Instance;
-    [SerializeField] private Color color;
+    [SerializeField] private PageController pageController;
+    [SerializeField] private Color targetColor=Color.red;
     [SerializeField] private bool isFinal=false;
-    public bool IsFinal { get => isFinal; }
+    [SerializeField] protected float timeChange;
+    [SerializeField] protected float timer;
+    public bool IsFinal { get => isFinal;}
+    public bool isStartNow=true;
     void Start()
     {
-        Instance= this;
-        timer = timeChange;
+        if (isStartNow)
+        {
+            timer = timeChange;
+        }
     }
     private void Reset()
     {
+        LoadComponents();
+    }
+    public void LoadComponents()
+    {
+       LoadTexts();
+       LoadPageController();
+    }
+    public override void LoadTexts()
+    {
         TextMeshProUGUI[] texts = GetComponentsInChildren<TextMeshProUGUI>();
-        txtsContent.AddRange(texts);
+        AddText(texts);
+    }
+    private void LoadPageController()
+    {
+        pageController = GetComponentInParent<PageController>();
     }
     private void Update()
     {
         ChangeTime();
         ChangeColor();
-        if(currentIndex== txtsContent.Count && IsFinal==false)
+        if(!IsFinal)
         {
-            Invoke(nameof(ChangeTextColorFinal), 0.5f);
+            Invoke(nameof(ChangeTextColorFinal), this.pageController.AudioClip[0].length);
             return;
         }
     } 
@@ -34,7 +51,6 @@ public class ChangeTextColor : Texts
     {
         txtsContent[currentIndex - 1].color = Color.black;
         isFinal = true;
-
     }
     public void ChangeTime()
     {
@@ -56,10 +72,11 @@ public class ChangeTextColor : Texts
             {
                 txtContent.color = Color.black;
             }
-            txtsContent[currentIndex].color = color;
+            txtsContent[currentIndex].color = targetColor;
             currentIndex++;
             timer = 0.0f;
         }
     }
+
 }
 

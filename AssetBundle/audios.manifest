@@ -1,0 +1,52 @@
+ManifestFileVersion: 0
+CRC: 3459253622
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c86e87a3c8f0413f2d178388e38cc129
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/audios/apple.mp3
+- Assets/audios/cucumber.mp3
+- Assets/audios/chopping board.mp3
+- Assets/audios/dressing.mp3
+- Assets/audios/tap.mp3
+- Assets/audios/boy.mp3
+- Assets/audios/carrot.mp3
+- Assets/audios/Let_s make a salad bowl.mp3
+- Assets/audios/pineapple.mp3
+- Assets/audios/frying pan.mp3
+- Assets/audios/The salad bowl looks so delicious!.mp3
+- "Assets/audios/Let\u2019s Make a Salad Bowl!.mp3"
+- Assets/audios/cheese.mp3
+- Assets/audios/I will shred some lettuce.mp3
+- Assets/audios/Of course we need some fruits and vegetables..mp3
+- Assets/audios/spatula.mp3
+- Assets/audios/Hey, do you want to eat some salads_.mp3
+- Assets/audios/gas stove.mp3
+- Assets/audios/fork.mp3
+- Assets/audios/bowl.mp3
+- Assets/audios/cooking pot.mp3
+- Assets/audios/salad bowl.mp3
+- Assets/audios/It_s fun to make something together. Now let_s enjoy!.mp3
+- Assets/audios/cheese grater.mp3
+- Assets/audios/Finally, I will add the dressing..mp3
+- Assets/audios/Sounds great.mp3
+- Assets/audios/boiling water.mp3
+- Assets/audios/lettuce.mp3
+- Assets/audios/pork.mp3
+- Assets/audios/Don_t forget to add some cheese!.mp3
+- Assets/audios/sink.mp3
+- Assets/audios/egg.mp3
+- Assets/audios/knife.mp3
+- Assets/audios/Now we need to mix them together.mp3
+- Assets/audios/spoon.mp3
+- Assets/audios/I will boil the eggs and fry the pork.mp3
+Dependencies: []

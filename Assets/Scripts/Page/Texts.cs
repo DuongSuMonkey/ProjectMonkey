@@ -5,7 +5,11 @@ using UnityEngine;
 public abstract class  Texts : MonoBehaviour
 {
     [SerializeField] protected List<TextMeshProUGUI> txtsContent;
-    [SerializeField] protected float timeChange;
-    [SerializeField] protected float timer;
     [SerializeField] protected int currentIndex = 0;
+    public void AddText(TextMeshProUGUI[] texts)
+    {
+        txtsContent.AddRange(texts);
+    }
+    public abstract void LoadTexts();
+
 }

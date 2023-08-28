@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.esotericsoftware.spine.spine-csharp": {
+      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-csharp/src#4.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "076e4e9e94004e5051517305aa320e3ad98949a2"
+    },
     "com.unity.2d.animation": {
       "version": "10.0.2",
       "depth": 1,

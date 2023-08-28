@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1757265216
+CRC: 1566735337
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4ecefc96848a9b737bf37b2cbebd2f9e
+    Hash: a65fbb3ef3c06b2e21a3331b6a72b537
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 140df546d9a320f5ffb71eb2f0c097a7
+    Hash: af6ad7350200a022dd5b38b9bcbdeddf
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -17,7 +17,7 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 61
+- Class: 60
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -32,13 +32,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  Script: {fileID: 11500000, guid: 18ec5874d3e3b2042887d5d7f3944231, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 053f4d9fc5dbd3047b0f2ea1f6794e86, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3b1c6039b044d9c4ea58a7a0b967c7f5, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
@@ -82,8 +80,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
-- AssemblyName: UnityEngine.CoreModule
-  ClassName: UnityEngine.RectOffset
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.FaceInfo
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
@@ -96,6 +92,7 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 Assets:
 - Assets/Prefabs/Page1.prefab
+- Assets/Prefabs/Blink.prefab
 Dependencies:
 - D:/ProjectMonkey/Assets/../AssetBundle/audios
 - D:/ProjectMonkey/Assets/../AssetBundle/images

@@ -12,9 +12,9 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
      }
     private IEnumerator Download()
     {
-        GameObject asset = null;
+        //var asset;
        // string url = "https://drive.google.com/u/0/uc?id=1FGB7ut-vn9BQzF7l5Xerf9buYQDojy0j&export=download";
-        string url = "https://drive.google.com/u/0/uc?id=1EsCN7l8G_ZVbvUuGceqab6KXskvJYy7w&export=download";
+        string url = "https://drive.google.com/u/0/uc?id=1tOJxWiWphaYqGLcwkSRc6H2JKm2XTGnU&export=download";
         using (UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(url))
         {
            
@@ -27,19 +27,16 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             {
                 Debug.Log(www);
                 AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(www);
-                asset = bundle.LoadAsset(bundle.GetAllAssetNames()[0]) as GameObject;
-                bundle = AssetBundle.LoadFromFile("D:\\ProjectMonkey\\AssetBundle");
+                var  assets = bundle.LoadAllAssets();
+                foreach(var a in assets)
+                {
+                    Debug.Log(a.name);
+                }
                 bundle.Unload(false);
-                //  AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(www);
-                //  // Load the asset from the AssetBundle.
-                //  asset = (GameObject)bundle.LoadAsset("./images");
-                // // Do something with the asset.
-                ////  Debug.Log("Asset loaded: " + asset.name);
-                //  bundle.Unload(false);
             }
             www.Dispose();
         }
-      InstantiateGameobjectFromAsset(asset);
+     // InstantiateGameobjectFromAsset(asset);
 
     }
     private void InstantiateGameobjectFromAsset(GameObject go)

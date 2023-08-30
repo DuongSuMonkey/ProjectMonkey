@@ -41,12 +41,12 @@ public class ChangeTextColor :Texts
     {
         ChangeTime();
         ChangeColor();
-        if(!IsFinal)
+        if (!IsFinal)
         {
             Invoke(nameof(ChangeTextColorFinal), this.pageController.AudioClip[0].length);
             return;
         }
-    } 
+    }
     public void ChangeTextColorFinal()
     {
         txtsContent[currentIndex - 1].color = Color.black;

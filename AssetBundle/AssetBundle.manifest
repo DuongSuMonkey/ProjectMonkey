@@ -1,15 +1,11 @@
 ManifestFileVersion: 0
-CRC: 296301005
+CRC: 2762062662
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: audios
+      Name: textmeshpro
       Dependencies: {}
     Info_1:
-      Name: images
-      Dependencies: {}
-    Info_2:
-      Name: prefabs
+      Name: story1
       Dependencies:
-        Dependency_0: audios
-        Dependency_1: images
+        Dependency_0: textmeshpro

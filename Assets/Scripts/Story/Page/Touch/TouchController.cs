@@ -158,6 +158,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using System;
 
 public class TouchesController : Texts
 {
@@ -166,8 +167,8 @@ public class TouchesController : Texts
     [SerializeField] private PageController pageController;
     [SerializeField] private bool isFirst = true;
 
-    private BlinkController blinkController;
-    private TouchUIController touchUIController;
+    private IBlinkController blinkController;
+    private ITouchUIController touchUIController;
     private void Start()
     {
         blinkController = new BlinkController(blinks, touches);
@@ -252,23 +253,27 @@ public class TouchesController : Texts
 
     private void HandleItemSelection(Blink blink)
     {
-        if (pageController.ChangeTextColor[pageController.ChangeTextColor.Count - 1].IsFinal)
+        if (IsClick())
         {
             int index = blinks.IndexOf(blink);
+            blink.isClick=true;
             blink.countClick++;
+            touchUIController.SearchText(touches[currentIndex], txtsContent);
             if (blink.countClick>1)
             {
                 blinkController.ProcessDoubleClick(blink, index);
-                touchUIController.SearchText(touches[currentIndex], txtsContent); 
             }
             else
             {
-                ShowTextCurrent();
-                touchUIController.SearchText(touches[currentIndex], txtsContent);
+
+                touchUIController.ShowTouchCurrent(blinks, touches, this);
             }
         }
     }
-
+    public bool IsClick()
+    {
+        return pageController.ChangeTextColor[pageController.ChangeTextColor.Count - 1].IsFinal;
+    }
     public void ShowTouchNext()
     {
        touchUIController.ShowTouchNext(blinks); 

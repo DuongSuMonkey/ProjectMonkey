@@ -9,7 +9,8 @@ public class Blink : MonoBehaviour
 {
     public event Action<Blink>  OnItemClicked;
     public int countClick;
-    private void OnMouseDown()
+    public bool isClick=false;
+   private void OnMouseDown()
     {
         OnItemClicked?.Invoke(this);
     }

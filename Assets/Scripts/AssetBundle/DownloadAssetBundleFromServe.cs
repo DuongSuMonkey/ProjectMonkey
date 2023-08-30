@@ -9,10 +9,10 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
     AssetBundle bundle;
     public string path;
     public string assetName;
+    public Camera Cam;
     void Start()
     {
         GetAssets();
-
     }
     public void GetAssets()
     {
@@ -41,17 +41,19 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
                 foreach (var a in assets)
                 {
                     Debug.Log(a.name);
-                    //if (a.name == "Main Camera")
-                    //{
-                    //     Instantiate(a);
-                    //}
                 }
                 if (assetName != "")
                 {
                     var asset = bundle.LoadAsset(assetName);
+                    if (assetName == "Canvas")
+                    {
+                        asset.GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+                        asset.GetComponentInChildren<Canvas>().worldCamera = Cam;
+                        Debug.Log(asset.GetComponentInChildren<Canvas>().worldCamera);
+                    }
                     Instantiate(asset);
-                    //Camera Cam=  asset.GetComponentInChildren<Camera>();
-                    //asset.GetComponentInChildren<Canvas>().worldCamera = Cam;
+                  
+                   
                 }
                 
                 bundle.Unload(false);

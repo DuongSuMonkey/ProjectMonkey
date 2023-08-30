@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadAssetbundlefromlocal : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
     AssetBundle myAsset;
     public string path;
     public string assetName;
+    public Camera Cam;
     void Start()
     {
         LoadAsset();
@@ -26,15 +29,19 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
         foreach (var Asset in allAsset)
         {
             Debug.Log(Asset.name);
-            //if (Asset.name == "Main Camera")
-            //{
-            //    Instantiate(Asset);
-            //}
         }
         if (assetName != "")
         {
             var prefab = myAsset.LoadAsset(assetName);
+            if (assetName == "Canvas")
+            {
+                prefab.GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+                prefab.GetComponentInChildren<Canvas>().worldCamera = Cam;
+                Debug.Log(prefab.GetComponentInChildren<Canvas>().worldCamera);
+            }
+
             Instantiate(prefab);
+           
         }
     }
     //void InstantiateAsset()

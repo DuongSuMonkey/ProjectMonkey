@@ -11,6 +11,7 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
     public string path;
     public string assetName;
     public Camera Cam;
+    public Canvas canvas;
     void Start()
     {
         LoadAsset();
@@ -25,24 +26,33 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
     }
     public void InstantiateAsset()
     {
-        var allAsset = myAsset.LoadAllAssets();
-        foreach (var Asset in allAsset)
-        {
-            Debug.Log(Asset.name);
-        }
         if (assetName != "")
         {
+            var allAsset = myAsset.LoadAllAssets();
             var prefab = myAsset.LoadAsset(assetName);
             if (assetName == "Canvas")
             {
-                prefab.GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-                prefab.GetComponentInChildren<Canvas>().worldCamera = Cam;
-                Debug.Log(prefab.GetComponentInChildren<Canvas>().worldCamera);
+                canvas.gameObject.SetActive(false);
+                prefab.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+                prefab.GetComponent<Canvas>().worldCamera = Cam;
+                Debug.Log(prefab.GetComponent<Canvas>().worldCamera);
+                Instantiate(prefab);
             }
-
-            Instantiate(prefab);
-           
+            else
+            {
+                canvas.gameObject.SetActive(true);
+                Instantiate(prefab, canvas.transform);
+                foreach (var Asset in allAsset)
+                {
+                    if (Asset.name == "MenuPanel")
+                    {
+                        Instantiate(Asset, canvas.transform);
+                    }
+                }
+            }
         }
+        
+        
     }
     //void InstantiateAsset()
     //{

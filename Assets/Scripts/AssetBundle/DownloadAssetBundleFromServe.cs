@@ -10,6 +10,7 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
     public string path;
     public string assetName;
     public Camera Cam;
+    public Canvas canvas;
     void Start()
     {
         GetAssets();
@@ -34,28 +35,48 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             }
             else
             {
-                
-                Debug.Log(www);
+            
+               
+                    Debug.Log(www);
                 bundle = DownloadHandlerAssetBundle.GetContent(www);
-                var assets = bundle.LoadAllAssets();
-                foreach (var a in assets)
-                {
-                    Debug.Log(a.name);
-                }
                 if (assetName != "")
                 {
+                    var assets = bundle.LoadAllAssets();
+                    // var assets = bundle.LoadAllAssets();
                     var asset = bundle.LoadAsset(assetName);
                     if (assetName == "Canvas")
                     {
-                        asset.GetComponentInChildren<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-                        asset.GetComponentInChildren<Canvas>().worldCamera = Cam;
-                        Debug.Log(asset.GetComponentInChildren<Canvas>().worldCamera);
+                        canvas.gameObject.SetActive(false);
+                        asset.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+                        asset.GetComponent<Canvas>().worldCamera = Cam;
+                        Instantiate(asset);
                     }
-                    Instantiate(asset);
-                  
-                   
-                }
-                
+                    else
+                    {
+                        canvas.gameObject.SetActive(true);
+                        Instantiate(asset, canvas.transform);
+                        foreach (var asset1 in assets)
+                        {
+                            if (asset1.GetType() == typeof(GameObject))
+                            {
+                                Debug.Log(asset1.name);
+                            }
+                            else if (asset1.GetType() == typeof(AudioClip))
+                            {
+                                AudioClip audioClip = asset1 as AudioClip;
+                                audioClip.LoadAudioData();
+                            }
+                        }
+                        foreach (var prefab in assets)
+                        {
+                            if (prefab.name == "MenuPanel")
+                            {
+                                Instantiate(prefab, canvas.transform);
+                            }
+                        }
+                        
+                    }
+                } 
                 bundle.Unload(false);
             }
             www.Dispose();

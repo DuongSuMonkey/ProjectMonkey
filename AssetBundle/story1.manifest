@@ -1,19 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2409009539
+CRC: 2076657806
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5abe4393ede3688b1de97837d2104378
+    Hash: 7678f8d35cf3a4cef358359e20121c5e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a858617dfd05f764ba9f65d44c1877da
+    Hash: e718103088444931fc688e36e0eda5c0
 HashAppended: 0
 ClassTypes:
 - Class: 1
-  Script: {instanceID: 0}
-- Class: 4
-  Script: {instanceID: 0}
-- Class: 20
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -22,8 +18,6 @@ ClassTypes:
 - Class: 60
   Script: {instanceID: 0}
 - Class: 74
-  Script: {instanceID: 0}
-- Class: 81
   Script: {instanceID: 0}
 - Class: 82
   Script: {instanceID: 0}
@@ -34,21 +28,15 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 18ec5874d3e3b2042887d5d7f3944231, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 2e8d1c88a82dd1a479fe2b377d909c7c, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 39fa3d8997a24136984ca6e2c99902bc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 053f4d9fc5dbd3047b0f2ea1f6794e86, type: 3}
 - Class: 114
@@ -58,40 +46,24 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 57eb2419bf5f8c040a59d6ea2b8cc927, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 76a2fe08884d4e94ba00da342e968b4a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6d732631103f5b44dad54354a195125f, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 222
   Script: {instanceID: 0}
-- Class: 223
-  Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
-- AssemblyName: Unity.InputSystem
-  ClassName: UnityEngine.InputSystem.InputAction
-- AssemblyName: Unity.InputSystem
-  ClassName: UnityEngine.InputSystem.InputActionMap
-- AssemblyName: Unity.InputSystem
-  ClassName: UnityEngine.InputSystem.InputBinding
-- AssemblyName: Unity.InputSystem
-  ClassName: UnityEngine.InputSystem.InputControlScheme
-- AssemblyName: Unity.InputSystem
-  ClassName: UnityEngine.InputSystem.InputControlScheme/DeviceRequirement
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
@@ -125,6 +97,7 @@ Assets:
 - Assets/audios/frying pan.mp3
 - "Assets/audios/Let\u2019s Make a Salad Bowl!.mp3"
 - Assets/audios/The salad bowl looks so delicious!.mp3
+- Assets/Prefabs/MenuPanel.prefab
 - Assets/Images 1/MenuOptionBg.png
 - Assets/audios/spatula.mp3
 - Assets/Images 1/RestartImg.png
@@ -143,7 +116,6 @@ Assets:
 - Assets/Images 1/FlipBookImg.png
 - Assets/audios/Now we need to mix them together.mp3
 - Assets/audios/spoon.mp3
-- Assets/Prefabs/Page1.prefab
 - Assets/Images 1/CloseBtn.png
 - Assets/audios/chopping board.mp3
 - Assets/audios/tap.mp3
@@ -152,10 +124,8 @@ Assets:
 - Assets/audios/pineapple.mp3
 - Assets/images/ONwVWDqBvuLzO9JRN2rmTH1672904703776_trong.png
 - Assets/audios/cheese.mp3
-- Assets/Prefabs/Main Camera.prefab
 - Assets/audios/I will shred some lettuce.mp3
 - Assets/audios/Of course we need some fruits and vegetables..mp3
-- Assets/Prefabs/Canvas.prefab
 - Assets/Images 1/MenuBorder.png
 - Assets/images/uQx8vLnhByvU8BGfJnpxur1672904703648_trong.png
 - Assets/audios/Hey, do you want to eat some salads_.mp3
@@ -179,6 +149,5 @@ Assets:
 - Assets/images/j2FtITkWXWvEA2eeiolqNH1672904703836_trong.png
 - Assets/Images 1/Share.png
 - Assets/audios/I will boil the eggs and fry the pork.mp3
-- Assets/Prefabs/Blink.prefab
 Dependencies:
 - D:/ProjectMonkey/Assets/../AssetBundle/textmeshpro

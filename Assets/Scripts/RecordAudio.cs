@@ -26,8 +26,8 @@ public class RecordAudio : MonoBehaviour
         }
 
         recordButton.onClick.AddListener(StartStopRecording);
-        //filepath = Application.persistentDataPath + "/" + filename;
-        filepath = "D:/ProjectMonkey/RecordAudio" + "/" + filename; // Đường dẫn lưu file ghi âm
+        filepath = Application.persistentDataPath + "/" + filename;
+     //   filepath = "D:/ProjectMonkey/RecordAudio" + "/" + filename; // Đường dẫn lưu file ghi âm
     }
 
     void StartStopRecording()

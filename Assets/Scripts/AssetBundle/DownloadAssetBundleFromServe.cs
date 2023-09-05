@@ -6,11 +6,10 @@ using UnityEngine.Networking;
 
 public class DownloadAssetBundleFromServe : MonoBehaviour
 {
-    AssetBundle bundle;
-    public string path;
-    public string assetName;
-    public Camera Cam;
-    public Canvas canvas;
+    [SerializeField] private AssetBundle bundle;
+    [SerializeField] private string path;
+    [SerializeField] private string assetName;
+    [SerializeField] private Canvas canvas;
     void Start()
     {
         GetAssets();
@@ -21,13 +20,10 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
     }
     private IEnumerator Download()
     {
-        //var asset;
-        // string url = "https://drive.google.com/u/0/uc?id=1FGB7ut-vn9BQzF7l5Xerf9buYQDojy0j&export=download";
-        //string url = "https://drive.google.com/u/0/uc?id=1tOJxWiWphaYqGLcwkSRc6H2JKm2XTGnU&export=download";
         string url = path;
         using (UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(url))
         {
-           
+
             yield return www.SendWebRequest();
             if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
             {
@@ -35,53 +31,61 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             }
             else
             {
-            
-               
-                    Debug.Log(www);
+                Debug.Log(www);
                 bundle = DownloadHandlerAssetBundle.GetContent(www);
                 if (assetName != "")
                 {
-                    var assets = bundle.LoadAllAssets();
-                    // var assets = bundle.LoadAllAssets();
-                    var asset = bundle.LoadAsset(assetName);
-                    if (assetName == "Canvas")
-                    {
-                        canvas.gameObject.SetActive(false);
-                        asset.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-                        asset.GetComponent<Canvas>().worldCamera = Cam;
-                        Instantiate(asset);
-                    }
-                    else
-                    {
-                        canvas.gameObject.SetActive(true);
-                        Instantiate(asset, canvas.transform);
-                        foreach (var asset1 in assets)
-                        {
-                            if (asset1.GetType() == typeof(GameObject))
-                            {
-                                Debug.Log(asset1.name);
-                            }
-                            else if (asset1.GetType() == typeof(AudioClip))
-                            {
-                                AudioClip audioClip = asset1 as AudioClip;
-                                audioClip.LoadAudioData();
-                            }
-                        }
-                        foreach (var prefab in assets)
-                        {
-                            if (prefab.name == "MenuPanel")
-                            {
-                                Instantiate(prefab, canvas.transform);
-                            }
-                        }
-                        
-                    }
-                } 
-                bundle.Unload(false);
+                    LoadAsset();
+                }
+                else
+                {
+                    LoadAllAssets();
+                }
+                    bundle.Unload(false);
             }
-            www.Dispose();
+                www.Dispose();
+            }
         }
-   
+    private void LoadAsset()
+    {
+        var asset = bundle.LoadAsset(assetName);
+        if (asset.GetType() == typeof(GameObject))
+        {
+            GameObject gameObject = asset as GameObject;
+            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                Instantiate(gameObject, canvas.transform);
+            }
+            else
+            {
+                Instantiate(gameObject);
+            }
+        }
     }
-
+    private void LoadAllAssets()
+    {
+        var assets = bundle.LoadAllAssets();
+        foreach (var prefab in assets)
+        {
+            if (prefab.GetType() == typeof(GameObject))
+            {
+                GameObject gameObject = prefab as GameObject;
+                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    Instantiate(gameObject, canvas.transform);
+                }
+                else
+                {
+                    Instantiate(gameObject);
+                }
+            }
+            else if (prefab.GetType() == typeof(AudioClip))
+            {
+                AudioClip audioClip = prefab as AudioClip;
+                audioClip.LoadAudioData();
+            }
+        }
+    }
 }

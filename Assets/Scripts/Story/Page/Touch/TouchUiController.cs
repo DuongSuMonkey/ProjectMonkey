@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -66,7 +66,7 @@ public class TouchUIController:ITouchUIController
         }
     }
 
-    public  void SearchText(TouchUI touch,List<TextMeshProUGUI> txtsContent)
+    public  void SearchText(TouchUI touch,List<TextMeshProUGUI> txtsContent, MonoBehaviour obj)
     {
         for (int i = 0; i < txtsContent.Count; i++)
         {
@@ -74,13 +74,24 @@ public class TouchUIController:ITouchUIController
             if (touch.TxtContent.text == textcontent)
             {
                 txtsContent[i].color = UnityEngine.Color.red;
-                txtsContent[i].GetComponent<RectTransform>().anchoredPosition = new Vector2
-                    (txtsContent[i].GetComponent<RectTransform>().anchoredPosition.x,
-                    txtsContent[i].GetComponent<RectTransform>().anchoredPosition.y + 6);
+                txtsContent[i].GetComponent<Animator>().SetTrigger("isCheck");
+                obj.StartCoroutine(OriginalTextColorCoroutine(txtsContent[i]));
             }
         }
     }
 
+    public IEnumerator OriginalTextColorCoroutine(TextMeshProUGUI textContent)
+    {
+        yield return new WaitForSeconds(1f); 
+        OriginalTextColor(textContent);
+    }
+    public void OriginalTextColor(TextMeshProUGUI textcontent)
+    {
+        if (textcontent.color == UnityEngine.Color.red)
+        {
+            textcontent.color = UnityEngine.Color.black;
+        }
+    }
     public bool IsTouchFinal(List<Blink> blinks)
     {
         return currentIndex < blinks.Count;

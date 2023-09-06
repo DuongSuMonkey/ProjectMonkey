@@ -159,6 +159,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using System;
+using System.Collections;
 
 public class TouchesController : Texts
 {
@@ -258,7 +259,7 @@ public class TouchesController : Texts
             int index = blinks.IndexOf(blink);
             blink.isClick=true;
             blink.countClick++;
-            touchUIController.SearchText(touches[currentIndex], txtsContent);
+            touchUIController.SearchText(touches[index], txtsContent,this);
             if (blink.countClick>1)
             {
                 blinkController.ProcessDoubleClick(blink, index);

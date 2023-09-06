@@ -33,7 +33,6 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
         {
             LoadAllAssets();
         }
-
         #region
         //void InstantiateAsset()
         //{

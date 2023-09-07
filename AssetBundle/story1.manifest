@@ -1,15 +1,17 @@
 ManifestFileVersion: 0
-CRC: 3293328075
+CRC: 1169483164
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: da33d2299b704f4c0ec52d8815e45e39
+    Hash: 8bdf52300f039d78dc6f1e1e06f63913
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8715fe37c05a692d20d545fa32784322
+    Hash: adb7db903661a1636efdc092c3103d31
 HashAppended: 0
 ClassTypes:
 - Class: 1
+  Script: {instanceID: 0}
+- Class: 4
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -29,8 +31,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 6d732631103f5b44dad54354a195125f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
@@ -59,6 +59,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 76a2fe08884d4e94ba00da342e968b4a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7ba17b5c08c6bb842bd9b0470d92173b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6d732631103f5b44dad54354a195125f, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -149,6 +153,7 @@ Assets:
 - Assets/Resources/Images 1/GuidingHand.png
 - Assets/audios/salad bowl.mp3
 - Assets/audios/Finally, I will add the dressing..mp3
+- Assets/Prefabs/LoadJsonnPolygonCollider.prefab
 - Assets/Prefabs/Story1.prefab
 - Assets/Resources/Images 1/BlinkImg.png
 - Assets/Resources/Images 1/Background.png

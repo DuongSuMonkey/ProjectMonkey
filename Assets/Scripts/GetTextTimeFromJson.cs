@@ -9,16 +9,14 @@ public class GetTextTimeFromJson : MonoBehaviour
 {
     [SerializeField] private JsonTimePath jsonPath;
     [SerializeField] private string path = "";
-    [SerializeField] private List<TextMeshProUGUI> polygonCollider2D;
     [SerializeField] private SyncText syncText;
     public List<float> start;
     public List<float> end;
     private void Reset()
     {
         GetPath();
-        GetCollider();
         GetSyncText();
-        DrawCollider();
+        GetTime();
     }
     public void GetPath()
     {
@@ -29,13 +27,7 @@ public class GetTextTimeFromJson : MonoBehaviour
     {
         syncText = GetComponent<SyncText>();
     }
-    public void GetCollider()
-    {
-        TextMeshProUGUI[] polygon = GetComponentsInChildren<TextMeshProUGUI>();
-        polygonCollider2D.AddRange(polygon);
-
-    }
-    public void DrawCollider()
+    public void GetTime()
     {
         string jsonContent = File.ReadAllText(path);
         JObject jsonObject = JObject.Parse(jsonContent);

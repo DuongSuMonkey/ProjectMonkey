@@ -24,6 +24,8 @@ public class TouchUI : MonoBehaviour
     }
     public void Select()
     {
+        Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        gameObject.transform.position = new Vector3(canvasPos.x, canvasPos.y, 0);
         gameObject.SetActive(true);
         audioSource.PlayOneShot(audioClip); 
     }

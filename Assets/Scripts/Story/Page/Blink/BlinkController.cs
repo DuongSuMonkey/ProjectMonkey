@@ -15,7 +15,7 @@ public class BlinkController:IBlinkController
 
     public void ProcessDoubleClick(Blink blink, int index)
     {
-        blink.gameObject.GetComponent<Image>().enabled = false;
+        blink.blinkEffect.gameObject.SetActive ( false);
         Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         TouchUI touch = Object.Instantiate(touches[index], new Vector3(canvasPos.x, canvasPos.y, 0), Quaternion.identity);
         touch.gameObject.transform.SetParent(blink.transform);

@@ -21,19 +21,23 @@ public class TouchUIController:ITouchUIController
     {
         touchUI.Select();
     }
-    private void HideBlinkImage(Blink blink)
+    private void HideBlinkEffect(Blink blink)
     {
-        blink.gameObject.GetComponent<Image>().enabled = false;
+        blink.blinkEffect.gameObject.SetActive( false);
     }
     public void InvokeShowTouchNext(MonoBehaviour obj,float delay)
     {
         obj.Invoke(nameof(ShowTouchNext),delay);
     }
+    public Blink GetBlink(List<Blink> blinks)
+    {
+        return blinks[currentIndex];
+    }
     public void ShowTouchCurrent(List<Blink> blinks, List<TouchUI> touches, MonoBehaviour obj)
     {
         if (IsTouchFinal(blinks))
         {
-            HideBlinkImage(blinks[currentIndex]);
+            HideBlinkEffect(blinks[currentIndex]);
             SelectCurrentTouchUI(touches[currentIndex]);
             InvokeShowTouchNext(obj,touches[currentIndex].audioClip.length);
         }
@@ -46,7 +50,12 @@ public class TouchUIController:ITouchUIController
 
     private void ShowNextTouch(List<Blink> blinks)
     {
-        blinks[currentIndex].GetComponent<Image>().enabled = true;
+        if (blinks[currentIndex].isClick)
+        {
+            currentIndex++;
+            ShowNextTouch(blinks);
+        }
+        blinks[currentIndex].blinkEffect.gameObject.SetActive(true);
     }
     private int IncreaseIndex()
     {

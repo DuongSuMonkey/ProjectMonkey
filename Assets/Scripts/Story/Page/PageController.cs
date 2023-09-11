@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PageController : MonoBehaviour
 {
-    [SerializeField] private List<ChangeTextColor> changeTextColor;
+    [SerializeField] private List<SyncText> changeTextColor;
     [SerializeField] protected TouchesController touchesController;
     [SerializeField] protected List<AudioSource> audioSource;
     [SerializeField] private List<AudioClip> audioClip;
-    public List<ChangeTextColor> ChangeTextColor { get => changeTextColor; }
+    public List<SyncText> ChangeTextColor { get => changeTextColor; }
     public List<AudioClip> AudioClip { get => audioClip;}
 
     private void Start()
@@ -44,7 +44,7 @@ public class PageController : MonoBehaviour
     }
     private void LoadChangTextColors()
     {
-        ChangeTextColor[] texts = GetComponentsInChildren<ChangeTextColor>();
+        SyncText[] texts = GetComponentsInChildren<SyncText>();
         changeTextColor.AddRange(texts);
     }
     private void LoadAudios()

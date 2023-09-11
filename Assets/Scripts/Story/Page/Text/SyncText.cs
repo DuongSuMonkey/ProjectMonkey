@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ChangeTextColor :Texts
+public class SyncText :Texts
 {
     [SerializeField] private PageController pageController;
     [SerializeField] private Color targetColor=Color.red;

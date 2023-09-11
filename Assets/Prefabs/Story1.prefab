@@ -1349,11 +1349,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4763236469265648653}
-  - {fileID: 6725305946288682629}
-  - {fileID: 2749414836748533760}
-  - {fileID: 3499026466832083207}
   - {fileID: 2751103395154420716}
+  - {fileID: 3499026466832083207}
+  - {fileID: 2749414836748533760}
+  - {fileID: 6725305946288682629}
+  - {fileID: 4763236469265648653}
   m_Father: {fileID: 1395854017669090609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2523,6 +2523,9 @@ MonoBehaviour:
   isFinal: 0
   timeChange: 0.3
   timer: 0
+  S: []
+  E: []
+  index: 0
   isStartNow: 1
 --- !u!82 &7855862691646645833
 AudioSource:

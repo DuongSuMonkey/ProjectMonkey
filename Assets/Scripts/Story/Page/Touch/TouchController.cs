@@ -108,9 +108,7 @@ public class TouchesController : Texts
             {
                 blinkController.ProcessDoubleClick(blink, index);
                 return;
-
             }
-
             touchUIController.ShowTouchCurrent(blinks, touches, this);
         }
     }

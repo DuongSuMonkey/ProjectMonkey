@@ -10,18 +10,27 @@ public class SyncText :Texts
     [SerializeField] private bool isFinal=false;
     [SerializeField] protected float timeChange;
     [SerializeField] protected float timer;
+    public List<float> S;
+    public List<float> E;
+    public int index = 0;
     public bool IsFinal { get => isFinal;}
     public bool isStartNow=true;
+    public GetTextTimeFromJson getTextTimeFromJson;
     void Start()
     {
         if (isStartNow)
         {
-            timer = timeChange;
+            timeChange = E[index] / 1000 - S[index] / 1000;
+            txtsContent[0].color = targetColor;
+            currentIndex = 1;
         }
     }
     private void Reset()
     {
+        getTextTimeFromJson = GetComponent<GetTextTimeFromJson>();
         LoadComponents();
+        S= getTextTimeFromJson.start; 
+        E= getTextTimeFromJson.end;
     }
     public void LoadComponents()
     {
@@ -65,7 +74,10 @@ public class SyncText :Texts
     }
     public void ChangeColor()
     {
-        
+        if (currentIndex < txtsContent.Count)
+        {
+            timeChange = E[index] / 1000 - S[index] / 1000;
+        }
         if (timer >= timeChange && currentIndex < txtsContent.Count)
         {
             foreach(var txtContent in txtsContent)
@@ -74,9 +86,9 @@ public class SyncText :Texts
             }
             txtsContent[currentIndex].color = targetColor;
             currentIndex++;
+            index++;
             timer = 0.0f;
         }
     }
-
 }
 

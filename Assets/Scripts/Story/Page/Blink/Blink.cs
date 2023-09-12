@@ -13,11 +13,12 @@ public class Blink : MonoBehaviour
     public int countClick;
     public bool isClick=false;
     public Transform blinkEffect;
+    public bool isBlink=true;
 
     [Obsolete]
     private void Reset()
     {
-        blinkEffect = gameObject.transform.FindChild("BlinkEffect");
+        blinkEffect = gameObject.transform.FindChild("SpineBlink");
     }
     private void OnMouseDown()
     {

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3521589000
+CRC: 3587701461
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a7168306c7a4d262642929e72fe32d88
+    Hash: 15324ae0b396e3184e67d3a48c61139e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 0f72f78ac964774a7143448e4610d6ab
+    Hash: 99ceae88332d6073c4d3edfe7e4334c6
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -14,6 +14,10 @@ ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
   Script: {instanceID: 0}
 - Class: 60
   Script: {instanceID: 0}
@@ -38,7 +42,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 7ba17b5c08c6bb842bd9b0470d92173b, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 18ec5874d3e3b2042887d5d7f3944231, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2e8d1c88a82dd1a479fe2b377d909c7c, type: 3}
 - Class: 114
@@ -58,7 +66,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: c454b93c4a2ca514ab89b768b19f666f, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
 - Class: 114
@@ -102,6 +114,12 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.Navigation
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.BlendModeMaterials
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.MeshGenerator
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.MeshGenerator/Settings
 Assets:
 - Assets/audios/apple.mp3
 - Assets/audios/cucumber.mp3

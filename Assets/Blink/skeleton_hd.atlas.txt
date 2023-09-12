@@ -1,0 +1,13 @@
+
+skeleton_hd.png
+size: 835, 977
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Blink
+  rotate: false
+  xy: 2, 2
+  size: 831, 973
+  orig: 831, 973
+  offset: 0, 0
+  index: -1

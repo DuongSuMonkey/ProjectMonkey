@@ -50,12 +50,15 @@ public class TouchUIController:ITouchUIController
 
     private void ShowNextTouch(List<Blink> blinks)
     {
-        if (blinks[currentIndex].isClick)
+        if (blinks[currentIndex].isBlink)
         {
-            currentIndex++;
-            ShowNextTouch(blinks);
+            if (blinks[currentIndex].isClick)
+            {
+                currentIndex++;
+                ShowNextTouch(blinks);
+            }
+            blinks[currentIndex].blinkEffect.gameObject.SetActive(true);
         }
-        blinks[currentIndex].blinkEffect.gameObject.SetActive(true);
     }
     private int IncreaseIndex()
     {

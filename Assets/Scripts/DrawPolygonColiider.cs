@@ -15,6 +15,7 @@ public class DrawPolygonCollider : MonoBehaviour
     {
         GetPath();
         GetCollider();
+        SetAnchors();
         DrawCollider();     
     }
     public void GetPath()
@@ -26,6 +27,15 @@ public class DrawPolygonCollider : MonoBehaviour
     {
         PolygonCollider2D[] polygon = GetComponentsInChildren<PolygonCollider2D>();
         polygonCollider2D.AddRange(polygon);
+    }
+    public void SetAnchors()
+    {
+        foreach(var polygon in polygonCollider2D)
+        {
+            polygon.GetComponent<RectTransform>().anchorMin = new Vector2(0,0);
+            polygon.GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
+
+        }
     }
     public void DrawCollider()
     {

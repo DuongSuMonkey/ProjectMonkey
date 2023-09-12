@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IBlinkController 
 {
-    void ProcessDoubleClick(Blink blink, int index);
+  //  void ProcessDoubleClick(Blink blink, int index);
 }

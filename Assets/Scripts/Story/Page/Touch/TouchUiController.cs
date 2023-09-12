@@ -11,7 +11,7 @@ public class TouchUIController:ITouchUIController
 {
     private List<TouchUI> touches;
     private int currentIndex;
-
+    private List<TouchUI> existingTouches=new List<TouchUI>();
     public TouchUIController(List<TouchUI> touches, int currentIndex)
     {
         this.touches = touches;
@@ -19,6 +19,7 @@ public class TouchUIController:ITouchUIController
     }
     private void SelectCurrentTouchUI(TouchUI touchUI)
     {
+        existingTouches.Add(touchUI);
         touchUI.Select();
     }
     private void HideBlinkEffect(Blink blink)
@@ -45,20 +46,23 @@ public class TouchUIController:ITouchUIController
     }
     private void HideCurrentTouch()
     {
-        touches[currentIndex].gameObject.SetActive(false);
+        touches[currentIndex].background.enabled = false;
+        touches[currentIndex].txtContent.enabled = false;
     }
 
     private void ShowNextTouch(List<Blink> blinks)
     {
-        if (blinks[currentIndex].isBlink)
+        
+        if (blinks[currentIndex].isClick)
         {
-            if (blinks[currentIndex].isClick)
-            {
                 currentIndex++;
                 ShowNextTouch(blinks);
-            }
+        }
+        if (blinks[currentIndex].isBlink)
+        {
             blinks[currentIndex].blinkEffect.gameObject.SetActive(true);
         }
+        
     }
     private int IncreaseIndex()
     {
@@ -112,6 +116,28 @@ public class TouchUIController:ITouchUIController
     public bool IsNextTouch(List<Blink> blinks)
     {
         return currentIndex < blinks.Count - 1;
+    }
+    public void ProcessDoubleClick(Blink blink, int index)
+    {
+        if (existingTouches.Count >= 1)
+        {
+            for (int i = 0; i < existingTouches.Count; i++) // Bắt đầu từ i = 1 để bỏ qua this.transform
+            {
+                if (existingTouches[i] != null)
+                {
+                    existingTouches[i].background.enabled = false;
+                    existingTouches[i].txtContent.enabled = false;
+                }
+            }
+        }
+        blink.blinkEffect.gameObject.SetActive(false);
+        Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        TouchUI touch = Object.Instantiate(touches[index], new Vector3(canvasPos.x, canvasPos.y, 0), Quaternion.identity);
+        existingTouches.Add(touch);
+        touch.gameObject.transform.SetParent(blink.transform);
+        touch.gameObject.transform.localScale = Vector3.one;
+        touch.Select();
+        touch.StartCoroutineDestroyTouch();
     }
 }
 

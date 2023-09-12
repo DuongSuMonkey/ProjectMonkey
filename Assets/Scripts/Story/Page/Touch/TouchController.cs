@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using System;
 using System.Collections;
+using System.Reflection;
 
 public class TouchesController : Texts
 {
@@ -67,7 +68,7 @@ public class TouchesController : Texts
     {
         foreach (var touch in touches)
         {
-            touch.gameObject.SetActive(false);
+            touch.HideTouch();
         }
     }
 
@@ -106,7 +107,7 @@ public class TouchesController : Texts
             touchUIController.SearchText(touches[index], txtsContent,this);
             if (blink.countClick > 1 || blink != touchUIController.GetBlink(blinks))
             {
-                blinkController.ProcessDoubleClick(blink, index);
+                touchUIController.ProcessDoubleClick(blink, index);
                 return;
             }
             touchUIController.ShowTouchCurrent(blinks, touches, this);

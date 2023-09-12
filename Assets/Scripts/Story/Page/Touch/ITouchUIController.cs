@@ -11,5 +11,6 @@ public interface ITouchUIController
     bool IsTouchFinal(List<Blink> blinks);
     bool IsNextTouch(List<Blink> blinks);
     void OriginalTextColor(TextMeshProUGUI textcontent);
+    void ProcessDoubleClick(Blink blink, int index);
     Blink GetBlink(List<Blink> blinks);
 }

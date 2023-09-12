@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TouchUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI txtContent;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] public TextMeshProUGUI txtContent;
+    [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip audioClip;
+    [SerializeField] public Animator animator;
+    [SerializeField] public Image background;
     public TextMeshProUGUI TxtContent { get => txtContent; }
 
     private void Reset()
@@ -21,15 +24,24 @@ public class TouchUI : MonoBehaviour
         txtContent = GetComponentInChildren<TextMeshProUGUI>();
         audioSource = GetComponent<AudioSource>();
         audioClip = audioSource.clip;
+        background= GetComponentInChildren<Image>();
+        animator= GetComponentInChildren<Animator>();   
     }
     public void Select()
     {
         Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         gameObject.transform.position = new Vector3(canvasPos.x, canvasPos.y, 0);
-        gameObject.SetActive(true);
+        background.enabled = true;
+        txtContent.enabled = true;
+        animator.SetTrigger("Appear");
         audioSource.PlayOneShot(audioClip); 
     }
-    public void GetDestroy()
+    public void HideTouch()
+    {
+        background.enabled = false;
+        txtContent.enabled = false;
+    }
+    public void StartCoroutineDestroyTouch()
     {
         StartCoroutine(DestroyTouch());
     }

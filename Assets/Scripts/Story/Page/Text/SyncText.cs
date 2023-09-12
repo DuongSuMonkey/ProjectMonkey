@@ -14,16 +14,12 @@ public class SyncText :Texts
     public List<float> timeEnd;
     public int index = 0;
     public bool IsFinal { get => isFinal;}
-    public bool isStartNow=true;
     public GetTextTimeFromJson getTextTimeFromJson;
     void Start()
     {
-        if (isStartNow)
-        {
             timeChange = timeEnd[index] / 1000 - timeStart[index] / 1000;
             txtsContent[0].color = targetColor;
             currentIndex = 1;
-        }
     }
     private void Reset()
     {

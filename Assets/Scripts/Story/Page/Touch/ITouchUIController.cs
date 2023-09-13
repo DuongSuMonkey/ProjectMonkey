@@ -7,10 +7,9 @@ public interface ITouchUIController
 {
     void ShowTouchNext(List<Blink> blinks);
     void ShowTouchCurrent(List<Blink> blinks, List<TouchUI> touches,MonoBehaviour obj);
-    void SearchText(TouchUI touch, List<TextMeshProUGUI> txtsContent, MonoBehaviour obj);
-    bool IsTouchFinal(List<Blink> blinks);
     bool IsNextTouch(List<Blink> blinks);
-    void OriginalTextColor(TextMeshProUGUI textcontent);
+    bool IsTouchFinal(List<Blink> blinks);
     void ProcessDoubleClick(Blink blink, int index);
-    Blink GetBlink(List<Blink> blinks);
+    TouchUI GetTouch();
+  
 }

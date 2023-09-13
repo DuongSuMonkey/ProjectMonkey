@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface IBlinkController 
 {
-  //  void ProcessDoubleClick(Blink blink, int index);
+    Blink GetBlink(Blink blink);
+    void HideBlinkEffect(Blink blink);
+    void ShowBlinkEffect(Blink blink);
 }

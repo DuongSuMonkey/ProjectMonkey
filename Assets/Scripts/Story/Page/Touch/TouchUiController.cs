@@ -12,27 +12,28 @@ public class TouchUIController:ITouchUIController
     private List<TouchUI> touches;
     private int currentIndex;
     private List<TouchUI> existingTouches=new List<TouchUI>();
+    private ITouchManager touchManager;
+    private ITouchSelection touchSelection;
+    private IBlinkController blinkController;
     public TouchUIController(List<TouchUI> touches, int currentIndex)
     {
         this.touches = touches;
         this.currentIndex = currentIndex;
+        touchSelection=new TouchSelection(existingTouches);
+        touchManager=new TouchManager(touches,currentIndex, existingTouches);
+        blinkController=new BlinkController(touches);
     }
     private void SelectCurrentTouchUI(TouchUI touchUI)
     {
-        existingTouches.Add(touchUI);
-        touchUI.Select();
+        touchSelection.SelectTouchUI(touchUI);
     }
     private void HideBlinkEffect(Blink blink)
     {
-        blink.blinkEffect.gameObject.SetActive( false);
+        blinkController.HideBlinkEffect(blink);
     }
     public void InvokeShowTouchNext(MonoBehaviour obj,float delay)
     {
         obj.Invoke(nameof(ShowTouchNext),delay);
-    }
-    public Blink GetBlink(List<Blink> blinks)
-    {
-        return blinks[currentIndex];
     }
     public void ShowTouchCurrent(List<Blink> blinks, List<TouchUI> touches, MonoBehaviour obj)
     {
@@ -46,66 +47,40 @@ public class TouchUIController:ITouchUIController
     }
     private void HideCurrentTouch()
     {
-        touches[currentIndex].background.enabled = false;
-        touches[currentIndex].txtContent.enabled = false;
+        touches[currentIndex].HideTouch();
     }
 
-    private void ShowNextTouch(List<Blink> blinks)
+    private void ShowNextBlink(List<Blink> blinks)
     {
-        
-        if (blinks[currentIndex].isClick)
-        {
-                currentIndex++;
-                ShowNextTouch(blinks);
-        }
+        ProcessClickBlink(blinks);
         if (blinks[currentIndex].isBlink)
         {
-            blinks[currentIndex].blinkEffect.gameObject.SetActive(true);
+            blinkController.ShowBlinkEffect(blinks[currentIndex]);
         }
         
+    }
+    private void ProcessClickBlink(List<Blink> blinks)
+    {
+        if (IsTouchFinal(blinks))
+        {
+            if (blinks[currentIndex].isClick)
+            {
+                currentIndex++;
+                ProcessClickBlink(blinks);
+            }
+        }
     }
     private int IncreaseIndex()
     {
         return currentIndex++;
     }
     public void ShowTouchNext(List<Blink> blinks)
-    {  
+    {
+        HideCurrentTouch();
         if (IsNextTouch( blinks))
         {
-            HideCurrentTouch();
             IncreaseIndex();
-            ShowNextTouch(blinks);
-        }
-        else
-        {
-            HideCurrentTouch();
-        }
-    }
-
-    public  void SearchText(TouchUI touch,List<TextMeshProUGUI> txtsContent, MonoBehaviour obj)
-    {
-        for (int i = 0; i < txtsContent.Count; i++)
-        {
-            string textcontent = Regex.Replace(txtsContent[i].text, @"[,.;!?]", "");
-            if (touch.TxtContent.text == textcontent)
-            {
-                txtsContent[i].color = UnityEngine.Color.red;
-                txtsContent[i].GetComponent<Animator>().SetTrigger("isCheck");
-                obj.StartCoroutine(OriginalTextColorCoroutine(txtsContent[i]));
-            }
-        }
-    }
-
-    public IEnumerator OriginalTextColorCoroutine(TextMeshProUGUI textContent)
-    {
-        yield return new WaitForSeconds(1f); 
-        OriginalTextColor(textContent);
-    }
-    public void OriginalTextColor(TextMeshProUGUI textcontent)
-    {
-        if (textcontent.color == UnityEngine.Color.red)
-        {
-            textcontent.color = UnityEngine.Color.black;
+            ShowNextBlink(blinks);
         }
     }
     public bool IsTouchFinal(List<Blink> blinks)
@@ -119,25 +94,22 @@ public class TouchUIController:ITouchUIController
     }
     public void ProcessDoubleClick(Blink blink, int index)
     {
-        if (existingTouches.Count >= 1)
-        {
-            for (int i = 0; i < existingTouches.Count; i++) // Bắt đầu từ i = 1 để bỏ qua this.transform
-            {
-                if (existingTouches[i] != null)
-                {
-                    existingTouches[i].background.enabled = false;
-                    existingTouches[i].txtContent.enabled = false;
-                }
-            }
-        }
+        HideAllTouch();
         blink.blinkEffect.gameObject.SetActive(false);
-        Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        TouchUI touch = Object.Instantiate(touches[index], new Vector3(canvasPos.x, canvasPos.y, 0), Quaternion.identity);
-        existingTouches.Add(touch);
-        touch.gameObject.transform.SetParent(blink.transform);
-        touch.gameObject.transform.localScale = Vector3.one;
-        touch.Select();
-        touch.StartCoroutineDestroyTouch();
+        CreateTouch(blink ,index);
     }
+    public TouchUI GetTouch()
+    {
+        return touches[currentIndex];
+    }
+    public void CreateTouch(Blink blink, int index)
+    {
+        touchManager.CreateTouch(blink, index);
+    }
+    public void HideAllTouch()
+    {
+        touchManager.HideAlTouch(existingTouches);
+    }
+
 }
 

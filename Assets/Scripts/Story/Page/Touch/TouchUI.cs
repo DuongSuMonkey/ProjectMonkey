@@ -41,7 +41,7 @@ public class TouchUI : MonoBehaviour
         background.enabled = false;
         txtContent.enabled = false;
     }
-    public void StartCoroutineDestroyTouch()
+    public void DestroyTouchCoroutine()
     {
         StartCoroutine(DestroyTouch());
     }

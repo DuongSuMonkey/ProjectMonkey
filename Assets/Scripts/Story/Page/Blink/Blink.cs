@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class Blink : MonoBehaviour
 {
-    public event Action<Blink>  OnItemClicked;
+    public event Action<Blink>  OnClicked;
     public int countClick;
     public bool isClick=false;
     public Transform blinkEffect;
@@ -22,6 +22,6 @@ public class Blink : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        OnItemClicked?.Invoke(this);
+        OnClicked?.Invoke(this);
     }
 }

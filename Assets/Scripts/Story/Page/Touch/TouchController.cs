@@ -13,11 +13,12 @@ public class TouchesController : Texts
     [SerializeField] private List<TouchUI> touches;
     [SerializeField] private PageController pageController;
     [SerializeField] private bool isFirst = true;
-    [SerializeField] private IBlinkController blinkController;
     [SerializeField] private ITouchUIController touchUIController;
+    [SerializeField] private ISearchText searchTextController;
+
     private void Start()
     {
-        blinkController = new BlinkController(blinks, touches);
+        searchTextController = new SearchTextController();
         touchUIController = new TouchUIController(touches, currentIndex);
         AddEventBlink();
         HideAllTouches();
@@ -93,25 +94,29 @@ public class TouchesController : Texts
     {
         foreach (var blink in blinks)
         {
-            blink.OnItemClicked += HandleItemSelection;
+            blink.OnClicked += HandleTouchSelection;
         }
     }
 
-    private void HandleItemSelection(Blink blink)
+    private void HandleTouchSelection(Blink blink)
     {
         if (IsClick())
         {
             int index = blinks.IndexOf(blink);
-            blink.isClick=true;
-            blink.countClick++;
-            touchUIController.SearchText(touches[index], txtsContent,this);
-            if (blink.countClick > 1 || blink != touchUIController.GetBlink(blinks))
-            {
-                touchUIController.ProcessDoubleClick(blink, index);
-                return;
-            }
-            touchUIController.ShowTouchCurrent(blinks, touches, this);
+            TouchSelection(blink, index);
         }
+    }
+    private void TouchSelection(Blink blink,int index)
+    {
+        blink.isClick = true;
+        blink.countClick++;
+        SearchText(touches[index]);
+        if (blink.countClick > 1 || touches[index] != touchUIController.GetTouch())
+        {
+            ProcessDoubleClick(blink, index);
+            return;
+        }
+        ShowTextCurrent();
     }
     public bool IsClick()
     {
@@ -124,6 +129,14 @@ public class TouchesController : Texts
     public void ShowTextCurrent()
     {
         touchUIController.ShowTouchCurrent(blinks,touches,this);
+    }
+    private void SearchText(TouchUI touch)
+    {
+        searchTextController.Search(touch, txtsContent, this);
+    }
+    private void ProcessDoubleClick(Blink blink, int index)
+    {
+        touchUIController.ProcessDoubleClick(blink, index);
     }
 }
 

@@ -33,8 +33,7 @@ public class DrawPolygonCollider : MonoBehaviour
         foreach(var polygon in polygonCollider2D)
         {
             polygon.GetComponent<RectTransform>().anchorMin = new Vector2(0,0);
-            polygon.GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
-
+            polygon.GetComponent<RectTransform>().anchorMax = new Vector2(0,0);
         }
     }
     public void DrawCollider()

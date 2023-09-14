@@ -1,29 +1,58 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlinkController:IBlinkController
+public class BlinkController : IBlinkController
 {
-    private List<TouchUI> touches;
-
-    public BlinkController(List<TouchUI> touches)
+    private List<TouchUI> touchesUI;
+    private int currentIndex;
+    public BlinkController(List<TouchUI> touchesUI, int currentIndex)
     {
-        this.touches = touches;
+        this.touchesUI = touchesUI;
+        this.currentIndex = currentIndex;
     }
 
-    public Blink GetBlink(Blink blink)
+    public TouchObject GetTouchObject(TouchObject touchObject)
     {
-        return blink;
+        return touchObject;
     }
 
-    public void HideBlinkEffect(Blink blink)
+    public void HideBlinkEffect(TouchObject touchObject)
     {
-        blink.blinkEffect.gameObject.SetActive(false);
+        touchObject.blinkEffect.gameObject.SetActive(false);
     }
 
-    public void ShowBlinkEffect(Blink blink)
+    public void ShowBlinkEffect(TouchObject touchObject)
     {
-        blink.blinkEffect.gameObject.SetActive(true);
+        touchObject.blinkEffect.gameObject.SetActive(true);
+    }
+    public bool IsBlinkFinal(List<TouchObject> touchObjects)
+    {
+        return currentIndex < touchObjects.Count;
+    }
+
+    public bool CanNextBlink(List<TouchObject> touchObjects)
+    {
+        return currentIndex < touchObjects.Count - 1;
+    }
+    public void ShowBlink(List<TouchObject> touchObjects)
+    {
+        ProcessClickBlink(touchObjects);
+        if (touchObjects[currentIndex].isBlink)
+        {
+            ShowBlinkEffect(touchObjects[currentIndex]);
+        }
+    }
+    private void ProcessClickBlink(List<TouchObject> touchObjects)
+    {
+        if (IsBlinkFinal(touchObjects))
+        {
+            if (touchObjects[currentIndex].isClick)
+            {
+                currentIndex++;
+                ProcessClickBlink(touchObjects);
+            }
+        }
     }
 }
-

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface ITouchManager
 {
-    void CreateTouch(Blink blink, int index);
-    void HideAlTouch(List<TouchUI> existingTouches);
+    void CreateTouch(TouchObject touchObject, int index);
+    void HideAllTouch();
 }

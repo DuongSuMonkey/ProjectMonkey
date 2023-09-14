@@ -7,17 +7,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Blink : MonoBehaviour
+public class TouchObject : MonoBehaviour
 {
-    public event Action<Blink>  OnClicked;
+    public event Action<TouchObject>  OnClicked;
     public int countClick;
     public bool isClick=false;
     public Transform blinkEffect;
+    public TouchUI touchUI;
     public bool isBlink=true;
 
     [Obsolete]
     private void Reset()
     {
+        touchUI=GetComponentInChildren<TouchUI>();
         blinkEffect = gameObject.transform.FindChild("SpineBlink");
     }
     private void OnMouseDown()

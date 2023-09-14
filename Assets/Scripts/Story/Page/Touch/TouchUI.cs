@@ -31,6 +31,7 @@ public class TouchUI : MonoBehaviour
     {
         Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         gameObject.transform.position = new Vector3(canvasPos.x, canvasPos.y, 0);
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, UnityEngine.Random.Range(-15,15)));
         background.enabled = true;
         txtContent.enabled = true;
         animator.SetTrigger("Appear");

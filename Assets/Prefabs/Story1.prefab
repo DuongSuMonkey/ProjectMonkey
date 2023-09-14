@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 4343511109233236608}
   - component: {fileID: 2779598559016830243}
   m_Layer: 0
-  m_Name: Touch
+  m_Name: TouchUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,8 +339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 827.2906, y: 536.26}
-  m_SizeDelta: {x: 215.86, y: 53.66}
+  m_AnchoredPosition: {x: 827.2906, y: 540.18}
+  m_SizeDelta: {x: 215.86, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5759187029053076141
 CanvasRenderer:
@@ -990,7 +990,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 2178173991110421210}
   - component: {fileID: 4827025583556996620}
   m_Layer: 0
-  m_Name: Touch (3)
+  m_Name: TouchUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,8 +1062,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1082.31, y: 250.57}
-  m_SizeDelta: {x: 136.84, y: 43.13}
+  m_AnchoredPosition: {x: 1082.31, y: 246.24}
+  m_SizeDelta: {x: 137, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4110046374123379586
 CanvasRenderer:
@@ -1411,13 +1411,13 @@ MonoBehaviour:
   - {fileID: 8112125701201342871}
   - {fileID: 3863670002749856973}
   currentIndex: 0
-  blinks:
+  touchObjects:
   - {fileID: 4006355016640915359}
   - {fileID: 6885036783945700309}
   - {fileID: 7427271266251668594}
   - {fileID: 1885592735767153668}
   - {fileID: 2419357140229925832}
-  touches:
+  touchesUI:
   - {fileID: 4824614286964674632}
   - {fileID: 110922592530822413}
   - {fileID: 4067342848825848940}
@@ -1425,6 +1425,7 @@ MonoBehaviour:
   - {fileID: 9172590840631740015}
   pageController: {fileID: 1917771205624285110}
   isFirst: 1
+  existingTouches: []
 --- !u!114 &7529832796068421836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1474,7 @@ GameObject:
   - component: {fileID: 4006355016640915359}
   - component: {fileID: 7660366414188199060}
   m_Layer: 0
-  m_Name: BlinkSaladbowl
+  m_Name: Saladbowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,6 +1554,7 @@ MonoBehaviour:
   countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1474636255548599145}
+  touchUI: {fileID: 4824614286964674632}
   isBlink: 1
 --- !u!60 &7660366414188199060
 PolygonCollider2D:
@@ -1685,7 +1687,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -44, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3976551451657252237
 CanvasRenderer:
@@ -2103,7 +2105,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2370,7 +2372,7 @@ GameObject:
   - component: {fileID: 1198170750734274183}
   - component: {fileID: 4186604672062988246}
   m_Layer: 0
-  m_Name: Touch
+  m_Name: TouchUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,7 +2397,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 642, y: 253.33}
-  m_SizeDelta: {x: 123.98, y: 47.34}
+  m_SizeDelta: {x: 137, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1877350340117062934
 CanvasRenderer:
@@ -2667,8 +2669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_SizeDelta: {x: -15.86, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5650957769143067567
 CanvasRenderer:
@@ -3114,7 +3116,7 @@ GameObject:
   - component: {fileID: 7427271266251668594}
   - component: {fileID: 438739413507741044}
   m_Layer: 0
-  m_Name: BlinkSpoon
+  m_Name: Spoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3194,6 +3196,7 @@ MonoBehaviour:
   countClick: 0
   isClick: 0
   blinkEffect: {fileID: 405744362460950091}
+  touchUI: {fileID: 4067342848825848940}
   isBlink: 1
 --- !u!60 &438739413507741044
 PolygonCollider2D:
@@ -3275,7 +3278,7 @@ GameObject:
   - component: {fileID: 1885592735767153668}
   - component: {fileID: 7966246473178762875}
   m_Layer: 0
-  m_Name: BlinkBoyRight
+  m_Name: BoyRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3355,6 +3358,7 @@ MonoBehaviour:
   countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6521675045762098468}
+  touchUI: {fileID: 419401478591956447}
   isBlink: 1
 --- !u!60 &7966246473178762875
 PolygonCollider2D:
@@ -3861,7 +3865,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3909,7 +3913,7 @@ GameObject:
   - component: {fileID: 2419357140229925832}
   - component: {fileID: 3708246857752608109}
   m_Layer: 0
-  m_Name: BlinkBoyLeft
+  m_Name: BoyLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3989,6 +3993,7 @@ MonoBehaviour:
   countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7607685544804150922}
+  touchUI: {fileID: 9172590840631740015}
   isBlink: 0
 --- !u!60 &3708246857752608109
 PolygonCollider2D:
@@ -4166,8 +4171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2.0699997, y: 0}
+  m_SizeDelta: {x: -55.98, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9137247288995810484
 CanvasRenderer:
@@ -4885,7 +4890,7 @@ GameObject:
   - component: {fileID: 4747160417979398325}
   - component: {fileID: 8409339369087835932}
   m_Layer: 0
-  m_Name: Touch(1)
+  m_Name: TouchUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4910,7 +4915,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 929.38947, y: 441.4}
-  m_SizeDelta: {x: 143.69, y: 50.78}
+  m_SizeDelta: {x: 143.69, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4254173791143568643
 CanvasRenderer:
@@ -5233,8 +5238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.9700012, y: -0.52000046}
+  m_SizeDelta: {x: -51.09, y: -1.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1500866423799954646
 CanvasRenderer:
@@ -5445,7 +5450,7 @@ GameObject:
   - component: {fileID: 6885036783945700309}
   - component: {fileID: 2684505177737846563}
   m_Layer: 0
-  m_Name: BlinkFork
+  m_Name: Fork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5525,6 +5530,7 @@ MonoBehaviour:
   countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8224420997053818227}
+  touchUI: {fileID: 110922592530822413}
   isBlink: 1
 --- !u!60 &2684505177737846563
 PolygonCollider2D:
@@ -5705,7 +5711,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -44, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5461482071451137544
 CanvasRenderer:
@@ -5975,7 +5981,7 @@ GameObject:
   - component: {fileID: 4525095493297778646}
   - component: {fileID: 7219464502649484872}
   m_Layer: 0
-  m_Name: Touch (2)
+  m_Name: TouchUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5999,8 +6005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 718.59, y: 446.6898}
-  m_SizeDelta: {x: 171.59, y: 46.29}
+  m_AnchoredPosition: {x: 718.59, y: 449.81}
+  m_SizeDelta: {x: 171.59, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8477266843284336026
 CanvasRenderer:

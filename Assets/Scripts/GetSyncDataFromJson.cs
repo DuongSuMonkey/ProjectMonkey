@@ -5,9 +5,9 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
-public class GetTextTimeFromJson : MonoBehaviour
+public class GetSyncDataFromJson : MonoBehaviour
 {
-    [SerializeField] private JsonTimePath jsonPath;
+    [SerializeField] private JsonSyncDataPath jsonPath;
     [SerializeField] private string path = "";
     [SerializeField] private SyncText syncText;
     public List<float> start;
@@ -16,18 +16,18 @@ public class GetTextTimeFromJson : MonoBehaviour
     {
         GetPath();
         GetSyncText();
-        GetTime();
+        GetSyncData();
     }
     public void GetPath()
     {
-        jsonPath = GetComponent<JsonTimePath>();
+        jsonPath = GetComponent<JsonSyncDataPath>();
         path = jsonPath.path;
     }
     public void GetSyncText()
     {
         syncText = GetComponent<SyncText>();
     }
-    public void GetTime()
+    public void GetSyncData()
     {
         string jsonContent = File.ReadAllText(path);
         JObject jsonObject = JObject.Parse(jsonContent);

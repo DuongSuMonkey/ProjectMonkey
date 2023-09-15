@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,8 @@ public class SearchTextController : ISearchText
     {
         for (int i = 0; i < txtsContent.Count; i++)
         {
-            if (txtsContent[i].text == touch.TxtContent.text)
+            string textcontent = Regex.Replace(txtsContent[i].text, @"[,.;!?]", "");
+            if (touch.txtContent.text== textcontent)
             {
                 txtsContent[i].color = UnityEngine.Color.red;
                 txtsContent[i].GetComponent<Animator>().SetTrigger("isCheck");

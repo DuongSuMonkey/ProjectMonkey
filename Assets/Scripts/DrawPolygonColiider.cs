@@ -4,18 +4,21 @@ using Newtonsoft.Json.Linq;
 using Unity.VisualScripting;
 using System.Linq;
 using System.IO;
-
+using UnityEditor;
+using System;
+[System.Serializable]
 public class DrawPolygonCollider : MonoBehaviour
 {
     [SerializeField] private JsonColliderPath jsonPath;
     [SerializeField] private string path = "";
     [SerializeField] private List<PolygonCollider2D> polygonCollider2D;
     [SerializeField] private List<Vector2> vertices = new List<Vector2>();
+    [SerializeField] private TouchObject touchObject;
     private void Reset()
     {
         GetPath();
+        GetTouchObject();
         GetCollider();
-        SetAnchors();
         DrawCollider();     
     }
     public void GetPath()
@@ -23,25 +26,22 @@ public class DrawPolygonCollider : MonoBehaviour
         jsonPath = GetComponent<JsonColliderPath>();
         path = jsonPath.path;
     }
+    public void GetTouchObject()
+    {
+        touchObject = jsonPath.touchObjectPrefab;
+    }
     public void GetCollider()
     {
         PolygonCollider2D[] polygon = GetComponentsInChildren<PolygonCollider2D>();
         polygonCollider2D.AddRange(polygon);
     }
-    public void SetAnchors()
-    {
-        foreach(var polygon in polygonCollider2D)
-        {
-            polygon.GetComponent<RectTransform>().anchorMin = new Vector2(0,0);
-            polygon.GetComponent<RectTransform>().anchorMax = new Vector2(0,0);
-        }
-    }
+
     public void DrawCollider()
     {
         string jsonContent = File.ReadAllText(path);
         JObject jsonObject = JObject.Parse(jsonContent);
         JArray touchArray = (JArray)jsonObject["image"];
-        for (int i = 0; i < polygonCollider2D.Count; i++)
+        for (int i = 0; i < touchArray.Count; i++)
         {
             JArray items = (JArray)jsonObject["image"][i]["touch"][0]["vertices"];
             for (int j = 0; j < items.Count; j++)
@@ -52,12 +52,26 @@ public class DrawPolygonCollider : MonoBehaviour
                 int x = int.Parse(values[0]);
                 int y = int.Parse(values[1]);
                 Vector2 vector = new Vector2(x, y);
-                vertices.Add(vector);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    vertices.Add(vector);
+                }
             }
-            polygonCollider2D[i].SetPath(0, vertices.ToArray());
-            vertices.Clear();
+            if (vertices.Count > 0)
+            {
+                if (i >polygonCollider2D.Count - 1)
+                {
+                    TouchObject game = Instantiate(touchObject);
+                    game.GetComponent<RectTransform>().SetParent(this.transform);
+                    polygonCollider2D.Add(game.GetComponent<PolygonCollider2D>());
+
+                }
+                polygonCollider2D[i].SetPath(0, vertices.ToArray());
+                vertices.Clear();
+            }
         }
     }
 }
+
 
 

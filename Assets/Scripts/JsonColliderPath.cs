@@ -5,4 +5,5 @@ using UnityEngine;
 public class JsonColliderPath : MonoBehaviour
 {
     public string path;
+    public TouchObject touchObjectPrefab;
 }

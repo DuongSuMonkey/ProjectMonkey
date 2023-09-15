@@ -21,6 +21,7 @@ public class TouchObject : MonoBehaviour
     {
         touchUI=GetComponentInChildren<TouchUI>();
         blinkEffect = gameObject.transform.FindChild("SpineBlink");
+        blinkEffect.GetComponent<RectTransform>().position= touchUI.GetComponent<RectTransform>().position;
     }
     private void OnMouseDown()
     {

@@ -6,10 +6,12 @@ using UnityEngine.Networking;
 
 public class DownloadAssetBundleFromServe : MonoBehaviour
 {
-    [SerializeField] private AssetBundle bundle;
+    [SerializeField] private AssetBundle myAsset;
     [SerializeField] private string path;
-    [SerializeField] private string assetName;
+    [SerializeField] private AssetLoadTypeFromSever loadType;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private string singleAssetName;
+    [SerializeField] private List<string> multipleAssetNames = new List<string>();
     void Start()
     {
         GetAssets();
@@ -32,40 +34,109 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             else
             {
                 Debug.Log(www);
-                bundle = DownloadHandlerAssetBundle.GetContent(www);
-                if (assetName != "")
+                myAsset = DownloadHandlerAssetBundle.GetContent(www);
+                switch (loadType)
                 {
-                    LoadAsset();
+                    case AssetLoadTypeFromSever.SingleAsset:
+                        if (!string.IsNullOrEmpty(singleAssetName))
+                        {
+                            LoadSingleAsset();
+                        }
+                        break;
+
+                    case AssetLoadTypeFromSever.MultipleAssets:
+                        if (multipleAssetNames.Count > 0)
+                        {
+                            LoadMultipleAssets();
+                        }
+                        break;
+
+                    case AssetLoadTypeFromSever.AllAssets:
+                        LoadAllAssets();
+                        break;
                 }
-                else
-                {
-                    LoadAllAssets();
-                }
-                    bundle.Unload(false);
+                myAsset.Unload(false);
             }
                 www.Dispose();
             }
         }
-    private void LoadAsset()
+    //private void LoadAsset()
+    //{
+    //    var asset = bundle.LoadAsset(assetName);
+    //    if (asset.GetType() == typeof(GameObject))
+    //    {
+    //        GameObject gameObject = asset as GameObject;
+    //        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+    //        if (rectTransform != null)
+    //        {
+    //            Instantiate(gameObject, canvas.transform);
+    //        }
+    //        else
+    //        {
+    //            Instantiate(gameObject);
+    //        }
+    //    }
+    //}
+    //private void LoadAllAssets()
+    //{
+    //    var assets = bundle.LoadAllAssets();
+    //    foreach (var prefab in assets)
+    //    {
+    //        if (prefab.GetType() == typeof(GameObject))
+    //        {
+    //            GameObject gameObject = prefab as GameObject;
+    //            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+    //            if (rectTransform != null)
+    //            {
+    //                Instantiate(gameObject, canvas.transform);
+    //            }
+    //            else
+    //            {
+    //                Instantiate(gameObject);
+    //            }
+    //        }
+    //        else if (prefab.GetType() == typeof(AudioClip))
+    //        {
+    //            AudioClip audioClip = prefab as AudioClip;
+    //            audioClip.LoadAudioData();
+    //        }
+    //    }
+    
+    private void LoadSingleAsset()
     {
-        var asset = bundle.LoadAsset(assetName);
-        if (asset.GetType() == typeof(GameObject))
+        var prefab = myAsset.LoadAsset(singleAssetName);
+        Instantiate(prefab, canvas.transform);
+    }
+
+    private void LoadMultipleAssets()
+    {
+        foreach (var assetName in multipleAssetNames)
         {
-            GameObject gameObject = asset as GameObject;
-            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-            if (rectTransform != null)
+            var prefab = myAsset.LoadAsset(assetName);
+            if (prefab != null && prefab.GetType() == typeof(GameObject))
             {
-                Instantiate(gameObject, canvas.transform);
+                GameObject gameObject = prefab as GameObject;
+                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+                if (rectTransform != null)
+                {
+                    Instantiate(gameObject, canvas.transform);
+                }
+                else
+                {
+                    Instantiate(gameObject);
+                }
             }
-            else
+            else if (prefab.GetType() == typeof(AudioClip))
             {
-                Instantiate(gameObject);
+                AudioClip audioClip = prefab as AudioClip;
+                audioClip.LoadAudioData();
             }
         }
     }
+
     private void LoadAllAssets()
     {
-        var assets = bundle.LoadAllAssets();
+        var assets = myAsset.LoadAllAssets();
         foreach (var prefab in assets)
         {
             if (prefab.GetType() == typeof(GameObject))
@@ -89,3 +160,11 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
         }
     }
 }
+public enum AssetLoadTypeFromSever
+{
+    SingleAsset,
+    MultipleAssets,
+    AllAssets
+}
+
+

@@ -38,20 +38,20 @@ public class BlinkController : IBlinkController
     }
     public void ShowBlink(List<TouchObject> touchObjects)
     {
-        ProcessClickBlink(touchObjects);
+        CanBlink(touchObjects);
         if (touchObjects[currentIndex].isBlink)
         {
             ShowBlinkEffect(touchObjects[currentIndex]);
         }
     }
-    private void ProcessClickBlink(List<TouchObject> touchObjects)
+    public void CanBlink(List<TouchObject> touchObjects)
     {
-        if (IsBlinkFinal(touchObjects))
+        if (CanNextBlink(touchObjects))
         {
-            if (touchObjects[currentIndex].isClick)
+            if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].isBlink)
             {
                 currentIndex++;
-                ProcessClickBlink(touchObjects);
+                CanBlink(touchObjects);
             }
         }
     }

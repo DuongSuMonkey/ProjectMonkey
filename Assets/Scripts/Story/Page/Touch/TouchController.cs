@@ -16,16 +16,30 @@ public class TouchesController : Texts
     [SerializeField] private ITouchUIHandler touchUIController;
     [SerializeField] private ISearchText searchTextController;
     [SerializeField] private List<TouchUI> existingTouches=new List<TouchUI>();
-
     private void Start()
     {
         searchTextController = new SearchTextController();
         touchUIController = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
-        AddEventBlink();
+        AddEventTouch();
         HideAllTouches();
         HideAllBlinks();
     }
+    public void SetAnchors()
+    {
+        foreach (var touchObject in touchObjects)
+        {
+            touchObject.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+            touchObject.GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
+        }
+    }
+    public void SetPosition()
+    {
+        foreach (var touchObject in touchObjects)
+        {
+            touchObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
+        }
 
+    }
     private void Reset()
     {
         LoadComponents();
@@ -34,21 +48,30 @@ public class TouchesController : Texts
     private void LoadComponents()
     {
         LoadPageController();
-        LoadBlinks();
+        LoadTouchObject();
         LoadTouches();
+        SetPosition();
+        SetScale();
+        SetAnchors();
         LoadTexts();
     }
-
-    private void LoadBlinks()
+    public void SetScale()
+    {
+        foreach (var touchObject in touchObjects)
+        {
+            touchObject.GetComponent<RectTransform>().localScale = Vector3.one;
+        }
+    }
+    private void LoadTouchObject()
     {
         touchObjects.AddRange(GetComponentsInChildren<TouchObject>());
     }
 
     private void LoadTouches()
     {
-        foreach (var blink in touchObjects)
+        foreach (var touchObject in touchObjects)
         {
-            touchesUI.Add(blink.GetComponentInChildren<TouchUI>());
+            touchesUI.Add(touchObject.GetComponentInChildren<TouchUI>());
         }
     }
 
@@ -59,9 +82,9 @@ public class TouchesController : Texts
 
     public override void LoadTexts()
     {
-        foreach (var changeTextColor in pageController.ChangeTextColor)
+        foreach (var syncText in pageController.SyncText)
         {
-            TextMeshProUGUI[] texts = changeTextColor.GetComponentsInChildren<TextMeshProUGUI>();
+            TextMeshProUGUI[] texts = syncText.GetComponentsInChildren<TextMeshProUGUI>();
             AddText(texts);
         }
     }
@@ -86,16 +109,23 @@ public class TouchesController : Texts
     {
         if (pageController.IsFinal() && isFirst)
         {
-            touchObjects[0].blinkEffect.gameObject.SetActive (true);
-            isFirst = false;
+            for (int i = 0; i < touchObjects.Count; i++)
+            {
+                if (touchObjects[i].isBlink)
+                {
+                    touchObjects[i].blinkEffect.gameObject.SetActive(true);
+                    isFirst = false;
+                    break;
+                }
+            }
         }
     }
 
-    private void AddEventBlink()
+    private void AddEventTouch()
     {
-        foreach (var blink in touchObjects)
+        foreach (var touch in touchObjects)
         {
-            blink.OnClicked += HandleTouchSelection;
+            touch.OnClicked += HandleTouchSelection;
         }
     }
 
@@ -123,7 +153,7 @@ public class TouchesController : Texts
     }
     public bool IsClick()
     {
-        return pageController.ChangeTextColor[pageController.ChangeTextColor.Count - 1].IsFinal;
+        return pageController.SyncText[pageController.SyncText.Count - 1].IsFinal;
     }
     public void ShowBlinkNext()
     {

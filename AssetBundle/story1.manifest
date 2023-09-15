@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 533728330
+CRC: 2897182114
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c067350f0f47e23fb0f7725487823f56
+    Hash: 6bf40023c8d6fe49dde945dba3127441
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e3a87c793badbef2bf3faa4debe8e746
+    Hash: fe07bcaab98af6d3e09564e09706e8c4
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -155,6 +155,7 @@ Assets:
 - Assets/audios/chopping board.mp3
 - Assets/audios/tap.mp3
 - Assets/audios/boy.mp3
+- Assets/Prefabs/TouchObject.prefab
 - Assets/audios/Let_s make a salad bowl.mp3
 - Assets/audios/pineapple.mp3
 - Assets/Resources/images/ONwVWDqBvuLzO9JRN2rmTH1672904703776_trong.png

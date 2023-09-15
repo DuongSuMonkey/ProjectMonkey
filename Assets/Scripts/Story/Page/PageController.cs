@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PageController : MonoBehaviour
 {
-    [SerializeField] private List<SyncText> changeTextColor;
+    [SerializeField] private List<SyncText> syncTexts;
     [SerializeField] protected TouchesController touchesController;
     [SerializeField] protected List<AudioSource> audioSource;
     [SerializeField] private List<AudioClip> audioClip;
-    public List<SyncText> ChangeTextColor { get => changeTextColor; }
+    public List<SyncText> SyncText { get => syncTexts; }
     public List<AudioClip> AudioClip { get => audioClip;}
 
     private void Start()
@@ -22,12 +22,12 @@ public class PageController : MonoBehaviour
     }
     private void Update()
     {
-        for (int i = 0; i < changeTextColor.Count; i++)
+        for (int i = 0; i < syncTexts.Count; i++)
         {
-            if (i < changeTextColor.Count - 1 && changeTextColor[i].IsFinal)
+            if (i < syncTexts.Count - 1 && syncTexts[i].IsFinal)
             {
-                changeTextColor[i].gameObject.SetActive(false);
-                changeTextColor[++i].gameObject.SetActive(true);
+                syncTexts[i].gameObject.SetActive(false);
+                syncTexts[++i].gameObject.SetActive(true);
             }
         }
     }
@@ -45,19 +45,19 @@ public class PageController : MonoBehaviour
     private void LoadChangTextColors()
     {
         SyncText[] texts = GetComponentsInChildren<SyncText>();
-        changeTextColor.AddRange(texts);
+        syncTexts.AddRange(texts);
     }
     private void LoadAudios()
     {
-        for (int i = 0; i < changeTextColor.Count; i++)
+        for (int i = 0; i < syncTexts.Count; i++)
         {
-            AudioSource audio = ChangeTextColor[i].GetComponent<AudioSource>();
+            AudioSource audio = SyncText[i].GetComponent<AudioSource>();
             audioSource.Add(audio);
         }
     }
     private void LoadAudioClips()
     {
-        for (int i = 0; i < changeTextColor.Count; i++)
+        for (int i = 0; i < syncTexts.Count; i++)
         {
             AudioClip Clip = audioSource[i].clip;
             audioClip.Add(Clip);
@@ -65,18 +65,18 @@ public class PageController : MonoBehaviour
     }
     public bool IsFinal()
     {
-        return changeTextColor[changeTextColor.Count-1].IsFinal;
+        return syncTexts[syncTexts.Count-1].IsFinal;
     }
     private void HideAllChangeTextColors()
     {
-        foreach (var changeTextColor in ChangeTextColor)
+        foreach (var changeTextColor in SyncText)
         {
             changeTextColor.gameObject.SetActive(false);
         }
     }
     public void ShowFirstChangeTextColor()
     {
-        changeTextColor[0].gameObject.SetActive(true);
+        syncTexts[0].gameObject.SetActive(true);
     }
    
 }

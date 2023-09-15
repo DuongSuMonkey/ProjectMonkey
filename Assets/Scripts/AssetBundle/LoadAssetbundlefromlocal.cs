@@ -6,104 +6,108 @@ using UnityEngine.UI;
 
 public class LoadAssetbundlefromlocal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private AssetBundle myAsset;
-    public string path;
-    [SerializeField] private string assetName;
-    [SerializeField] private Canvas canvas;
-    void Start()
-    {
-        GetAsset();
-        InstantiateAsset();
-    }
 
-    void GetAsset()
-    {
-        myAsset = AssetBundle.LoadFromFile(path);
-        Debug.Log(myAsset == null ? "Faild" : "Succes");
+        [SerializeField] private AssetBundle myAsset;
+        public string path;
+        [SerializeField] private AssetLoadType loadType;
+        [SerializeField] private string singleAssetName;
+        [SerializeField] private List<string> multipleAssetNames = new List<string>();
+        [SerializeField] private Canvas canvas;
 
-    }
-    public void InstantiateAsset()
-    {
-        if (assetName != "")
+        void Start()
         {
-            LoadAsset();
+            GetAsset();
+            InstantiateAsset();
         }
-        else
+
+        void GetAsset()
         {
-            LoadAllAssets();
+            myAsset = AssetBundle.LoadFromFile(path);
+            Debug.Log(myAsset == null ? "Failed" : "Success");
         }
-        #region
-        //void InstantiateAsset()
-        //{
-        //    // Load all assets within the assetbundle
-        //    var allAssets = myAsset.LoadAllAssets();
 
-        //    foreach (var asset in allAssets)
-        //    {
-        //        if (asset.GetType() == typeof(GameObject))
-        //        {
-        //            Debug.Log(asset.name);
-        //            //Instantiate(asset as GameObject);
-        //        }
-        //        else if (asset.GetType() == typeof(AudioClip))
-        //        {
-        //            // Here you can handle audio assets as needed
-        //            // For example, play the audio clip
-        //            AudioClip audioClip = asset as AudioClip;
-        //            AudioSource.PlayClipAtPoint(audioClip, transform.position);
-        //        }
-        //        else if (asset.GetType() == typeof(Texture2D))
-        //        {
-        //            // Here you can handle texture assets as needed
-        //            // For example, assign texture to a material
-        //            Texture2D texture = asset as Texture2D;
-        //            Material material = GetComponent<Renderer>().material;
-        //            material.mainTexture = texture;
-        //        }
-        //    }
-
-        //    // Load a specific asset by name, if provided
-        //    if (!string.IsNullOrEmpty(assetName))
-        //    {
-        //        var prefab = myAsset.LoadAsset(assetName);
-        //        if (prefab != null && prefab.GetType() == typeof(GameObject))
-        //        {
-        //            Instantiate(prefab as GameObject);
-        //        }
-        //    }
-        // }
-        #endregion
-    }
-    private void LoadAsset()
-    {
-        var prefab = myAsset.LoadAsset(assetName);
-        Instantiate(prefab, canvas.transform);
-    }
-    private void LoadAllAssets()
-    {
-        var assets = myAsset.LoadAllAssets();
-        foreach (var prefab in assets)
+        public void InstantiateAsset()
         {
-            if (prefab.GetType() == typeof(GameObject))
+            switch (loadType)
             {
-                GameObject gameObject = prefab as GameObject;
-                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-                if (rectTransform != null)
+                case AssetLoadType.SingleAsset:
+                    if (!string.IsNullOrEmpty(singleAssetName))
+                    {
+                        LoadSingleAsset();
+                    }
+                    break;
+
+                case AssetLoadType.MultipleAssets:
+                    if (multipleAssetNames.Count > 0)
+                    {
+                        LoadMultipleAssets();
+                    }
+                    break;
+
+                case AssetLoadType.AllAssets:
+                    LoadAllAssets();
+                    break;
+            }
+        }
+
+        private void LoadSingleAsset()
+        {
+            var prefab = myAsset.LoadAsset(singleAssetName);
+            Instantiate(prefab, canvas.transform);
+        }
+
+        private void LoadMultipleAssets()
+        {
+            foreach (var assetName in multipleAssetNames)
+            {
+                var prefab = myAsset.LoadAsset(assetName);
+                if (prefab != null && prefab.GetType() == typeof(GameObject))
                 {
-                    Instantiate(gameObject, canvas.transform);
-                }
-                else
-                {
-                    Instantiate(gameObject);
+                    GameObject gameObject = prefab as GameObject;
+                    RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+                    if (rectTransform != null)
+                    {
+                        Instantiate(gameObject, canvas.transform);
+                    }
+                    else
+                    {
+                        Instantiate(gameObject);
+                    }
                 }
             }
-            else if (prefab.GetType() == typeof(AudioClip))
+        }
+
+        private void LoadAllAssets()
+        {
+            var assets = myAsset.LoadAllAssets();
+            foreach (var prefab in assets)
             {
-                AudioClip audioClip = prefab as AudioClip;
-                audioClip.LoadAudioData();
+                if (prefab.GetType() == typeof(GameObject))
+                {
+                    GameObject gameObject = prefab as GameObject;
+                    RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+                    if (rectTransform != null)
+                    {
+                        Instantiate(gameObject, canvas.transform);
+                    }
+                    else
+                    {
+                        Instantiate(gameObject);
+                    }
+                }
+                else if (prefab.GetType() == typeof(AudioClip))
+                {
+                    AudioClip audioClip = prefab as AudioClip;
+                    audioClip.LoadAudioData();
+                }
             }
         }
     }
+
+  public enum AssetLoadType
+{
+    SingleAsset,
+    MultipleAssets,
+    AllAssets
 }
 

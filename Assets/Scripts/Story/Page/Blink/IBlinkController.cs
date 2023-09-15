@@ -10,4 +10,5 @@ public interface IBlinkController
     bool IsBlinkFinal(List<TouchObject> touchObjects);
     bool CanNextBlink(List<TouchObject> touchObjects);
     void ShowBlink(List<TouchObject> touchObject);
+    void CanBlink(List<TouchObject> touchObjects);
 }

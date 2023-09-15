@@ -13,7 +13,6 @@ public class TouchUI : MonoBehaviour
     [SerializeField] public AudioClip audioClip;
     [SerializeField] public Animator animator;
     [SerializeField] public Image background;
-    public TextMeshProUGUI TxtContent { get => txtContent; }
 
     private void Reset()
     {

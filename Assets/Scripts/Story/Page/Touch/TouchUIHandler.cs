@@ -20,31 +20,45 @@ public class TouchUIHandler:ITouchUIHandler
         this.touchesUI = touchesUI;
         this.currentIndex = currentIndex;
         this.existingTouches= existingTouches;
-        touchManager=new TouchManager(touchesUI,currentIndex, existingTouches);
-        blinkController=new BlinkController(touchesUI,currentIndex);
+        touchManager =new TouchManager(touchesUI,currentIndex, existingTouches);
+        blinkController = new BlinkController(touchesUI,currentIndex);
     }
     public void ShowTouchCurrent(List<TouchObject> touchObjects, List<TouchUI> touchesUI)
     {
-        if (!blinkController.IsBlinkFinal(touchObjects))
+        if (!IsBlinkFinal(touchObjects))
         {
             return;
         }
         blinkController.HideBlinkEffect(touchObjects[currentIndex]);
-        touchManager.CreateTouch(touchObjects[currentIndex], currentIndex);
+        CreateTouch(touchObjects[currentIndex], currentIndex);
         ShowBlinkNext(touchObjects);
+    }
+    public bool IsBlinkFinal(List<TouchObject> touchObjects)
+    {
+        return blinkController.IsBlinkFinal(touchObjects);
     }
     private int IncreaseIndex()
     {
         return currentIndex++;
     }
-
     public void ShowBlinkNext(List<TouchObject> touchObjects)
     {
-        if (blinkController.CanNextBlink(touchObjects))
+        if (CanNextBlink(touchObjects))
         {
-            IncreaseIndex();
+            if (touchObjects[currentIndex].isBlink)
+            {
+                IncreaseIndex();
+            }
             blinkController.ShowBlink(touchObjects);
         }
+    }
+    public void ShowBlink(List<TouchObject> touchObjects)
+    {
+        blinkController.ShowBlink(touchObjects);
+    }
+    public bool CanNextBlink(List<TouchObject> touchObjects)
+    {
+         return blinkController.CanNextBlink(touchObjects);
     }
     public void ProcessDoubleClick(TouchObject touchObject, int index)
     {
@@ -64,6 +78,5 @@ public class TouchUIHandler:ITouchUIHandler
     {
         touchManager.HideAllTouch();
     }
-
 }
 

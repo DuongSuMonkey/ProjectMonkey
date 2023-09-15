@@ -14,7 +14,7 @@ public class SyncText :Texts
     public List<float> timeEnd;
     public int index = 0;
     public bool IsFinal { get => isFinal;}
-    public GetTextTimeFromJson getTextTimeFromJson;
+    public GetSyncDataFromJson getTextTimeFromJson;
     void Start()
     {
             timeChange = timeEnd[index] / 1000 - timeStart[index] / 1000;
@@ -39,7 +39,7 @@ public class SyncText :Texts
     }
     public void LoadTimeText()
     {
-        getTextTimeFromJson = GetComponent<GetTextTimeFromJson>();
+        getTextTimeFromJson = GetComponent<GetSyncDataFromJson>();
     }
     public override void LoadTexts()
     {

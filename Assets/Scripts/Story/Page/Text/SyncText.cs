@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,15 +11,14 @@ public class SyncText :Texts
     [SerializeField] private bool isFinal=false;
     [SerializeField] protected float timeChange;
     [SerializeField] protected float timer;
-    public List<float> timeStart;
-    public List<float> timeEnd;
-    public int index = 0;
+    public int syncDataIndex = 0;
     public bool IsFinal { get => isFinal;}
-    public GetSyncDataFromJson getTextTimeFromJson;
+    public GetSyncDataFromJson getSyncDataFromJson;
+    public List<SyncData> syncData;
     void Start()
     {
-            timeChange = timeEnd[index] / 1000 - timeStart[index] / 1000;
-            txtsContent[0].color = targetColor;
+        timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
+        txtContents[0].color = targetColor;
             currentIndex = 1;
     }
     private void Reset()
@@ -31,15 +31,31 @@ public class SyncText :Texts
        LoadPageController();
        LoadTimeText();
        GetTime();
+       GetContent();
     }
     public void GetTime()
     {
-        timeStart = getTextTimeFromJson.start;
-        timeEnd = getTextTimeFromJson.end;
+        foreach (var data in getSyncDataFromJson.syncData) {
+            syncData.Add(data);
+        }
     }
     public void LoadTimeText()
     {
-        getTextTimeFromJson = GetComponent<GetSyncDataFromJson>();
+        getSyncDataFromJson = GetComponent<GetSyncDataFromJson>();
+    }
+    public void GetContent()
+    {
+        for(int i=0;i< getSyncDataFromJson.txtContents.Count;i++)
+        {
+            if (i > txtContents.Count - 1)
+            {
+                TextMeshProUGUI text = Instantiate(getSyncDataFromJson.textPrefab, this.transform);
+                text.rectTransform.localPosition = Vector3.zero;
+                text.rectTransform.localScale = Vector3.one;
+                txtContents.Add(text);
+            }
+            txtContents[i].text = getSyncDataFromJson.txtContents[i];
+        }
     }
     public override void LoadTexts()
     {
@@ -54,20 +70,16 @@ public class SyncText :Texts
     {
         ChangeTime();
         ChangeColor();
-        if (!IsFinal)
-        {
-            Invoke(nameof(ChangeTextColorFinal), this.pageController.AudioClip[0].length);
-            return;
-        }
+
     }
     public void ChangeTextColorFinal()
     {
-        txtsContent[currentIndex - 1].color = Color.black;
+        txtContents[currentIndex - 1].color = Color.black;
         isFinal = true;
     }
     public void ChangeTime()
     {
-        if (currentIndex < txtsContent.Count)
+        if (currentIndex < txtContents.Count)
         {
             timer += Time.deltaTime;
         }
@@ -78,21 +90,30 @@ public class SyncText :Texts
     }
     public void ChangeColor()
     {
-        if (currentIndex < txtsContent.Count)
+        if (currentIndex < txtContents.Count)
         {
-            timeChange = timeEnd[index] / 1000 - timeStart[index] / 1000;
+            timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
         }
-        if (timer >= timeChange && currentIndex < txtsContent.Count)
+        if (timer >= timeChange && currentIndex < txtContents.Count)
         {
-            foreach(var txtContent in txtsContent)
+            foreach(var txtContent in txtContents)
             {
                 txtContent.color = Color.black;
             }
-            txtsContent[currentIndex].color = targetColor;
+            txtContents[currentIndex].color = targetColor;
             currentIndex++;
-            index++;
+            syncDataIndex++;
             timer = 0.0f;
         }
+        else if (currentIndex== txtContents.Count  && !isFinal)
+        {
+            Invoke(nameof(ChangeTextColorFinal), syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000);
+        }
     }
+}
+[Serializable]
+public struct SyncData {
+    public float timeStart;
+    public float timeEnd;
 }
 

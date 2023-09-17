@@ -10,18 +10,24 @@ public class GetSyncDataFromJson : MonoBehaviour
     [SerializeField] private JsonSyncDataPath jsonPath;
     [SerializeField] private string path = "";
     [SerializeField] private SyncText syncText;
-    public List<float> start;
-    public List<float> end;
+    public List<string> txtContents;
+    public TextMeshProUGUI textPrefab;
+    public List<SyncData> syncData;
     private void Reset()
     {
         GetPath();
         GetSyncText();
+        GetTextPrefab();
         GetSyncData();
     }
     public void GetPath()
     {
         jsonPath = GetComponent<JsonSyncDataPath>();
         path = jsonPath.path;
+    }
+    public void GetTextPrefab()
+    {
+        textPrefab=jsonPath.textPrefab;
     }
     public void GetSyncText()
     {
@@ -39,8 +45,13 @@ public class GetSyncDataFromJson : MonoBehaviour
             {
                 float e =float.Parse( items[j]["e"].ToString());
                 float s = float.Parse(items[j]["s"].ToString());
-                start.Add(s);
-                end.Add(e);
+                string text = items[j]["w"].ToString();
+                txtContents.Add(text);
+                SyncData newSyncData = new SyncData();
+                newSyncData.timeStart = s;
+                newSyncData.timeEnd = e;
+                syncData.Add(newSyncData);
+               
             }
         }
     }

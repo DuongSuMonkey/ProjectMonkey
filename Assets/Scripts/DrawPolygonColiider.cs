@@ -17,7 +17,7 @@ public class DrawPolygonCollider : MonoBehaviour
     private void Reset()
     {
         GetPath();
-        GetTouchObject();
+        GetTouchObjectPrefab();
         GetCollider();
         DrawCollider();     
     }
@@ -26,7 +26,7 @@ public class DrawPolygonCollider : MonoBehaviour
         jsonPath = GetComponent<JsonColliderPath>();
         path = jsonPath.path;
     }
-    public void GetTouchObject()
+    public void GetTouchObjectPrefab()
     {
         touchObject = jsonPath.touchObjectPrefab;
     }
@@ -61,9 +61,8 @@ public class DrawPolygonCollider : MonoBehaviour
             {
                 if (i >polygonCollider2D.Count - 1)
                 {
-                    TouchObject game = Instantiate(touchObject);
-                    game.GetComponent<RectTransform>().SetParent(this.transform);
-                    polygonCollider2D.Add(game.GetComponent<PolygonCollider2D>());
+                    TouchObject touch = Instantiate(touchObject,this.transform);
+                    polygonCollider2D.Add(touch.GetComponent<PolygonCollider2D>());
 
                 }
                 polygonCollider2D[i].SetPath(0, vertices.ToArray());

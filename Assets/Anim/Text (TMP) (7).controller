@@ -36,7 +36,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isCheck
+    m_ConditionEvent: isHightlight
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3939964967979854812}
@@ -61,7 +61,7 @@ AnimatorController:
   m_Name: Text (TMP) (7)
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isCheck
+  - m_Name: isHightlight
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0

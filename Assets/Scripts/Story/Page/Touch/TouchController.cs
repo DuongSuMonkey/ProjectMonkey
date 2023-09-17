@@ -88,7 +88,6 @@ public class TouchesController : Texts
             AddText(texts);
         }
     }
-
     private void HideAllTouches()
     {
         foreach (var touch in touchesUI)
@@ -131,7 +130,7 @@ public class TouchesController : Texts
 
     private void HandleTouchSelection(TouchObject touchObject)
     {
-        if (IsClick())
+        if (CanClick())
         {
             int index = this.touchObjects.IndexOf(touchObject);
             TouchSelection(touchObject, index);
@@ -139,7 +138,6 @@ public class TouchesController : Texts
     }
     private void TouchSelection(TouchObject touchObject,int index)
     {
-       
         touchObject.isClick = true;
         touchObject.countClick++;
         SearchText(touchesUI[index]);
@@ -151,7 +149,7 @@ public class TouchesController : Texts
         }
         ShowTouchCurrent();
     }
-    public bool IsClick()
+    public bool CanClick()
     {
         return pageController.SyncText[pageController.SyncText.Count - 1].IsFinal;
     }
@@ -165,7 +163,7 @@ public class TouchesController : Texts
     }
     private void SearchText(TouchUI touch)
     {
-        searchTextController.Search(touch, txtsContent, this);
+        searchTextController.Search(touch, txtContents, this);
     }
     private void ProcessDoubleClick(TouchObject touchObject, int index)
     {

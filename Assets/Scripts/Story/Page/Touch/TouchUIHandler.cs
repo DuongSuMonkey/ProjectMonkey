@@ -35,7 +35,7 @@ public class TouchUIHandler:ITouchUIHandler
     }
     public bool IsBlinkFinal(List<TouchObject> touchObjects)
     {
-        return blinkController.IsBlinkFinal(touchObjects);
+        return blinkController.IsProcessingRemaining(touchObjects);
     }
     private int IncreaseIndex()
     {

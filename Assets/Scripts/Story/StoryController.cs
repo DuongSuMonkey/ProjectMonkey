@@ -5,13 +5,18 @@ using UnityEngine;
 public class StoryController : MonoBehaviour
 {
     [SerializeField] private List<PageController> pages;
+    [SerializeField] private int currentIndex=0;
+    public bool isStart=true;
     private void Start()
     {
-        //foreach(PageController page in pages)
-        //{
-        //    page.gameObject.SetActive(false);
-        //}
-        //pages[0].gameObject.SetActive(true);
+        if (isStart)
+        {
+            foreach (PageController page in pages)
+            {
+                page.gameObject.SetActive(false);
+            }
+            pages[0].gameObject.SetActive(true);
+        }
     }
     private void Reset()
     {
@@ -26,6 +31,13 @@ public class StoryController : MonoBehaviour
     {
         PageController[] page = GetComponentsInChildren<PageController>();
         pages.AddRange(page);
+    }
+    public void NextPage()
+    {
+        pages[currentIndex].gameObject.SetActive(false);
+        currentIndex++;
+        pages[currentIndex].gameObject.SetActive(true);
+
     }
     
 }

@@ -6,16 +6,17 @@ using UnityEngine;
 
 public class SearchTextController : ISearchText
 {
-    public void Search(TouchUI touch, List<TextMeshProUGUI> txtsContent, MonoBehaviour obj)
+
+    public void Search(TouchUI TouchUI, List<TextMeshProUGUI> txtContents, MonoBehaviour obj)
     {
-        for (int i = 0; i < txtsContent.Count; i++)
+        for (int i = 0; i < txtContents.Count; i++)
         {
-            string textcontent = Regex.Replace(txtsContent[i].text, @"[,.;!?]", "");
-            if (touch.txtContent.text== textcontent)
+            string textcontent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "");
+            if (TouchUI.txtContent.text.Equals(textcontent))
             {
-                txtsContent[i].color = UnityEngine.Color.red;
-                txtsContent[i].GetComponent<Animator>().SetTrigger("isCheck");
-                obj.StartCoroutine(OriginalTextColorCoroutine(txtsContent[i]));
+                txtContents[i].color = Color.red;
+                txtContents[i].GetComponent<Animator>().SetTrigger("isHightlight");
+                obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
             }
         }
     }
@@ -28,9 +29,9 @@ public class SearchTextController : ISearchText
 
     public void OriginalTextColor(TextMeshProUGUI textcontent)
     {
-        if (textcontent.color == UnityEngine.Color.red)
+        if (textcontent.color == Color.red)
         {
-            textcontent.color = UnityEngine.Color.black;
+            textcontent.color = Color.black;
         }
     }
 }

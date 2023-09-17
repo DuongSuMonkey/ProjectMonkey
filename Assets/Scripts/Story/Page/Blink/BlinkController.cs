@@ -27,7 +27,7 @@ public class BlinkController : IBlinkController
     {
         touchObject.blinkEffect.gameObject.SetActive(true);
     }
-    public bool IsBlinkFinal(List<TouchObject> touchObjects)
+    public bool IsProcessingRemaining(List<TouchObject> touchObjects)
     {
         return currentIndex < touchObjects.Count;
     }

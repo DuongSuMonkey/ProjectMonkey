@@ -14,9 +14,11 @@ public class TouchUI : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] public Image background;
 
-    private void Reset()
+    public void Reset()
     {
         LoadComponents();
+        Vector2 textSize = txtContent.GetPreferredValues(float.PositiveInfinity, float.PositiveInfinity);
+        this.GetComponent<RectTransform>().sizeDelta = new Vector2(textSize.x + 20, textSize.y + 20);
     }
     public void LoadComponents()
     {

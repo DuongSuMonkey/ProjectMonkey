@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3894892582
+CRC: 2462475875
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ef3349251de9eb8170581be5088d4c80
+    Hash: 78e1a036d2ef2f55808476c3f2df69f2
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4876e382d9d08dcf2cd953d28781cd74
+    Hash: de51906bc90fd4bb0a7d68736e0d4e37
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -88,6 +88,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: .SyncData
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
@@ -159,6 +161,7 @@ Assets:
 - Assets/audios/Let_s make a salad bowl.mp3
 - Assets/audios/pineapple.mp3
 - Assets/Resources/images/ONwVWDqBvuLzO9JRN2rmTH1672904703776_trong.png
+- Assets/Prefabs/Text (TMP).prefab
 - Assets/audios/cheese.mp3
 - Assets/audios/I will shred some lettuce.mp3
 - Assets/audios/Of course we need some fruits and vegetables..mp3

@@ -64,11 +64,22 @@ public class TouchesController : Texts
     }
     private void LoadTouchObject()
     {
+        //var touchObjectsArray = GetComponentsInChildren<TouchObject>();
+        //for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
+        //{
+        //    touchObjects.Add(touchObjectsArray[i]);
+        //}
         touchObjects.AddRange(GetComponentsInChildren<TouchObject>());
     }
 
     private void LoadTouches()
     {
+        //var touchObjectsArray = GetComponentsInChildren<TouchUI>();
+        //for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
+        //{
+        //    //var touchObject = touchObjects[i];
+        //    touchesUI.Add(touchObjectsArray[i]);
+        //}
         foreach (var touchObject in touchObjects)
         {
             touchesUI.Add(touchObject.GetComponentInChildren<TouchUI>());
@@ -142,7 +153,7 @@ public class TouchesController : Texts
         touchObject.countClick++;
         SearchText(touchesUI[index]);
         HideAllTouch();
-        if (touchObject.countClick > 1 || touchesUI[index] != touchUIController.GetTouch())
+        if (touchObject.countClick > 1 || touchUIController.GetTouch() != touchUIController.GetTouch())
         {
             ProcessDoubleClick(touchObject, index);
             return;

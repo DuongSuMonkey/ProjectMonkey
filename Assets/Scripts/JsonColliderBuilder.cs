@@ -1,15 +1,11 @@
-﻿using UnityEngine;
+﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using Unity.VisualScripting;
-using System.Linq;
 using System.IO;
-using UnityEditor;
-using System;
+using UnityEngine;
 [System.Serializable]
-public class DrawPolygonCollider : MonoBehaviour
+public class JsonColliderBuilder : MonoBehaviour
 {
-    [SerializeField] private JsonColliderPath jsonPath;
+    [SerializeField] private JsonPagePath jsonPath;
     [SerializeField] private string path = "";
     [SerializeField] private List<PolygonCollider2D> polygonCollider2D;
     [SerializeField] private List<Vector2> vertices = new List<Vector2>();
@@ -19,11 +15,12 @@ public class DrawPolygonCollider : MonoBehaviour
         GetPath();
         GetTouchObjectPrefab();
         GetCollider();
-        DrawCollider();     
+        DrawCollider();
+        SetWordById();
     }
     public void GetPath()
     {
-        jsonPath = GetComponent<JsonColliderPath>();
+        jsonPath = GetComponent<JsonPagePath>();
         path = jsonPath.path;
     }
     public void GetTouchObjectPrefab()
@@ -70,7 +67,32 @@ public class DrawPolygonCollider : MonoBehaviour
             }
         }
     }
+    public void SetWordById()
+    {
+        string jsonContent = File.ReadAllText(path);
+        JObject jsonObject = JObject.Parse(jsonContent);
+        for (int i = 0; i < polygonCollider2D.Count; i++)
+        {
+            int items = (int)jsonObject["image"][i]["word_id"];
+            GetWordByID(items.ToString(), polygonCollider2D[i]);
+        }
+    }
+    public void GetWordByID(string fileName,PolygonCollider2D polygonCollider)
+    {
+        string folderPath = @"d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\";
+        string[] files = Directory.GetFiles(folderPath, fileName + ".json", SearchOption.AllDirectories);
+        if (files.Length > 0)
+        {
+            string jsonFilePath = files[0];
+            string jsonContent = File.ReadAllText(jsonFilePath);
+            JObject jsonObject = JObject.Parse(jsonContent);
+            string items = (string)jsonObject["text"];
+            polygonCollider.gameObject.GetComponentInChildren<TouchUI>().txtContent.text = items;
+        }
+        else
+        {
+            Debug.Log("Fail");
+        }
+    }
 }
-
-
 

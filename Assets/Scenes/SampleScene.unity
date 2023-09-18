@@ -746,6 +746,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Story1
       objectReference: {fileID: 0}
+    - target: {fileID: 1731678922660138892, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935482006601755902, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: isStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080158267596861556, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380467574442787803, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9081540373118750818, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -25,7 +25,7 @@ public class TouchUIHandler:ITouchUIHandler
     }
     public void ShowTouchCurrent(List<TouchObject> touchObjects, List<TouchUI> touchesUI)
     {
-        if (!IsBlinkFinal(touchObjects))
+        if (!IsProcessingRemaining(touchObjects))
         {
             return;
         }
@@ -33,7 +33,7 @@ public class TouchUIHandler:ITouchUIHandler
         CreateTouch(touchObjects[currentIndex], currentIndex);
         ShowBlinkNext(touchObjects);
     }
-    public bool IsBlinkFinal(List<TouchObject> touchObjects)
+    public bool IsProcessingRemaining(List<TouchObject> touchObjects)
     {
         return blinkController.IsProcessingRemaining(touchObjects);
     }
@@ -49,7 +49,7 @@ public class TouchUIHandler:ITouchUIHandler
             {
                 IncreaseIndex();
             }
-            blinkController.ShowBlink(touchObjects);
+          blinkController.ShowBlink(touchObjects);
         }
     }
     public void ShowBlink(List<TouchObject> touchObjects)

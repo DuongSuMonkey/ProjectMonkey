@@ -35,6 +35,7 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             {
                 Debug.Log(www);
                 myAsset = DownloadHandlerAssetBundle.GetContent(www);
+                LoadAudioData();
                 switch (loadType)
                 {
                     case AssetLoadTypeFromSever.SingleAsset:
@@ -60,48 +61,18 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
                 www.Dispose();
             }
         }
-    //private void LoadAsset()
-    //{
-    //    var asset = bundle.LoadAsset(assetName);
-    //    if (asset.GetType() == typeof(GameObject))
-    //    {
-    //        GameObject gameObject = asset as GameObject;
-    //        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-    //        if (rectTransform != null)
-    //        {
-    //            Instantiate(gameObject, canvas.transform);
-    //        }
-    //        else
-    //        {
-    //            Instantiate(gameObject);
-    //        }
-    //    }
-    //}
-    //private void LoadAllAssets()
-    //{
-    //    var assets = bundle.LoadAllAssets();
-    //    foreach (var prefab in assets)
-    //    {
-    //        if (prefab.GetType() == typeof(GameObject))
-    //        {
-    //            GameObject gameObject = prefab as GameObject;
-    //            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-    //            if (rectTransform != null)
-    //            {
-    //                Instantiate(gameObject, canvas.transform);
-    //            }
-    //            else
-    //            {
-    //                Instantiate(gameObject);
-    //            }
-    //        }
-    //        else if (prefab.GetType() == typeof(AudioClip))
-    //        {
-    //            AudioClip audioClip = prefab as AudioClip;
-    //            audioClip.LoadAudioData();
-    //        }
-    //    }
-    
+    private void LoadAudioData()
+    {
+        var assets = myAsset.LoadAllAssets();
+        foreach (var prefab in assets)
+        {
+            if (prefab.GetType() == typeof(AudioClip))
+            {
+                AudioClip audioClip = prefab as AudioClip;
+                audioClip.LoadAudioData();
+            }
+        }
+    }
     private void LoadSingleAsset()
     {
         var prefab = myAsset.LoadAsset(singleAssetName);
@@ -126,11 +97,6 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
                     Instantiate(gameObject);
                 }
             }
-            else if (prefab.GetType() == typeof(AudioClip))
-            {
-                AudioClip audioClip = prefab as AudioClip;
-                audioClip.LoadAudioData();
-            }
         }
     }
 
@@ -151,11 +117,6 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
                 {
                     Instantiate(gameObject);
                 }
-            }
-            else if (prefab.GetType() == typeof(AudioClip))
-            {
-                AudioClip audioClip = prefab as AudioClip;
-                audioClip.LoadAudioData();
             }
         }
     }

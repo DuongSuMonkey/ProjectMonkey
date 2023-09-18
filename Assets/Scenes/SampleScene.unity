@@ -403,7 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1436935723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,11 +417,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAsset: {fileID: 0}
-  path: https://drive.google.com/u/0/uc?id=1st-6TmpWlZsP1Em4YHOmFBnbPpUQ3fGR&export=download
-  loadType: 0
+  path: https://drive.google.com/u/0/uc?id=1Kd9R13LsEgkuODeo8CLkgEONvomvTFFu&export=download
+  loadType: 1
   canvas: {fileID: 6750277007239234247}
   singleAssetName: Story1
-  multipleAssetNames: []
+  multipleAssetNames:
+  - Story1
+  - MenuPanel
 --- !u!4 &1436935724
 Transform:
   m_ObjectHideFlags: 0
@@ -746,11 +748,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Story1
       objectReference: {fileID: 0}
-    - target: {fileID: 1731678922660138892, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300456220692279381, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+    - target: {fileID: 1254723254076402956, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

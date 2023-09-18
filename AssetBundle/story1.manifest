@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2462475875
+CRC: 2542265856
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 78e1a036d2ef2f55808476c3f2df69f2
+    Hash: 247561571eb367e30bd6eccb4cb6608d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: de51906bc90fd4bb0a7d68736e0d4e37
+    Hash: dc8454ab4b7d04d07af6368d51cba852
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -123,71 +123,72 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: spine-unity
   ClassName: Spine.Unity.MeshGenerator/Settings
 Assets:
-- Assets/audios/apple.mp3
-- Assets/audios/cucumber.mp3
+- Assets/Resources/audios/apple.mp3
+- Assets/Resources/audios/cucumber.mp3
 - Assets/Resources/Images 1/LRC_Image.png
-- Assets/audios/dressing.mp3
+- Assets/Resources/audios/dressing.mp3
 - Assets/Resources/images/sK2dF8gy6Ou6nAWXbfmQgL1672904703791_trong.png
-- Assets/audios/carrot.mp3
+- Assets/Resources/audios/carrot.mp3
 - Assets/Resources/images/tyBrNbK7J3RQNyp5iFyOgk1672904703758_trong.png
-- Assets/audios/frying pan.mp3
-- "Assets/audios/Let\u2019s Make a Salad Bowl!.mp3"
-- Assets/audios/The salad bowl looks so delicious!.mp3
+- Assets/Resources/audios/frying pan.mp3
+- "Assets/Resources/audios/Let\u2019s Make a Salad Bowl!.mp3"
+- Assets/Resources/audios/The salad bowl looks so delicious!.mp3
 - Assets/Prefabs/MenuPanel.prefab
 - Assets/Resources/Images 1/MenuOptionBg.png
-- Assets/audios/spatula.mp3
+- Assets/Resources/audios/spatula.mp3
 - Assets/Resources/Images 1/RestartImg.png
 - Assets/Resources/images/vcxJRLt9ebNd5KPtHWw1Gl1672904703709_trong.png
+- Assets/Prefabs/Page.prefab
 - Assets/Resources/Images 1/Ellipse 78.png
 - Assets/Resources/Images 1/nen-removebg-preview.png
-- Assets/audios/cheese grater.mp3
+- Assets/Resources/audios/cheese grater.mp3
 - Assets/Resources/Images 1/FlipBook_Normal.png
-- Assets/audios/Sounds great.mp3
-- Assets/audios/boiling water.mp3
-- Assets/audios/lettuce.mp3
+- Assets/Resources/audios/Sounds great.mp3
+- Assets/Resources/audios/boiling water.mp3
+- Assets/Resources/audios/lettuce.mp3
 - Assets/Resources/Images 1/PauseImg.png
 - Assets/Resources/Images 1/Play.png
-- Assets/audios/sink.mp3
-- Assets/audios/knife.mp3
+- Assets/Resources/audios/sink.mp3
+- Assets/Resources/audios/knife.mp3
 - Assets/Resources/images/m7ONzmMXmQkaJ8mj3jrSdI1672904703799_trong.png
 - Assets/Resources/Images 1/FlipBookImg.png
-- Assets/audios/Now we need to mix them together.mp3
-- Assets/audios/spoon.mp3
+- Assets/Resources/audios/Now we need to mix them together.mp3
+- Assets/Resources/audios/spoon.mp3
 - Assets/Resources/Images 1/CloseBtn.png
-- Assets/audios/chopping board.mp3
-- Assets/audios/tap.mp3
-- Assets/audios/boy.mp3
+- Assets/Resources/audios/chopping board.mp3
+- Assets/Resources/audios/tap.mp3
+- Assets/Resources/audios/boy.mp3
 - Assets/Prefabs/TouchObject.prefab
-- Assets/audios/Let_s make a salad bowl.mp3
-- Assets/audios/pineapple.mp3
+- Assets/Resources/audios/Let_s make a salad bowl.mp3
+- Assets/Resources/audios/pineapple.mp3
 - Assets/Resources/images/ONwVWDqBvuLzO9JRN2rmTH1672904703776_trong.png
 - Assets/Prefabs/Text (TMP).prefab
-- Assets/audios/cheese.mp3
-- Assets/audios/I will shred some lettuce.mp3
-- Assets/audios/Of course we need some fruits and vegetables..mp3
+- Assets/Resources/audios/cheese.mp3
+- Assets/Resources/audios/I will shred some lettuce.mp3
+- Assets/Resources/audios/Of course we need some fruits and vegetables..mp3
 - Assets/Resources/Images 1/MenuBorder.png
 - Assets/Resources/images/uQx8vLnhByvU8BGfJnpxur1672904703648_trong.png
 - Assets/Prefabs/RecordAudio.prefab
-- Assets/audios/Hey, do you want to eat some salads_.mp3
-- Assets/audios/gas stove.mp3
-- Assets/audios/fork.mp3
-- Assets/audios/bowl.mp3
+- Assets/Resources/audios/Hey, do you want to eat some salads_.mp3
+- Assets/Resources/audios/gas stove.mp3
+- Assets/Resources/audios/fork.mp3
+- Assets/Resources/audios/bowl.mp3
 - Assets/Resources/images/Lg4oU6Aq4DxsWdwLByyCax1672904703767_trong.png
 - Assets/Resources/images/mTslr1cBESgjHOKfuCbXVL1672904703734_trong.png
-- Assets/audios/cooking pot.mp3
-- Assets/audios/It_s fun to make something together. Now let_s enjoy!.mp3
+- Assets/Resources/audios/cooking pot.mp3
+- Assets/Resources/audios/It_s fun to make something together. Now let_s enjoy!.mp3
 - Assets/Resources/Images 1/GuidingHand.png
-- Assets/audios/salad bowl.mp3
-- Assets/audios/Finally, I will add the dressing..mp3
+- Assets/Resources/audios/salad bowl.mp3
+- Assets/Resources/audios/Finally, I will add the dressing..mp3
 - Assets/Prefabs/Story1.prefab
 - Assets/Resources/Images 1/BlinkImg.png
 - Assets/Resources/Images 1/Background.png
-- Assets/audios/Don_t forget to add some cheese!.mp3
-- Assets/audios/pork.mp3
-- Assets/audios/egg.mp3
+- Assets/Resources/audios/Don_t forget to add some cheese!.mp3
+- Assets/Resources/audios/pork.mp3
+- Assets/Resources/audios/egg.mp3
 - Assets/Resources/images/ZWSAJtLuPueiEa9JpFPyqy1672904703749_trong.png
 - Assets/Resources/images/j2FtITkWXWvEA2eeiolqNH1672904703836_trong.png
 - Assets/Resources/Images 1/Share.png
-- Assets/audios/I will boil the eggs and fry the pork.mp3
+- Assets/Resources/audios/I will boil the eggs and fry the pork.mp3
 Dependencies:
 - D:/ProjectMonkey/Assets/../AssetBundle/textmeshpro

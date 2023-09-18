@@ -13,13 +13,13 @@ public class TouchesController : Texts
     [SerializeField] private List<TouchUI> touchesUI;
     [SerializeField] private PageController pageController;
     [SerializeField] private bool isFirst = true;
-    [SerializeField] private ITouchUIHandler touchUIController;
+    [SerializeField] private ITouchUIHandler touchUIHandle;
     [SerializeField] private ISearchText searchTextController;
     [SerializeField] private List<TouchUI> existingTouches=new List<TouchUI>();
     private void Start()
     {
         searchTextController = new SearchTextController();
-        touchUIController = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
+        touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
         AddEventTouch();
         HideAllTouches();
         HideAllBlinks();
@@ -143,7 +143,7 @@ public class TouchesController : Texts
     {
         if (CanClick())
         {
-            int index = this.touchObjects.IndexOf(touchObject);
+            int index = touchObjects.IndexOf(touchObject);
             TouchSelection(touchObject, index);
         }
     }
@@ -153,7 +153,7 @@ public class TouchesController : Texts
         touchObject.countClick++;
         SearchText(touchesUI[index]);
         HideAllTouch();
-        if (touchObject.countClick > 1 || touchUIController.GetTouch() != touchUIController.GetTouch())
+        if (touchObject.countClick > 1 || touchesUI[index] != touchUIHandle.GetTouch())
         {
             ProcessDoubleClick(touchObject, index);
             return;
@@ -166,11 +166,11 @@ public class TouchesController : Texts
     }
     public void ShowBlinkNext()
     {
-       touchUIController.ShowBlinkNext(touchObjects); 
+       touchUIHandle.ShowBlinkNext(touchObjects); 
     }
     public void ShowTouchCurrent()
     {
-        touchUIController.ShowTouchCurrent(touchObjects,touchesUI);
+        touchUIHandle.ShowTouchCurrent(touchObjects,touchesUI);
     }
     private void SearchText(TouchUI touch)
     {
@@ -178,11 +178,11 @@ public class TouchesController : Texts
     }
     private void ProcessDoubleClick(TouchObject touchObject, int index)
     {
-        touchUIController.ProcessDoubleClick(touchObject, index);
+        touchUIHandle.ProcessDoubleClick(touchObject, index);
     }
     public void HideAllTouch()
     {
-        touchUIController.HideAllTouch();
+        touchUIHandle.HideAllTouch();
     }
 }
 

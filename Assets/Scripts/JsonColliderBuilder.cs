@@ -88,6 +88,9 @@ public class JsonColliderBuilder : MonoBehaviour
             JObject jsonObject = JObject.Parse(jsonContent);
             string items = (string)jsonObject["text"];
             polygonCollider.gameObject.GetComponentInChildren<TouchUI>().txtContent.text = items;
+            string audioClipPath = $"audios/{items}";
+            polygonCollider.gameObject.GetComponentInChildren<TouchUI>().audioSource.clip=Resources.Load<AudioClip>(audioClipPath);
+            polygonCollider.gameObject.GetComponentInChildren<TouchUI>().Reset();
         }
         else
         {

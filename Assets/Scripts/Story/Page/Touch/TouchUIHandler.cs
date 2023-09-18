@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Principal;
 using System.Text.RegularExpressions;
 using System.Threading;
 using TMPro;
@@ -29,9 +30,9 @@ public class TouchUIHandler:ITouchUIHandler
         {
             return;
         }
-        blinkController.HideBlinkEffect(touchObjects[currentIndex]);
-        CreateTouch(touchObjects[currentIndex], currentIndex);
-        ShowBlinkNext(touchObjects);
+         blinkController.HideBlinkEffect(touchObjects[currentIndex]);
+         CreateTouch(touchObjects[currentIndex], currentIndex);
+         ShowBlinkNext(touchObjects);
     }
     public bool IsProcessingRemaining(List<TouchObject> touchObjects)
     {

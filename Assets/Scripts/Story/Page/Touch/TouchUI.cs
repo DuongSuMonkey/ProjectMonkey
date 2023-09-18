@@ -17,6 +17,10 @@ public class TouchUI : MonoBehaviour
     public void Reset()
     {
         LoadComponents();
+        SetSize();
+    }
+    public void SetSize()
+    {
         Vector2 textSize = txtContent.GetPreferredValues(float.PositiveInfinity, float.PositiveInfinity);
         this.GetComponent<RectTransform>().sizeDelta = new Vector2(textSize.x + 20, textSize.y + 20);
     }

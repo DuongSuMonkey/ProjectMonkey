@@ -13,17 +13,45 @@ public class GetSyncDataFromJson : MonoBehaviour
     public List<string> txtContents;
     public TextMeshProUGUI textPrefab;
     public List<SyncData> syncData;
+    public string pathPage;
+    public PageController pageController;
+    public List<string> filesPath;
     private void Reset()
     {
         GetPath();
         GetSyncText();
+        GetPageController();
+        SetSyncDataPath();
         GetTextPrefab();
         GetSyncData();
     }
     public void GetPath()
     {
         jsonPath = GetComponent<JsonSyncDataPath>();
-        path = jsonPath.path;
+        pathPage = jsonPath.path;
+        string jsonContent = File.ReadAllText(pathPage);
+        JObject jsonObject = JObject.Parse(jsonContent);
+        JArray touchArray = (JArray)jsonObject["text"];
+        for (int i = 0; i < touchArray.Count; i++)
+        {
+            int items = (int)jsonObject["text"][i]["word_id"];
+            string folderPath = @"d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\";
+            string[] files = Directory.GetFiles(folderPath, items + ".json", SearchOption.AllDirectories);
+            path = files[0];
+            filesPath.AddRange(files);
+        }
+       
+    }
+    public void GetPageController()
+    {
+        pageController = GetComponentInParent<PageController>();
+    }
+    public void SetSyncDataPath()
+    {
+        for (int i = 0; i < pageController.SyncText.Count; i++)
+        {
+            pageController.SyncText[i].GetComponent<GetSyncDataFromJson>().path = filesPath[i];
+        }
     }
     public void GetTextPrefab()
     {

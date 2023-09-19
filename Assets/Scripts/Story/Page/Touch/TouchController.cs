@@ -19,7 +19,6 @@ public class TouchesController : Texts
     private void Start()
     {
         searchTextController = new SearchTextController();
-        touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
         AddEventTouch();
         HideAllTouches();
         HideAllBlinks();
@@ -114,23 +113,6 @@ public class TouchesController : Texts
             blink.blinkEffect.gameObject.SetActive(false);
         }
     }
-
-    private void Update()
-    {
-        if (pageController.IsFinal() && isFirst)
-        {
-            for (int i = 0; i < touchObjects.Count; i++)
-            {
-                if (touchObjects[i].isBlink)
-                {
-                    touchObjects[i].blinkEffect.gameObject.SetActive(true);
-                    isFirst = false;
-                    break;
-                }
-            }
-        }
-    }
-
     private void AddEventTouch()
     {
         foreach (var touch in touchObjects)
@@ -183,6 +165,27 @@ public class TouchesController : Texts
     public void HideAllTouch()
     {
         touchUIHandle.HideAllTouch();
+    }
+    public void ShowFirstBlink()
+    {
+        for (int i = 0; i < touchObjects.Count; i++)
+        {
+            if (touchObjects[i].isBlink)
+            {
+                touchObjects[i].blinkEffect.gameObject.SetActive(true);
+                currentIndex = i;
+                touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
+                isFirst = false;
+                break;
+            }
+        }
+    }
+    private void Update()
+    {
+        if (pageController.IsFinal() && isFirst)
+        {
+            ShowFirstBlink();
+        }
     }
 }
 

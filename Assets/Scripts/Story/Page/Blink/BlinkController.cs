@@ -13,11 +13,6 @@ public class BlinkController : IBlinkController
         this.currentIndex = currentIndex;
     }
 
-    public TouchObject GetTouchObject(TouchObject touchObject)
-    {
-        return touchObject;
-    }
-
     public void HideBlinkEffect(TouchObject touchObject)
     {
         touchObject.blinkEffect.gameObject.SetActive(false);
@@ -27,12 +22,12 @@ public class BlinkController : IBlinkController
     {
         touchObject.blinkEffect.gameObject.SetActive(true);
     }
-    public bool IsProcessingRemaining(List<TouchObject> touchObjects)
+    public bool IsProcessingRemaining(int currentIndex, List<TouchObject> touchObjects)
     {
         return currentIndex < touchObjects.Count;
     }
 
-    public bool CanNextBlink(List<TouchObject> touchObjects)
+    public bool CanNextBlink(int currentIndex,List<TouchObject> touchObjects)
     {
         return currentIndex < touchObjects.Count - 1;
     }
@@ -46,7 +41,7 @@ public class BlinkController : IBlinkController
     }
     public void CanBlink(List<TouchObject> touchObjects)
     {
-        if (CanNextBlink(touchObjects))
+        if (CanNextBlink(currentIndex,touchObjects))
         {
             if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].isBlink)
             {

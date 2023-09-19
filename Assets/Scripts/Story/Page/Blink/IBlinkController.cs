@@ -4,11 +4,10 @@ using UnityEngine;
 
 public interface IBlinkController 
 {
-    TouchObject GetTouchObject(TouchObject touchObject);
     void HideBlinkEffect(TouchObject touchObject);
     void ShowBlinkEffect(TouchObject touchObject);
-    bool IsProcessingRemaining(List<TouchObject> touchObjects);
-    bool CanNextBlink(List<TouchObject> touchObjects);
+    bool IsProcessingRemaining(int currentIndex , List<TouchObject> touchObjects);
+    bool CanNextBlink(int currentIndex,List<TouchObject> touchObjects);
     void ShowBlink(List<TouchObject> touchObject);
     void CanBlink(List<TouchObject> touchObjects);
 }

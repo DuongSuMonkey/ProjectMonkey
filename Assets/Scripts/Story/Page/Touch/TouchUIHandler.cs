@@ -36,7 +36,7 @@ public class TouchUIHandler:ITouchUIHandler
     }
     public bool IsProcessingRemaining(List<TouchObject> touchObjects)
     {
-        return blinkController.IsProcessingRemaining(touchObjects);
+        return blinkController.IsProcessingRemaining(currentIndex,touchObjects);
     }
     private int IncreaseIndex()
     {
@@ -46,12 +46,16 @@ public class TouchUIHandler:ITouchUIHandler
     {
         if (CanNextBlink(touchObjects))
         {
-            if (touchObjects[currentIndex].isBlink)
+            if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].isBlink)
             {
                 IncreaseIndex();
+                Debug.Log(currentIndex);
+                ShowBlinkNext(touchObjects);
+
             }
-          blinkController.ShowBlink(touchObjects);
+            ShowBlink(touchObjects);
         }
+        
     }
     public void ShowBlink(List<TouchObject> touchObjects)
     {
@@ -59,7 +63,7 @@ public class TouchUIHandler:ITouchUIHandler
     }
     public bool CanNextBlink(List<TouchObject> touchObjects)
     {
-         return blinkController.CanNextBlink(touchObjects);
+         return blinkController.CanNextBlink(currentIndex,touchObjects);
     }
     public void ProcessDoubleClick(TouchObject touchObject, int index)
     {

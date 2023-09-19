@@ -6683,9 +6683,9 @@ MonoBehaviour:
   - {fileID: 518977538415956400}
   - {fileID: 1451413586029080837}
   - {fileID: 817606234087353719}
-  pageController: {fileID: 3408915947721072668}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 3408915947721072668}
+  canShowFirstBlink: 1
 --- !u!114 &8038604329646925602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9727,9 +9727,9 @@ MonoBehaviour:
   - {fileID: 9178098341733663598}
   - {fileID: 6930274374625127662}
   - {fileID: 7734058140854826464}
-  pageController: {fileID: 4857213698472632087}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 4857213698472632087}
+  canShowFirstBlink: 1
 --- !u!114 &2863400672184057217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10276,7 +10276,7 @@ MonoBehaviour:
   - {fileID: 5424406486430294214}
   - {fileID: 8418338560096091207}
   currentIndex: 0
-  isStart: 0
+  isStart: 1
 --- !u!1 &1273526844015652282
 GameObject:
   m_ObjectHideFlags: 0
@@ -11709,9 +11709,9 @@ MonoBehaviour:
   - {fileID: 3736765407664515427}
   - {fileID: 1797878598056255008}
   - {fileID: 6546477835485574488}
-  pageController: {fileID: 8909113905655726432}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 8909113905655726432}
+  canShowFirstBlink: 1
 --- !u!114 &3739347148194452710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14793,9 +14793,9 @@ MonoBehaviour:
   - {fileID: 4067342848825848940}
   - {fileID: 419401478591956447}
   - {fileID: 9172590840631740015}
-  pageController: {fileID: 1917771205624285110}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 1917771205624285110}
+  canShowFirstBlink: 1
 --- !u!114 &7529832796068421836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15377,8 +15377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 5609608053365273286}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\1gi7enbqa2wkvwo6hlkvvxcmealqafph_234728\40000168.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\1gi7enbqa2wkvwo6hlkvvxcmealqafph_234728\40000168.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_7.json
+  jsonPath: {fileID: 5609608053365273286}
+  pageController: {fileID: 4845511440625247571}
   syncText: {fileID: 6902009658334687890}
   txtContents:
   - Finally,
@@ -15401,10 +15405,6 @@ MonoBehaviour:
     timeEnd: 2260
   - timeStart: 2260
     timeEnd: 3580
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_7.json
-  pageController: {fileID: 4845511440625247571}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\1gi7enbqa2wkvwo6hlkvvxcmealqafph_234728\40000168.json
 --- !u!114 &5609608053365273286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19229,9 +19229,9 @@ MonoBehaviour:
   - {fileID: 660879930775088237}
   - {fileID: 9042963433449516724}
   - {fileID: 4405737546065892117}
-  pageController: {fileID: 136297365677520481}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 136297365677520481}
+  canShowFirstBlink: 1
 --- !u!114 &4655092616441416699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26305,8 +26305,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 3677650835007321585}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\nxhthuoqpaopxknqgmvtj7hizydssrdn_234728\40000166.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\nxhthuoqpaopxknqgmvtj7hizydssrdn_234728\40000166.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_9.json
+  jsonPath: {fileID: 3677650835007321585}
+  pageController: {fileID: 5424406486430294214}
   syncText: {fileID: 2281362081108909195}
   txtContents:
   - The
@@ -26329,10 +26333,6 @@ MonoBehaviour:
     timeEnd: 2220
   - timeStart: 2220
     timeEnd: 3400
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_9.json
-  pageController: {fileID: 5424406486430294214}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\nxhthuoqpaopxknqgmvtj7hizydssrdn_234728\40000166.json
 --- !u!114 &3677650835007321585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34777,8 +34777,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 7725613664450636730}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\yawq796itjukn4yq0m7gmcbpanjhckzy_234728\40000198.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\yawq796itjukn4yq0m7gmcbpanjhckzy_234728\40000198.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_3.json
+  jsonPath: {fileID: 7725613664450636730}
+  pageController: {fileID: 136297365677520481}
   syncText: {fileID: 7155654335332426133}
   txtContents:
   - I
@@ -34798,10 +34802,6 @@ MonoBehaviour:
     timeEnd: 1370
   - timeStart: 1370
     timeEnd: 2330
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_3.json
-  pageController: {fileID: 136297365677520481}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\yawq796itjukn4yq0m7gmcbpanjhckzy_234728\40000198.json
 --- !u!114 &7725613664450636730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37611,8 +37611,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 6113019272296275478}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\sc0os6im92jsza0sop9zdvd5dav9d4ld_234728\40000193.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\sc0os6im92jsza0sop9zdvd5dav9d4ld_234728\40000193.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_1.json
+  jsonPath: {fileID: 6113019272296275478}
+  pageController: {fileID: 1917771205624285110}
   syncText: {fileID: 3886538970507328745}
   txtContents:
   - Hey,
@@ -37641,9 +37645,6 @@ MonoBehaviour:
     timeEnd: 2450
   - timeStart: 2450
     timeEnd: 3530
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_1.json
-  pageController: {fileID: 1917771205624285110}
-  filesPath: []
 --- !u!114 &6113019272296275478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44336,9 +44337,9 @@ MonoBehaviour:
   touchesUI:
   - {fileID: 5637007771085047253}
   - {fileID: 8792227112820178667}
-  pageController: {fileID: 5350399837182689758}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 5350399837182689758}
+  canShowFirstBlink: 1
 --- !u!114 &798355735019910825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47690,8 +47691,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 969762063306327428}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\hso5db9knzilkcrfdj8qjkxsacnvn1pd_234728\40000173.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\hso5db9knzilkcrfdj8qjkxsacnvn1pd_234728\40000173.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_8.json
+  jsonPath: {fileID: 969762063306327428}
+  pageController: {fileID: 8909113905655726432}
   syncText: {fileID: 8163874144461763128}
   txtContents:
   - Now
@@ -47717,10 +47722,6 @@ MonoBehaviour:
     timeEnd: 1920
   - timeStart: 1920
     timeEnd: 2770
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_8.json
-  pageController: {fileID: 8909113905655726432}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\hso5db9knzilkcrfdj8qjkxsacnvn1pd_234728\40000173.json
 --- !u!114 &969762063306327428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48248,9 +48249,9 @@ MonoBehaviour:
   - {fileID: 6327677926338824581}
   - {fileID: 5475253949003202624}
   - {fileID: 7817173630102682462}
-  pageController: {fileID: 8418338560096091207}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 8418338560096091207}
+  canShowFirstBlink: 1
 --- !u!114 &5646032149984420731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54765,9 +54766,9 @@ MonoBehaviour:
   - {fileID: 4322609602949466158}
   - {fileID: 7824443543793622060}
   - {fileID: 454660746811288053}
-  pageController: {fileID: 4845511440625247571}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 4845511440625247571}
+  canShowFirstBlink: 1
 --- !u!114 &1932757744046859182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57315,8 +57316,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 4297262315806514522}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ernub6nudkq7zllzcdvd1qbfnrv8gyum_234728\40000167.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ernub6nudkq7zllzcdvd1qbfnrv8gyum_234728\40000167.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_6.json
+  jsonPath: {fileID: 4297262315806514522}
+  pageController: {fileID: 647414502043068894}
   syncText: {fileID: 4919764874923752648}
   txtContents:
   - Of
@@ -57345,10 +57350,6 @@ MonoBehaviour:
     timeEnd: 2160
   - timeStart: 2160
     timeEnd: 3280
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_6.json
-  pageController: {fileID: 647414502043068894}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ernub6nudkq7zllzcdvd1qbfnrv8gyum_234728\40000167.json
 --- !u!114 &4297262315806514522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65777,8 +65778,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 8767660244675680596}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\umedhwmucxlaarwo3wgenju6nlp5sasd_234728\40000180.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\umedhwmucxlaarwo3wgenju6nlp5sasd_234728\40000180.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_10.json
+  jsonPath: {fileID: 8767660244675680596}
+  pageController: {fileID: 8418338560096091207}
   syncText: {fileID: 3930063546848535756}
   txtContents:
   - It's
@@ -65810,10 +65815,6 @@ MonoBehaviour:
     timeEnd: 3660
   - timeStart: 3660
     timeEnd: 4500
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_10.json
-  pageController: {fileID: 8418338560096091207}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\umedhwmucxlaarwo3wgenju6nlp5sasd_234728\40000180.json
 --- !u!114 &8767660244675680596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67205,8 +67206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 7366035102770369379}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\aqnmb308ljptwguwukwims7ipxxrkjic_234728\40000181.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\aqnmb308ljptwguwukwims7ipxxrkjic_234728\40000181.json
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
+  jsonPath: {fileID: 7366035102770369379}
+  pageController: {fileID: 5350399837182689758}
   syncText: {fileID: 3449349784803006640}
   txtContents:
   - Let's
@@ -67226,11 +67232,6 @@ MonoBehaviour:
     timeEnd: 1780
   - timeStart: 1780
     timeEnd: 2300
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
-  pageController: {fileID: 5350399837182689758}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\aqnmb308ljptwguwukwims7ipxxrkjic_234728\40000181.json
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
 --- !u!114 &7366035102770369379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68668,8 +68669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 5696326186161549386}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\5vm0m9f8um2dmnzlnmuzi5ncwmehifwn_234728\40000182.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\5vm0m9f8um2dmnzlnmuzi5ncwmehifwn_234728\40000182.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_4.json
+  jsonPath: {fileID: 5696326186161549386}
+  pageController: {fileID: 3408915947721072668}
   syncText: {fileID: 8356776096888109482}
   txtContents:
   - I
@@ -68701,10 +68706,6 @@ MonoBehaviour:
     timeEnd: 2980
   - timeStart: 2980
     timeEnd: 3640
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_4.json
-  pageController: {fileID: 3408915947721072668}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\5vm0m9f8um2dmnzlnmuzi5ncwmehifwn_234728\40000182.json
 --- !u!114 &5696326186161549386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69392,15 +69393,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 5115805838142595190}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
+  filesPath: []
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
+  jsonPath: {fileID: 5115805838142595190}
+  pageController: {fileID: 5350399837182689758}
   syncText: {fileID: 0}
   txtContents: []
   textPrefab: {fileID: 0}
   syncData: []
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
-  pageController: {fileID: 5350399837182689758}
-  filesPath: []
 --- !u!114 &5115805838142595190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71769,9 +71770,9 @@ MonoBehaviour:
   - {fileID: 4363003070111083840}
   - {fileID: 4150370312283664991}
   - {fileID: 5341430730118771762}
-  pageController: {fileID: 5424406486430294214}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 5424406486430294214}
+  canShowFirstBlink: 1
 --- !u!114 &159324668199355214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76072,8 +76073,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc701559984f1f49a724af47bc06bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonPath: {fileID: 5559433536070396460}
   path: d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\kgvbaqleuqc3adbdceresl860rnqqtcs_234728\40000199.json
+  filesPath:
+  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\kgvbaqleuqc3adbdceresl860rnqqtcs_234728\40000199.json
+  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_5.json
+  jsonPath: {fileID: 5559433536070396460}
+  pageController: {fileID: 4857213698472632087}
   syncText: {fileID: 2173087967752037759}
   txtContents:
   - Don't
@@ -76096,10 +76101,6 @@ MonoBehaviour:
     timeEnd: 2200
   - timeStart: 2200
     timeEnd: 3110
-  pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_5.json
-  pageController: {fileID: 4857213698472632087}
-  filesPath:
-  - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\kgvbaqleuqc3adbdceresl860rnqqtcs_234728\40000199.json
 --- !u!114 &5559433536070396460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80450,9 +80451,9 @@ MonoBehaviour:
   - {fileID: 8840259125465339303}
   - {fileID: 94855834667044520}
   - {fileID: 658345394999376354}
-  pageController: {fileID: 647414502043068894}
-  isFirst: 1
   existingTouches: []
+  pageController: {fileID: 647414502043068894}
+  canShowFirstBlink: 1
 --- !u!114 &6197223363829429688
 MonoBehaviour:
   m_ObjectHideFlags: 0

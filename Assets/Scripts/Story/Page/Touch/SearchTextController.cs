@@ -13,11 +13,12 @@ public class SearchTextController : ISearchText
         {
             string textContent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "");
             string doubleTextContent = "";
+            string textContentNoS = Regex.Replace(txtContents[i].text, @"[,.;!?s]", "");
             if (i < txtContents.Count - 1)
             {
                 doubleTextContent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "") + " " + Regex.Replace(txtContents[i+1].text, @"[,.;!?]", "");
             }
-            if (TouchUI.txtContent.text.Equals(textContent))
+            if (TouchUI.txtContent.text.Equals(textContent) || TouchUI.txtContent.text.Equals(textContentNoS))
             {
                 txtContents[i].color = Color.red;
                 txtContents[i].GetComponent<Animator>().SetTrigger("isHightlight");

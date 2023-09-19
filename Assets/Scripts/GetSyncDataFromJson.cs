@@ -7,15 +7,17 @@ using UnityEngine;
 
 public class GetSyncDataFromJson : MonoBehaviour
 {
-    [SerializeField] private JsonSyncDataPath jsonPath;
+    [Header("Path")]
     [SerializeField] private string path = "";
+    public List<string> filesPath;
+    public string pathPage;
+    [Header("Components")]
+    [SerializeField] private JsonSyncDataPath jsonPath;
+    public PageController pageController;
     [SerializeField] private SyncText syncText;
     public List<string> txtContents;
     public TextMeshProUGUI textPrefab;
     public List<SyncData> syncData;
-    public string pathPage;
-    public PageController pageController;
-    public List<string> filesPath;
     private void Reset()
     {
         GetPath();
@@ -68,12 +70,12 @@ public class GetSyncDataFromJson : MonoBehaviour
         JArray touchArray = (JArray)jsonObject["audio"];
         for (int i = 0; i < touchArray.Count; i++)
         {
-            JArray items = (JArray)jsonObject["audio"][0]["sync_data"];
-            for (int j = 0; j < items.Count; j++)
+            JArray datas = (JArray)jsonObject["audio"][0]["sync_data"];
+            for (int j = 0; j < datas.Count; j++)
             {
-                float e =float.Parse( items[j]["e"].ToString());
-                float s = float.Parse(items[j]["s"].ToString());
-                string text = items[j]["w"].ToString();
+                float e =float.Parse( datas[j]["e"].ToString());
+                float s = float.Parse(datas[j]["s"].ToString());
+                string text = datas[j]["w"].ToString();
                 txtContents.Add(text);
                 SyncData newSyncData = new SyncData();
                 newSyncData.timeStart = s;

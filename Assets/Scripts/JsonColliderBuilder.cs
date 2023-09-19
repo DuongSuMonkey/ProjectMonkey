@@ -40,10 +40,10 @@ public class JsonColliderBuilder : MonoBehaviour
         JArray touchArray = (JArray)jsonObject["image"];
         for (int i = 0; i < touchArray.Count; i++)
         {
-            JArray items = (JArray)jsonObject["image"][i]["touch"][0]["vertices"];
-            for (int j = 0; j < items.Count; j++)
+            JArray datas = (JArray)jsonObject["image"][i]["touch"][0]["vertices"];
+            for (int j = 0; j < datas.Count; j++)
             {
-                var result = items[j].ToObject<string>();
+                var result = datas[j].ToObject<string>();
                 result = result.Trim('{', '}');
                 string[] values = result.Split(',');
                 int x = int.Parse(values[0]);
@@ -73,8 +73,8 @@ public class JsonColliderBuilder : MonoBehaviour
         JObject jsonObject = JObject.Parse(jsonContent);
         for (int i = 0; i < polygonCollider2D.Count; i++)
         {
-            int items = (int)jsonObject["image"][i]["word_id"];
-            GetWordByID(items.ToString(), polygonCollider2D[i]);
+            int wordID = (int)jsonObject["image"][i]["word_id"];
+            GetWordByID(wordID.ToString(), polygonCollider2D[i]);
         }
     }
     public void GetWordByID(string fileName,PolygonCollider2D polygonCollider)
@@ -86,9 +86,9 @@ public class JsonColliderBuilder : MonoBehaviour
             string jsonFilePath = files[0];
             string jsonContent = File.ReadAllText(jsonFilePath);
             JObject jsonObject = JObject.Parse(jsonContent);
-            string items = (string)jsonObject["text"];
-            polygonCollider.gameObject.GetComponentInChildren<TouchUI>().txtContent.text = items;
-            string audioClipPath = $"audios/{items}";
+            string data = (string)jsonObject["text"];
+            polygonCollider.gameObject.GetComponentInChildren<TouchUI>().txtContent.text = data;
+            string audioClipPath = $"audios/{data}";
             polygonCollider.gameObject.GetComponentInChildren<TouchUI>().audioSource.clip=Resources.Load<AudioClip>(audioClipPath);
             polygonCollider.gameObject.GetComponentInChildren<TouchUI>().Reset();
         }

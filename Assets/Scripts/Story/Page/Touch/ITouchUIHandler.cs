@@ -8,6 +8,7 @@ public interface ITouchUIHandler
     void ShowBlinkNext(List<TouchObject> touchObjects);
     void ShowTouchCurrent(List<TouchObject> touchObjects, List<TouchUI> touches);
     void ProcessDoubleClick(TouchObject touchObject, int index);
+    bool IsProcessingRemaining(List<TouchObject> touchObjects);
     TouchUI GetTouch();
     void HideAllTouch();
 

@@ -11,11 +11,11 @@ public class TouchesController : Texts
 {
     [SerializeField] private List<TouchObject> touchObjects;
     [SerializeField] private List<TouchUI> touchesUI;
+    [SerializeField] private List<TouchUI> existingTouches = new List<TouchUI>();
     [SerializeField] private PageController pageController;
-    [SerializeField] private bool isFirst = true;
+    [SerializeField] private bool canShowFirstBlink = true;
     [SerializeField] private ITouchUIHandler touchUIHandle;
     [SerializeField] private ISearchText searchTextController;
-    [SerializeField] private List<TouchUI> existingTouches=new List<TouchUI>();
     private void Start()
     {
         searchTextController = new SearchTextController();
@@ -176,14 +176,14 @@ public class TouchesController : Texts
                 touchObjects[i].blinkEffect.gameObject.SetActive(true);
                 currentIndex = i;
                 touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
-                isFirst = false;
+                canShowFirstBlink = false;
                 break;
             }
         }
     }
     private void Update()
     {
-        if (pageController.IsFinal() && isFirst)
+        if (pageController.IsFinal() && canShowFirstBlink)
         {
             ShowFirstBlink();
         }

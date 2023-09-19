@@ -19,7 +19,7 @@ public class SyncText :Texts
     {
         timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
         txtContents[0].color = targetColor;
-            currentIndex = 1;
+        currentIndex = 1;
     }
     private void Reset()
     {
@@ -83,10 +83,6 @@ public class SyncText :Texts
         {
             timer += Time.deltaTime;
         }
-        else
-        {
-            return;
-        }
     }
     public void ChangeColor()
     {
@@ -105,7 +101,7 @@ public class SyncText :Texts
             syncDataIndex++;
             timer = 0.0f;
         }
-        else if (currentIndex== txtContents.Count  && !isFinal)
+        else if (currentIndex == txtContents.Count  && !isFinal)
         {
             Invoke(nameof(ChangeTextColorFinal), syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000);
         }

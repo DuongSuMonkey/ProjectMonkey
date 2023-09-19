@@ -11,12 +11,25 @@ public class SearchTextController : ISearchText
     {
         for (int i = 0; i < txtContents.Count; i++)
         {
-            string textcontent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "");
-            if (TouchUI.txtContent.text.Equals(textcontent))
+            string textContent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "");
+            string doubleTextContent = "";
+            if (i < txtContents.Count - 1)
+            {
+                doubleTextContent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "") + " " + Regex.Replace(txtContents[i+1].text, @"[,.;!?]", "");
+            }
+            if (TouchUI.txtContent.text.Equals(textContent))
             {
                 txtContents[i].color = Color.red;
                 txtContents[i].GetComponent<Animator>().SetTrigger("isHightlight");
                 obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
+            }else if (TouchUI.txtContent.text.Equals(doubleTextContent))
+            {
+                txtContents[i].color = Color.red;
+                txtContents[i+1].color = Color.red;
+                txtContents[i].GetComponent<Animator>().SetTrigger("isHightlight");
+                txtContents[i+1].GetComponent<Animator>().SetTrigger("isHightlight");
+                obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
+                obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i+1]));
             }
         }
     }

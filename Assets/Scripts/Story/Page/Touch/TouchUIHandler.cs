@@ -49,7 +49,6 @@ public class TouchUIHandler:ITouchUIHandler
             if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].isBlink)
             {
                 IncreaseIndex();
-                Debug.Log(currentIndex);
                 ShowBlinkNext(touchObjects);
 
             }

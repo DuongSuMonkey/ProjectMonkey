@@ -19,6 +19,7 @@ public class TouchesController : Texts
     private void Start()
     {
         searchTextController = new SearchTextController();
+        touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
         AddEventTouch();
         HideAllTouches();
         HideAllBlinks();

@@ -403,7 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1436935723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +748,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Story1
       objectReference: {fileID: 0}
-    - target: {fileID: 1254723254076402956, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+    - target: {fileID: 1731678922660138892, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697421680072216156, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861837667604165472, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

@@ -90,6 +90,10 @@ public class JsonColliderBuilder : MonoBehaviour
             polygonCollider.gameObject.GetComponentInChildren<TouchUI>().txtContent.text = data;
             string audioClipPath = $"audios/{data}";
             polygonCollider.gameObject.GetComponentInChildren<TouchUI>().audioSource.clip=Resources.Load<AudioClip>(audioClipPath);
+            if (Resources.Load<AudioClip>(audioClipPath) == null)
+            {
+                Debug.Log("Audi not found");
+            }
             polygonCollider.gameObject.GetComponentInChildren<TouchUI>().Reset();
         }
         else

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExitOptionHandler : MonoBehaviour, IMenuOptionHandler
+public class ExitOptionHandler :IMenuOptionHandler
 {
     public void HandleOption()
     {

@@ -34,7 +34,7 @@ public class BlinkController : IBlinkController
     public void ShowBlink(List<TouchObject> touchObjects)
     {
         CanBlink(touchObjects);
-        if (touchObjects[currentIndex].isBlink)
+        if (touchObjects[currentIndex].hasBlink)
         {
             ShowBlinkEffect(touchObjects[currentIndex]);
         }
@@ -43,7 +43,7 @@ public class BlinkController : IBlinkController
     {
         if (CanNextBlink(currentIndex,touchObjects))
         {
-            if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].isBlink)
+            if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].hasBlink)
             {
                 currentIndex++;
                 CanBlink(touchObjects);

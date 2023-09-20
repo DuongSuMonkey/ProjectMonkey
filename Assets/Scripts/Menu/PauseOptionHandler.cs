@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseOptionHandler : MonoBehaviour, IMenuOptionHandler
+public class PauseOptionHandler :IMenuOptionHandler
 {
     private Button button;
     private bool isContinue = true;

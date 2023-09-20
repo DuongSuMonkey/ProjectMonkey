@@ -413,7 +413,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 9163740686038759460}
   touchUI: {fileID: 9178098341733663598}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7263583232195205355}
 --- !u!60 &7263583232195205355
 PolygonCollider2D:
@@ -3020,7 +3020,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1025368640829966263}
   touchUI: {fileID: 3699279092412056668}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 3140035385605126596}
 --- !u!60 &3140035385605126596
 PolygonCollider2D:
@@ -5874,7 +5874,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 20579162736444477}
   touchUI: {fileID: 658345394999376354}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2678979465067154262}
 --- !u!60 &2678979465067154262
 PolygonCollider2D:
@@ -7496,7 +7496,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5843455149387813061}
   touchUI: {fileID: 7817173630102682462}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5570050355467988909}
 --- !u!60 &5570050355467988909
 PolygonCollider2D:
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1771525858891567694}
   touchUI: {fileID: 6702011674035612275}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 4346550232683719385}
 --- !u!60 &4346550232683719385
 PolygonCollider2D:
@@ -9059,7 +9059,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8925169983291076737}
   touchUI: {fileID: 785632631832574824}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2479737065367151349}
 --- !u!60 &2479737065367151349
 PolygonCollider2D:
@@ -10372,7 +10372,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5976186854885029319}
   touchUI: {fileID: 4232307356837704422}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7379060380645220123}
 --- !u!60 &7379060380645220123
 PolygonCollider2D:
@@ -12212,7 +12212,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1192090808219876644}
   touchUI: {fileID: 4780845277532566060}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 1860708710331606555}
 --- !u!60 &1860708710331606555
 PolygonCollider2D:
@@ -12450,7 +12450,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5747475930448993302}
   touchUI: {fileID: 4759383820564271155}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5031315339020369268}
 --- !u!60 &5031315339020369268
 PolygonCollider2D:
@@ -12600,7 +12600,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4699909901048364870}
   touchUI: {fileID: 7734058140854826464}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 1193164633603846153}
 --- !u!60 &1193164633603846153
 PolygonCollider2D:
@@ -12760,7 +12760,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 48690071125007997}
   touchUI: {fileID: 1589170646975050363}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 1534161012090485685}
 --- !u!60 &1534161012090485685
 PolygonCollider2D:
@@ -14135,7 +14135,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6135204595348258635}
   touchUI: {fileID: 1840635084502573991}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6710443919233455367}
 --- !u!60 &6710443919233455367
 PolygonCollider2D:
@@ -14619,7 +14619,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 547105481714561281}
   touchUI: {fileID: 1797878598056255008}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5848821205064036358}
 --- !u!60 &5848821205064036358
 PolygonCollider2D:
@@ -15061,7 +15061,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1010795386175095402}
   touchUI: {fileID: 4366359849649407767}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4771462189570234236}
 --- !u!60 &4771462189570234236
 PolygonCollider2D:
@@ -15648,7 +15648,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6902489113259357090}
   touchUI: {fileID: 3909077231724286649}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6087123418364207096}
 --- !u!60 &6087123418364207096
 PolygonCollider2D:
@@ -15953,7 +15953,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 3349990650158341577}
   touchUI: {fileID: 5341430730118771762}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4028905274504042963}
 --- !u!60 &4028905274504042963
 PolygonCollider2D:
@@ -16346,7 +16346,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1474636255548599145}
   touchUI: {fileID: 4824614286964674632}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 7660366414188199060}
 --- !u!60 &7660366414188199060
 PolygonCollider2D:
@@ -17282,7 +17282,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5469536465210742961}
   touchUI: {fileID: 755623316420886879}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 848435824762737550}
 --- !u!60 &848435824762737550
 PolygonCollider2D:
@@ -17942,7 +17942,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7505295916111966066}
   touchUI: {fileID: 5475253949003202624}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6803020935685884040}
 --- !u!60 &6803020935685884040
 PolygonCollider2D:
@@ -18174,7 +18174,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4922096879204897128}
   touchUI: {fileID: 710870391028494892}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7229555535734320467}
 --- !u!60 &7229555535734320467
 PolygonCollider2D:
@@ -18846,7 +18846,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 9004982169963657662}
   touchUI: {fileID: 4932731876895030492}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 8413170203549746560}
 --- !u!60 &8413170203549746560
 PolygonCollider2D:
@@ -21403,7 +21403,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8668949938552622995}
   touchUI: {fileID: 8319526087767802841}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4054597828162683998}
 --- !u!60 &4054597828162683998
 PolygonCollider2D:
@@ -22132,7 +22132,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 2920169684225519269}
   touchUI: {fileID: 4150370312283664991}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 455173649928318816}
 --- !u!60 &455173649928318816
 PolygonCollider2D:
@@ -23107,7 +23107,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5889707525920303843}
   touchUI: {fileID: 5637007771085047253}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6022061764343476407}
 --- !u!60 &6022061764343476407
 PolygonCollider2D:
@@ -24182,7 +24182,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6593853242665383463}
   touchUI: {fileID: 4503455773309740800}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5352498827525491671}
 --- !u!60 &5352498827525491671
 PolygonCollider2D:
@@ -25183,7 +25183,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4440381999570547124}
   touchUI: {fileID: 6327677926338824581}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4891003085760464261}
 --- !u!60 &4891003085760464261
 PolygonCollider2D:
@@ -25618,7 +25618,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1133742572016635954}
   touchUI: {fileID: 3384327133371028541}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6259988705039834710}
 --- !u!60 &6259988705039834710
 PolygonCollider2D:
@@ -27415,7 +27415,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4916557993929818986}
   touchUI: {fileID: 6026399441318180333}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 8343460818898938857}
 --- !u!60 &8343460818898938857
 PolygonCollider2D:
@@ -28446,7 +28446,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6463481368741247966}
   touchUI: {fileID: 9107510201224032524}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6346829101871849793}
 --- !u!60 &6346829101871849793
 PolygonCollider2D:
@@ -28885,7 +28885,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7983984458748799993}
   touchUI: {fileID: 9042963433449516724}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7718051863413665518}
 --- !u!60 &7718051863413665518
 PolygonCollider2D:
@@ -29479,7 +29479,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4818303221111674074}
   touchUI: {fileID: 4001892264952902562}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 3341729572352628509}
 --- !u!60 &3341729572352628509
 PolygonCollider2D:
@@ -29646,7 +29646,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5534652309009940017}
   touchUI: {fileID: 537581260806341910}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 9011759288104110506}
 --- !u!60 &9011759288104110506
 PolygonCollider2D:
@@ -30384,7 +30384,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 469531719979328284}
   touchUI: {fileID: 6546477835485574488}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7124364639236175605}
 --- !u!60 &7124364639236175605
 PolygonCollider2D:
@@ -30615,7 +30615,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1015618319111312196}
   touchUI: {fileID: 3731705079131982275}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 8620932158784177232}
 --- !u!60 &8620932158784177232
 PolygonCollider2D:
@@ -31936,7 +31936,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8578767749528215145}
   touchUI: {fileID: 6876981857469571239}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 6027594538443462939}
 --- !u!60 &6027594538443462939
 PolygonCollider2D:
@@ -32300,7 +32300,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6988835192171641210}
   touchUI: {fileID: 8764287704100378389}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 8161821113563961928}
 --- !u!60 &8161821113563961928
 PolygonCollider2D:
@@ -33167,7 +33167,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 3370900893347542874}
   touchUI: {fileID: 6418467884878794553}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6705084093334518825}
 --- !u!60 &6705084093334518825
 PolygonCollider2D:
@@ -33327,7 +33327,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4599189756547586688}
   touchUI: {fileID: 660879930775088237}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2533806068175751395}
 --- !u!60 &2533806068175751395
 PolygonCollider2D:
@@ -35140,7 +35140,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1286172346554369598}
   touchUI: {fileID: 4332787686988981031}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2398377060421951719}
 --- !u!60 &2398377060421951719
 PolygonCollider2D:
@@ -35302,7 +35302,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1938764885255547551}
   touchUI: {fileID: 1072520805725214899}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 667659967872156574}
 --- !u!60 &667659967872156574
 PolygonCollider2D:
@@ -36984,7 +36984,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5658745517877201392}
   touchUI: {fileID: 1451413586029080837}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4527286182551862058}
 --- !u!60 &4527286182551862058
 PolygonCollider2D:
@@ -37754,7 +37754,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6313931454258384721}
   touchUI: {fileID: 9006788635035018569}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 744150401688886701}
 --- !u!60 &744150401688886701
 PolygonCollider2D:
@@ -37904,7 +37904,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 405744362460950091}
   touchUI: {fileID: 4067342848825848940}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 438739413507741044}
 --- !u!60 &438739413507741044
 PolygonCollider2D:
@@ -38295,7 +38295,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6521675045762098468}
   touchUI: {fileID: 419401478591956447}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 7966246473178762875}
 --- !u!60 &7966246473178762875
 PolygonCollider2D:
@@ -39585,7 +39585,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4234376211029062366}
   touchUI: {fileID: 1944211912653480422}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5773853276822537845}
 --- !u!60 &5773853276822537845
 PolygonCollider2D:
@@ -42352,7 +42352,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7607685544804150922}
   touchUI: {fileID: 9172590840631740015}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 3708246857752608109}
 --- !u!60 &3708246857752608109
 PolygonCollider2D:
@@ -43039,7 +43039,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 3501872785972904460}
   touchUI: {fileID: 4335310330094546265}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4838424792148516062}
 --- !u!60 &4838424792148516062
 PolygonCollider2D:
@@ -43421,7 +43421,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 3138182348861029497}
   touchUI: {fileID: 6173768468099405506}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7451234607745943789}
 --- !u!60 &7451234607745943789
 PolygonCollider2D:
@@ -43740,7 +43740,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7280683706358005616}
   touchUI: {fileID: 6560395333437454633}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 4162161669114184442}
 --- !u!60 &4162161669114184442
 PolygonCollider2D:
@@ -44709,7 +44709,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 642844660264033128}
   touchUI: {fileID: 8969382690528943928}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2438539507881561987}
 --- !u!60 &2438539507881561987
 PolygonCollider2D:
@@ -45577,7 +45577,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8289531745596380416}
   touchUI: {fileID: 5697137180776010083}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 357560014999779282}
 --- !u!60 &357560014999779282
 PolygonCollider2D:
@@ -46971,7 +46971,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 164388802369425135}
   touchUI: {fileID: 4322609602949466158}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5862184338138191375}
 --- !u!60 &5862184338138191375
 PolygonCollider2D:
@@ -47272,7 +47272,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6020537519614840444}
   touchUI: {fileID: 6371136778294160665}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 7761980568590306017}
 --- !u!60 &7761980568590306017
 PolygonCollider2D:
@@ -51697,7 +51697,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6077713820461304620}
   touchUI: {fileID: 6576499325732757870}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 8646828916163247953}
 --- !u!60 &8646828916163247953
 PolygonCollider2D:
@@ -52281,7 +52281,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 2134793223923588588}
   touchUI: {fileID: 4747642118136576941}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2808721619887697771}
 --- !u!60 &2808721619887697771
 PolygonCollider2D:
@@ -52822,7 +52822,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 9113653414217983095}
   touchUI: {fileID: 518977538415956400}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5340160834048205505}
 --- !u!60 &5340160834048205505
 PolygonCollider2D:
@@ -54190,7 +54190,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 2689489452297046592}
   touchUI: {fileID: 94855834667044520}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 1423916777988017310}
 --- !u!60 &1423916777988017310
 PolygonCollider2D:
@@ -55725,7 +55725,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 524629986386799669}
   touchUI: {fileID: 4363003070111083840}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6878512326037315591}
 --- !u!60 &6878512326037315591
 PolygonCollider2D:
@@ -56517,7 +56517,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1801089317331007288}
   touchUI: {fileID: 8884839371423589394}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 6603287148888764602}
 --- !u!60 &6603287148888764602
 PolygonCollider2D:
@@ -57624,7 +57624,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1307976287106578781}
   touchUI: {fileID: 1239832374734038829}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 5854219705835989005}
 --- !u!60 &5854219705835989005
 PolygonCollider2D:
@@ -58246,7 +58246,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7365446947168273414}
   touchUI: {fileID: 5993524649317032222}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 5753401214375115345}
 --- !u!60 &5753401214375115345
 PolygonCollider2D:
@@ -60462,7 +60462,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8869417142812270192}
   touchUI: {fileID: 1814897807698039352}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4386897113437205448}
 --- !u!60 &4386897113437205448
 PolygonCollider2D:
@@ -61215,7 +61215,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8449933504245126470}
   touchUI: {fileID: 454660746811288053}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 8182113075039770388}
 --- !u!60 &8182113075039770388
 PolygonCollider2D:
@@ -61685,7 +61685,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1596474209713567808}
   touchUI: {fileID: 8792227112820178667}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 3506892036620876241}
 --- !u!60 &3506892036620876241
 PolygonCollider2D:
@@ -62911,7 +62911,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4285868400638792058}
   touchUI: {fileID: 2680032220565425543}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4282199653660723581}
 --- !u!60 &4282199653660723581
 PolygonCollider2D:
@@ -64182,7 +64182,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 6751204765020071220}
   touchUI: {fileID: 4405737546065892117}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 1759352797052874406}
 --- !u!60 &1759352797052874406
 PolygonCollider2D:
@@ -66090,7 +66090,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 339842700985366244}
   touchUI: {fileID: 8486527858626214959}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 2257818796023738471}
 --- !u!60 &2257818796023738471
 PolygonCollider2D:
@@ -66811,7 +66811,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8224420997053818227}
   touchUI: {fileID: 110922592530822413}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 2684505177737846563}
 --- !u!60 &2684505177737846563
 PolygonCollider2D:
@@ -68185,7 +68185,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5105081269633175621}
   touchUI: {fileID: 2784100058422139980}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 4612120226612060237}
 --- !u!60 &4612120226612060237
 PolygonCollider2D:
@@ -69511,7 +69511,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7573806269824060008}
   touchUI: {fileID: 5678953668370657919}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 1200638507212579718}
 --- !u!60 &1200638507212579718
 PolygonCollider2D:
@@ -72838,7 +72838,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1063451672549419023}
   touchUI: {fileID: 817606234087353719}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5876175820432235174}
 --- !u!60 &5876175820432235174
 PolygonCollider2D:
@@ -74946,7 +74946,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 7900683063075253001}
   touchUI: {fileID: 3264875289879871382}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 5744298763194573980}
 --- !u!60 &5744298763194573980
 PolygonCollider2D:
@@ -75263,7 +75263,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 2271220478097288215}
   touchUI: {fileID: 8763532177425094613}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 9004068404523205874}
 --- !u!60 &9004068404523205874
 PolygonCollider2D:
@@ -78235,7 +78235,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 2629968780267029562}
   touchUI: {fileID: 7824443543793622060}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 3458185660450234143}
 --- !u!60 &3458185660450234143
 PolygonCollider2D:
@@ -79245,7 +79245,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1739856274969140252}
   touchUI: {fileID: 8840259125465339303}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 2023124273023682610}
 --- !u!60 &2023124273023682610
 PolygonCollider2D:
@@ -79582,7 +79582,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1346233068386512425}
   touchUI: {fileID: 1548368168017942902}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 1664949309967711802}
 --- !u!60 &1664949309967711802
 PolygonCollider2D:
@@ -82290,7 +82290,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 9000534026974903572}
   touchUI: {fileID: 7243194030684263662}
-  isBlink: 1
+  hasBlink: 1
   polygonCollider: {fileID: 3222592698631646624}
 --- !u!60 &3222592698631646624
 PolygonCollider2D:
@@ -83165,7 +83165,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 8801858697931771454}
   touchUI: {fileID: 3736765407664515427}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 4606608853671453200}
 --- !u!60 &4606608853671453200
 PolygonCollider2D:
@@ -83652,7 +83652,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 5282934094164426371}
   touchUI: {fileID: 6930274374625127662}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 6663557496359678434}
 --- !u!60 &6663557496359678434
 PolygonCollider2D:
@@ -83945,7 +83945,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 1873194508157987249}
   touchUI: {fileID: 2457360813415431317}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 7225570420804363161}
 --- !u!60 &7225570420804363161
 PolygonCollider2D:
@@ -84097,7 +84097,7 @@ MonoBehaviour:
   isClick: 0
   blinkEffect: {fileID: 4069371728994921348}
   touchUI: {fileID: 8868142261150479672}
-  isBlink: 0
+  hasBlink: 0
   polygonCollider: {fileID: 3279620518283130993}
 --- !u!60 &3279620518283130993
 PolygonCollider2D:

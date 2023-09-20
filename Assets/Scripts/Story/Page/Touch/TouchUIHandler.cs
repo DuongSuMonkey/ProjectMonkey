@@ -46,7 +46,7 @@ public class TouchUIHandler:ITouchUIHandler
     {
         if (CanNextBlink(touchObjects))
         {
-            if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].isBlink)
+            if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].hasBlink)
             {
                 IncreaseIndex();
                 ShowBlinkNext(touchObjects);

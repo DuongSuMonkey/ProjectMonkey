@@ -14,7 +14,7 @@ public class TouchObject : MonoBehaviour
     public bool isClick=false;
     public Transform blinkEffect;
     public TouchUI touchUI;
-    public bool isBlink=true;
+    public bool hasBlink=true;
     public PolygonCollider2D polygonCollider;
 
     [Obsolete]
@@ -47,5 +47,21 @@ public class TouchObject : MonoBehaviour
     private void OnMouseDown()
     {
         OnClicked?.Invoke(this);
+    }
+    public void Select(ITouchUIHandler touchUIHandle, List<TouchObject> touchObjects, List<TouchUI> touchesUI,int index)
+    {
+       isClick = true;
+       countClick++;
+       touchUIHandle.HideAllTouch();
+       if (countClick > 1 || touchesUI[index] != touchUIHandle.GetTouch())
+       {
+            touchUIHandle.ProcessDoubleClick(this, index);
+            return;
+       }
+       ShowTouchCurrent(touchUIHandle, touchObjects, touchesUI);
+    }
+    public void ShowTouchCurrent(ITouchUIHandler touchUIHandle,List<TouchObject> touchObjects,List<TouchUI> touchesUI)
+    {
+        touchUIHandle.ShowTouchCurrent(touchObjects, touchesUI);
     }
 }

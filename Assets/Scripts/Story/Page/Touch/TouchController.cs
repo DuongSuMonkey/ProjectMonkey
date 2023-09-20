@@ -24,6 +24,10 @@ public class TouchesController : Texts
         HideAllTouches();
         HideAllBlinks();
     }
+    private void Reset()
+    {
+        LoadComponents();
+    }
     public void SetAnchors()
     {
         foreach (var touchObject in touchObjects)
@@ -40,11 +44,6 @@ public class TouchesController : Texts
         }
 
     }
-    private void Reset()
-    {
-        LoadComponents();
-    }
-
     private void LoadComponents()
     {
         LoadPageController();
@@ -64,22 +63,11 @@ public class TouchesController : Texts
     }
     private void LoadTouchObject()
     {
-        //var touchObjectsArray = GetComponentsInChildren<TouchObject>();
-        //for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
-        //{
-        //    touchObjects.Add(touchObjectsArray[i]);
-        //}
         touchObjects.AddRange(GetComponentsInChildren<TouchObject>());
     }
 
     private void LoadTouches()
     {
-        //var touchObjectsArray = GetComponentsInChildren<TouchUI>();
-        //for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
-        //{
-        //    //var touchObject = touchObjects[i];
-        //    touchesUI.Add(touchObjectsArray[i]);
-        //}
         foreach (var touchObject in touchObjects)
         {
             touchesUI.Add(touchObject.GetComponentInChildren<TouchUI>());
@@ -132,46 +120,22 @@ public class TouchesController : Texts
     }
     private void TouchSelection(TouchObject touchObject,int index)
     {
-        touchObject.isClick = true;
-        touchObject.countClick++;
+        touchObject.Select(touchUIHandle,touchObjects,touchesUI,index);
         SearchText(touchesUI[index]);
-        HideAllTouch();
-        if (touchObject.countClick > 1 || touchesUI[index] != touchUIHandle.GetTouch())
-        {
-            ProcessDoubleClick(touchObject, index);
-            return;
-        }
-        ShowTouchCurrent();
     }
     public bool CanClick()
     {
         return pageController.SyncText[pageController.SyncText.Count - 1].IsFinal;
     }
-    public void ShowBlinkNext()
-    {
-       touchUIHandle.ShowBlinkNext(touchObjects); 
-    }
-    public void ShowTouchCurrent()
-    {
-        touchUIHandle.ShowTouchCurrent(touchObjects,touchesUI);
-    }
     private void SearchText(TouchUI touch)
     {
         searchTextController.Search(touch, txtContents, this);
-    }
-    private void ProcessDoubleClick(TouchObject touchObject, int index)
-    {
-        touchUIHandle.ProcessDoubleClick(touchObject, index);
-    }
-    public void HideAllTouch()
-    {
-        touchUIHandle.HideAllTouch();
     }
     public void ShowFirstBlink()
     {
         for (int i = 0; i < touchObjects.Count; i++)
         {
-            if (touchObjects[i].isBlink)
+            if (touchObjects[i].hasBlink)
             {
                 touchObjects[i].blinkEffect.gameObject.SetActive(true);
                 currentIndex = i;

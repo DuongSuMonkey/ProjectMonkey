@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AutoFlipOptionHandler : MonoBehaviour, IMenuOptionHandler
+public class AutoFlipOptionHandler : IMenuOptionHandler
 {
     private Button button;
     private bool isFlip = false;

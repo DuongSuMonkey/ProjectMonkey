@@ -5,7 +5,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
-public class GetSyncDataFromJson : MonoBehaviour
+public class GetSyncDataFromJson : MonoBehaviour, IGetSyncDataFromJson
 {
     [Header("Path")]
     [SerializeField] private string path = "";

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 [System.Serializable]
-public class JsonColliderBuilder : MonoBehaviour
+public class JsonColliderBuilder : MonoBehaviour, IJsonColliderBuilder
 {
     [SerializeField] private JsonPagePath jsonPath;
     [SerializeField] private string path = "";

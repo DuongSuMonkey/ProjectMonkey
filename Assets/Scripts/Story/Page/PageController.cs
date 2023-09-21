@@ -5,7 +5,7 @@ using UnityEngine;
 public class PageController : MonoBehaviour
 {
     [SerializeField] private List<SyncText> syncTexts;
-    [SerializeField] protected TouchesController touchesController;
+    [SerializeField] protected TouchController touchesController;
     [SerializeField] protected List<AudioSource> audioSource;
     [SerializeField] private List<AudioClip> audioClip;
     public List<SyncText> SyncText { get => syncTexts; }
@@ -40,7 +40,7 @@ public class PageController : MonoBehaviour
     }
     private void LoadTouches()
     {
-        touchesController = GetComponentInChildren<TouchesController>();
+        touchesController = GetComponentInChildren<TouchController>();
     }
     private void LoadChangTextColors()
     {

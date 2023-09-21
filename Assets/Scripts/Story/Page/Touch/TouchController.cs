@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using System.Reflection;
 
-public class TouchesController : Texts
+public class TouchController : Texts
 {
     [SerializeField] private List<TouchObject> touchObjects;
     [SerializeField] private List<TouchUI> touchesUI;
@@ -63,7 +63,12 @@ public class TouchesController : Texts
     }
     private void LoadTouchObject()
     {
-        touchObjects.AddRange(GetComponentsInChildren<TouchObject>());
+        var touchObjectsArray = GetComponentsInChildren<TouchObject>();
+        for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
+        {
+            touchObjects.Add(touchObjectsArray[i]);
+        }
+        // touchObjects.AddRange(GetComponentsInChildren<TouchObject>());
     }
 
     private void LoadTouches()

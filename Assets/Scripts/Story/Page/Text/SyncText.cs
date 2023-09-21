@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SyncText :Texts
+public class SyncText :Texts, ISyncText
 {
     [SerializeField] private PageController pageController;
     [SerializeField] private Color targetColor=Color.red;
@@ -106,10 +106,5 @@ public class SyncText :Texts
             Invoke(nameof(ChangeTextColorFinal), syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000);
         }
     }
-}
-[Serializable]
-public struct SyncData {
-    public float timeStart;
-    public float timeEnd;
 }
 

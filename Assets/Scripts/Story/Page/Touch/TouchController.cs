@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using System.Reflection;
 
-public class TouchController : Texts
+public class TouchController : Texts,ITouchController
 {
     [SerializeField] private List<TouchObject> touchObjects;
     [SerializeField] private List<TouchUI> touchesUI;
@@ -44,7 +44,7 @@ public class TouchController : Texts
         }
 
     }
-    private void LoadComponents()
+    public void LoadComponents()
     {
         LoadPageController();
         LoadTouchObject();
@@ -61,7 +61,7 @@ public class TouchController : Texts
             touchObject.GetComponent<RectTransform>().localScale = Vector3.one;
         }
     }
-    private void LoadTouchObject()
+    public void LoadTouchObject()
     {
         var touchObjectsArray = GetComponentsInChildren<TouchObject>();
         for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
@@ -70,7 +70,7 @@ public class TouchController : Texts
         }
     }
 
-    private void LoadTouches()
+    public void LoadTouches()
     {
         foreach (var touchObject in touchObjects)
         {
@@ -106,7 +106,7 @@ public class TouchController : Texts
             blink.blinkEffect.gameObject.SetActive(false);
         }
     }
-    private void AddEventTouch()
+    public void AddEventTouch()
     {
         foreach (var touch in touchObjects)
         {

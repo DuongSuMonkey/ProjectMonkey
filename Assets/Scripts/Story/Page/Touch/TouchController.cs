@@ -68,7 +68,6 @@ public class TouchController : Texts
         {
             touchObjects.Add(touchObjectsArray[i]);
         }
-        // touchObjects.AddRange(GetComponentsInChildren<TouchObject>());
     }
 
     private void LoadTouches()

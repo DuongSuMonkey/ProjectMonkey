@@ -4,19 +4,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class DownloadAssetBundleFromServe : MonoBehaviour
+public class DownloadAssetBundleFromServe : MonoBehaviour, IDownloadAssetbundle
 {
     [SerializeField] private AssetBundle myAsset;
     [SerializeField] private string path;
-    [SerializeField] private AssetLoadTypeFromSever loadType;
+    [SerializeField] private AssetLoadType loadType;
     [SerializeField] private Canvas canvas;
     [SerializeField] private string singleAssetName;
     [SerializeField] private List<string> multipleAssetNames = new List<string>();
     void Start()
     {
-        GetAssets();
+        GetAsset();
     }
-    public void GetAssets()
+    public void GetAsset()
     {
         StartCoroutine(Download());
     }
@@ -38,21 +38,21 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
                 LoadAudioData();
                 switch (loadType)
                 {
-                    case AssetLoadTypeFromSever.SingleAsset:
+                    case AssetLoadType.SingleAsset:
                         if (!string.IsNullOrEmpty(singleAssetName))
                         {
                             LoadSingleAsset();
                         }
                         break;
 
-                    case AssetLoadTypeFromSever.MultipleAssets:
+                    case AssetLoadType.MultipleAssets:
                         if (multipleAssetNames.Count > 0)
                         {
                             LoadMultipleAssets();
                         }
                         break;
 
-                    case AssetLoadTypeFromSever.AllAssets:
+                    case AssetLoadType.AllAssets:
                         LoadAllAssets();
                         break;
                 }
@@ -73,13 +73,13 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             }
         }
     }
-    private void LoadSingleAsset()
+    public void LoadSingleAsset()
     {
         var prefab = myAsset.LoadAsset(singleAssetName);
         Instantiate(prefab, canvas.transform);
     }
 
-    private void LoadMultipleAssets()
+    public void LoadMultipleAssets()
     {
         foreach (var assetName in multipleAssetNames)
         {
@@ -100,7 +100,7 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
         }
     }
 
-    private void LoadAllAssets()
+    public void LoadAllAssets()
     {
         var assets = myAsset.LoadAllAssets();
         foreach (var prefab in assets)
@@ -120,12 +120,6 @@ public class DownloadAssetBundleFromServe : MonoBehaviour
             }
         }
     }
-}
-public enum AssetLoadTypeFromSever
-{
-    SingleAsset,
-    MultipleAssets,
-    AllAssets
 }
 
 

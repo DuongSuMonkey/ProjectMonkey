@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadAssetbundlefromlocal : MonoBehaviour
+public class LoadAssetbundlefromlocal : MonoBehaviour, IDownloadAssetbundle
 {
 
     [SerializeField] private AssetBundle myAsset;
@@ -20,7 +20,7 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
         LoadAsset();
     }
 
-    void GetAsset()
+   public void GetAsset()
     {
         myAsset = AssetBundle.LoadFromFile(path);
         Debug.Log(myAsset == null ? "Failed" : "Success");
@@ -49,13 +49,13 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
                 break;
         }
     }
-    private void LoadSingleAsset()
+    public void LoadSingleAsset()
     {
         var prefab = myAsset.LoadAsset(singleAssetName);
         Instantiate(prefab, canvas.transform);
     }
 
-    private void LoadMultipleAssets()
+    public void LoadMultipleAssets()
     {
         foreach (var assetName in multipleAssetNames)
         {
@@ -76,7 +76,7 @@ public class LoadAssetbundlefromlocal : MonoBehaviour
         }
     }
 
-    private void LoadAllAssets()
+    public void LoadAllAssets()
     {
         var assets = myAsset.LoadAllAssets();
         foreach (var prefab in assets)

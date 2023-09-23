@@ -34,7 +34,7 @@ public class TouchObject : MonoBehaviour
     {
         blinkEffect = gameObject.transform.FindChild("SpineBlink");
     }
-    public void SetPosition()
+    public void SetChildrenPosition()
     {
         polygonCollider = GetComponent<PolygonCollider2D>();
         Vector2 center = GetPolygonColliderCenter(polygonCollider);
@@ -75,5 +75,18 @@ public class TouchObject : MonoBehaviour
     public void ShowTouchCurrent(ITouchUIHandler touchUIHandle,List<TouchObject> touchObjects,List<TouchUI> touchesUI)
     {
         touchUIHandle.ShowTouchCurrent(touchObjects, touchesUI);
+    }
+    public void SetAnchors()
+    {
+       GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+       GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
+    }
+    public void SetPosition()
+    { 
+        GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
+    }
+    public void SetScale()
+    {
+      GetComponent<RectTransform>().localScale = Vector3.one;
     }
 }

@@ -1,48 +1,52 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchManager : ITouchManager,ITouchSelection
+public class TouchManager : ITouchManager
 {
+    private List<TouchObject> touchObjects;
     private List<TouchUI> touchesUi;
     private int currentIndex;
     private List<TouchUI> existingTouches;
     private ITouchSelection touchSelection;
-    public TouchManager(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches)
+    private ITouchUIHandler touchUIHandler;
+    private ISearchText searchText;
+    public TouchManager(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches, List<TouchObject> touchObjects,ITouchUIHandler touchUIHandler)
     {
         this.touchesUi = touchesUI;
         this.currentIndex = currentIndex;
         this.existingTouches = existingTouches;
-        touchSelection = new TouchSelection(existingTouches);
+        this.touchObjects = touchObjects;
+        searchText = new SearchTextController();
+        touchSelection =new TouchSelection(existingTouches, touchObjects,touchesUI);
+        this.touchUIHandler= touchUIHandler;
     }
     
-    public void CreateTouch(TouchObject touchObject,int index)
+    [System.Obsolete]
+    public void LoadTouchObjects(List<TouchObject> touchObjects,MonoBehaviour obj)
     {
-        Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        TouchUI touch = Object.Instantiate(touchesUi[index], new Vector3(canvasPos.x, canvasPos.y,0),
-           Quaternion.Euler(new Vector3(0,0,Random.Range(-15,15))));
-        touch.gameObject.transform.SetParent(touchObject.transform);
-        touch.gameObject.transform.localScale = Vector3.one;
-        AddTouchExisting(touch);
-        SelectTouchUI(touch);
-        touch.DestroyTouchCoroutine();
-    }
-    public void HideAllTouch()
-    {
-        foreach (TouchUI touch in existingTouches)
+        var touchObjectsArray = obj.GetComponentsInChildren<TouchObject>();
+        for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
         {
-            if (touch != null)
-            {
-                touch.HideTouch();
-            }
+            touchObjects.Add(touchObjectsArray[i]);
         }
     }
-    public void AddTouchExisting(TouchUI touch)
+
+    public void SelectTouchObject(TouchObject touchObject, int index,IPageController pageController)
     {
-        existingTouches.Add(touch);
+        if (!pageController.IsFinal())
+        {
+            return;
+        }
+        touchSelection.SelectTouchObject(touchUIHandler, touchObjects, touchObject, index);
     }
-    public void SelectTouchUI(TouchUI touchUI)
+
+    public void AddEventTouch(List<TouchObject> touchObjects, System.Action<TouchObject> onTouched)
     {
-        touchUI.Select();
+        foreach (var touchObject in touchObjects)
+        {
+            touchObject.OnClicked += onTouched;
+        }
     }
+
 }

@@ -7,6 +7,4 @@ public interface ITouchController
     void AddEventTouch();
     void ShowFirstBlink();
     void LoadComponents();
-    void LoadTouches();
-    void LoadTouchObject();
 }

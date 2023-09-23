@@ -7,75 +7,39 @@ using System;
 using System.Collections;
 using System.Reflection;
 
-public class TouchController : Texts,ITouchController
+public class TouchController : Texts, ITouchController
 {
     [SerializeField] private List<TouchObject> touchObjects;
     [SerializeField] private List<TouchUI> touchesUI;
     [SerializeField] private List<TouchUI> existingTouches = new List<TouchUI>();
     [SerializeField] private PageController pageController;
     [SerializeField] private bool canShowFirstBlink = true;
-    [SerializeField] private ITouchUIHandler touchUIHandle;
+    [SerializeField] private ITouchUIHandler touchUIHandler;
     [SerializeField] private ISearchText searchTextController;
+    [SerializeField] private ITouchSelection touchSelection;
+    [SerializeField] private ITouchManager touchManager;
+    [SerializeField] private ITouchControllerInitializer touchControllerInitializer;
     private void Start()
     {
         searchTextController = new SearchTextController();
-        touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
+        touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
+        touchSelection = new TouchSelection(existingTouches, touchObjects, touchesUI);
+        touchManager = new TouchManager(touchesUI, currentIndex, existingTouches, touchObjects, touchUIHandler);
         AddEventTouch();
-        HideAllTouches();
+        HideAllTouchesUI();
         HideAllBlinks();
     }
     private void Reset()
     {
+        touchManager = new TouchManager(touchesUI, currentIndex, existingTouches, touchObjects, touchUIHandler);
+        touchControllerInitializer = new TouchControllerInitializer(touchManager);
         LoadComponents();
-    }
-    public void SetAnchors()
-    {
-        foreach (var touchObject in touchObjects)
-        {
-            touchObject.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
-            touchObject.GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
-        }
-    }
-    public void SetPosition()
-    {
-        foreach (var touchObject in touchObjects)
-        {
-            touchObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
-        }
-
     }
     public void LoadComponents()
     {
+        touchControllerInitializer.LoadComponents(touchesUI, touchObjects, this);
         LoadPageController();
-        LoadTouchObject();
-        LoadTouches();
-        SetPosition();
-        SetScale();
-        SetAnchors();
         LoadTexts();
-    }
-    public void SetScale()
-    {
-        foreach (var touchObject in touchObjects)
-        {
-            touchObject.GetComponent<RectTransform>().localScale = Vector3.one;
-        }
-    }
-    public void LoadTouchObject()
-    {
-        var touchObjectsArray = GetComponentsInChildren<TouchObject>();
-        for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
-        {
-            touchObjects.Add(touchObjectsArray[i]);
-        }
-    }
-
-    public void LoadTouches()
-    {
-        foreach (var touchObject in touchObjects)
-        {
-            touchesUI.Add(touchObject.GetComponentInChildren<TouchUI>());
-        }
     }
 
     private void LoadPageController()
@@ -85,56 +49,31 @@ public class TouchController : Texts,ITouchController
 
     public override void LoadTexts()
     {
-        foreach (var syncText in pageController.SyncText)
-        {
-            TextMeshProUGUI[] texts = syncText.GetComponentsInChildren<TextMeshProUGUI>();
-            AddText(texts);
-        }
+        pageController.LoadTexts(txtContents);
     }
-    private void HideAllTouches()
+    private void HideAllTouchesUI()
     {
-        foreach (var touch in touchesUI)
-        {
-            touch.HideTouch();
-        }
+        touchUIHandler.HideAllTouchesUI(touchesUI);
     }
 
     private void HideAllBlinks()
     {
-        foreach (var blink in touchObjects)
-        {
-            blink.blinkEffect.gameObject.SetActive(false);
-        }
+        touchUIHandler.HideAllBlinks(touchObjects);
     }
     public void AddEventTouch()
     {
-        foreach (var touch in touchObjects)
-        {
-            touch.OnClicked += HandleTouchSelection;
-        }
+        touchManager.AddEventTouch(touchObjects, HandleTouchSelection);
     }
-
     private void HandleTouchSelection(TouchObject touchObject)
     {
-        if (CanClick())
-        {
-            int index = touchObjects.IndexOf(touchObject);
-            TouchSelection(touchObject, index);
-        }
+        int index = touchObjects.IndexOf(touchObject);
+        TouchSelection(touchObject, index);
     }
-    private void TouchSelection(TouchObject touchObject,int index)
+    private void TouchSelection(TouchObject touchObject, int index)
     {
-        touchObject.Select(touchUIHandle,touchObjects,touchesUI,index);
-        SearchText(touchesUI[index]);
-    }
-    public bool CanClick()
-    {
-        return pageController.SyncText[pageController.SyncText.Count - 1].IsFinal;
-    }
-    private void SearchText(TouchUI touch)
-    {
-        searchTextController.Search(touch, txtContents, this);
-    }
+        touchManager.SelectTouchObject(touchObject, index, pageController);
+        searchTextController.Search(touchesUI[index], txtContents, this);
+    } 
     public void ShowFirstBlink()
     {
         for (int i = 0; i < touchObjects.Count; i++)
@@ -143,7 +82,7 @@ public class TouchController : Texts,ITouchController
             {
                 touchObjects[i].blinkEffect.gameObject.SetActive(true);
                 currentIndex = i;
-                touchUIHandle = new TouchUIHandler(touchesUI, currentIndex, existingTouches);
+                touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
                 canShowFirstBlink = false;
                 break;
             }

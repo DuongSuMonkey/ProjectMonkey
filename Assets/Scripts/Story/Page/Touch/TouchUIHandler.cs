@@ -11,18 +11,20 @@ using UnityEngine.UI;
 
 public class TouchUIHandler:ITouchUIHandler
 {
+    private List<TouchObject> touchObjects;
     private List<TouchUI> touchesUI;
     private int currentIndex;
     private List<TouchUI> existingTouches;
-    private ITouchManager touchManager;
     private IBlinkController blinkController;
-    public TouchUIHandler(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches)
+    private ITouchSelection touchSelection;
+    public TouchUIHandler(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches, List<TouchObject> touchObjects)
     {
         this.touchesUI = touchesUI;
         this.currentIndex = currentIndex;
-        this.existingTouches= existingTouches;
-        touchManager =new TouchManager(touchesUI,currentIndex, existingTouches);
-        blinkController = new BlinkController(touchesUI,currentIndex);
+        this.existingTouches = existingTouches;
+        touchSelection = new TouchSelection(existingTouches,touchObjects,touchesUI);
+        blinkController = new BlinkController(touchesUI, currentIndex,touchObjects);
+        this.touchObjects = touchObjects;
     }
     public void ShowTouchCurrent(List<TouchObject> touchObjects, List<TouchUI> touchesUI)
     {
@@ -76,11 +78,40 @@ public class TouchUIHandler:ITouchUIHandler
     }
     public void CreateTouch(TouchObject touchObject, int index)
     {
-        touchManager.CreateTouch(touchObject, index);
+        Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        TouchUI touch = UnityEngine.Object.Instantiate(touchesUI[index], new Vector3(canvasPos.x, canvasPos.y, 0),
+           Quaternion.Euler(new Vector3(0, 0, UnityEngine.Random.Range(-15, 15))));
+        touch.gameObject.transform.SetParent(touchObject.transform);
+        touch.gameObject.transform.localScale = Vector3.one;
+        touchSelection.SelectTouchUI(touch);
+        touch.DestroyTouchCoroutine();
     }
+
     public void HideAllTouch()
     {
-        touchManager.HideAllTouch();
+        foreach (TouchUI touch in existingTouches)
+        {
+            if (touch != null)
+            {
+                touch.HideTouch();
+            }
+        }
+    }
+    public void ShowFirstBlink(List<TouchObject> touchObjects, List<TouchUI> existingTouches)
+    {
+        blinkController.ShowFirstBlink(touchObjects, existingTouches);
+    }
+    public void HideAllBlinks(List<TouchObject> touchObjects)
+    {
+        blinkController.HideAllBlinks(touchObjects);
+    }
+
+    public void HideAllTouchesUI(List<TouchUI> touchesUI)
+    {
+        foreach (var touch in touchesUI)
+        {
+            touch.HideTouch();
+        }
     }
 }
 

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class PageController : MonoBehaviour
+public class PageController : MonoBehaviour, IPageController
 {
     [SerializeField] private List<SyncText> syncTexts;
     [SerializeField] protected TouchController touchesController;
@@ -13,8 +14,8 @@ public class PageController : MonoBehaviour
 
     private void Start()
     {
-        HideAllChangeTextColors();
-        ShowFirstChangeTextColor();
+        HideAllSyncText();
+        ShowFirstSyncText();
     }
     private void Reset()
     {
@@ -38,7 +39,7 @@ public class PageController : MonoBehaviour
         LoadAudios();
         LoadAudioClips();
     }
-    private void LoadTouches()
+    public void LoadTouches()
     {
         touchesController = GetComponentInChildren<TouchController>();
     }
@@ -67,16 +68,23 @@ public class PageController : MonoBehaviour
     {
         return syncTexts[syncTexts.Count-1].IsFinal;
     }
-    private void HideAllChangeTextColors()
+    public void HideAllSyncText()
     {
         foreach (var changeTextColor in SyncText)
         {
             changeTextColor.gameObject.SetActive(false);
         }
     }
-    public void ShowFirstChangeTextColor()
+    public void ShowFirstSyncText()
     {
         syncTexts[0].gameObject.SetActive(true);
     }
-   
+    public void LoadTexts(List<TextMeshProUGUI>txtContents)
+    {
+        foreach (var syncText in SyncText)
+        {
+            TextMeshProUGUI[] texts = syncText.GetComponentsInChildren<TextMeshProUGUI>();
+            txtContents.AddRange(texts);
+        }
+    }
 }

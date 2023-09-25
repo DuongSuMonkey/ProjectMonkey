@@ -4,15 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadAssetbundlefromlocal : MonoBehaviour, IDownloadAssetbundle
+public class LoadAssetbundlefromlocal : IDownloadAssetbundle
 {
-
-    [SerializeField] private AssetBundle myAsset;
-    public string path;
-    [SerializeField] private AssetLoadType loadType;
-    [SerializeField] private string singleAssetName;
-    [SerializeField] private List<string> multipleAssetNames = new List<string>();
-    [SerializeField] private Canvas canvas;
 
     void Start()
     {
@@ -20,86 +13,29 @@ public class LoadAssetbundlefromlocal : MonoBehaviour, IDownloadAssetbundle
         LoadAsset();
     }
 
-   public void GetAsset()
-    {
+   public override void GetAsset()
+   {
         myAsset = AssetBundle.LoadFromFile(path);
         Debug.Log(myAsset == null ? "Failed" : "Success");
+   }
+
+    public override void LoadAsset()
+    {
+        base.LoadAsset();
+    }
+    public override void LoadSingleAsset()
+    {
+        base.LoadSingleAsset();
     }
 
-    public void LoadAsset()
+    public override void LoadMultipleAssets()
     {
-        switch (loadType)
-        {
-            case AssetLoadType.SingleAsset:
-                if (!string.IsNullOrEmpty(singleAssetName))
-                {
-                    LoadSingleAsset();
-                }
-                break;
-
-            case AssetLoadType.MultipleAssets:
-                if (multipleAssetNames.Count > 0)
-                {
-                    LoadMultipleAssets();
-                }
-                break;
-
-            case AssetLoadType.AllAssets:
-                LoadAllAssets();
-                break;
-        }
-    }
-    public void LoadSingleAsset()
-    {
-        var prefab = myAsset.LoadAsset(singleAssetName);
-        Instantiate(prefab, canvas.transform);
+        base.LoadMultipleAssets();
     }
 
-    public void LoadMultipleAssets()
+    public override void LoadAllAssets()
     {
-        foreach (var assetName in multipleAssetNames)
-        {
-            var prefab = myAsset.LoadAsset(assetName);
-            if (prefab != null && prefab.GetType() == typeof(GameObject))
-            {
-                GameObject gameObject = prefab as GameObject;
-                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-                if (rectTransform != null)
-                {
-                    Instantiate(gameObject, canvas.transform);
-                }
-                else
-                {
-                    Instantiate(gameObject);
-                }
-            }
-        }
-    }
-
-    public void LoadAllAssets()
-    {
-        var assets = myAsset.LoadAllAssets();
-        foreach (var prefab in assets)
-        {
-            if (prefab.GetType() == typeof(GameObject))
-            {
-                GameObject gameObject = prefab as GameObject;
-                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-                if (rectTransform != null)
-                {
-                    Instantiate(gameObject, canvas.transform);
-                }
-                else
-                {
-                    Instantiate(gameObject);
-                }
-            }
-            else if (prefab.GetType() == typeof(AudioClip))
-            {
-                AudioClip audioClip = prefab as AudioClip;
-                audioClip.LoadAudioData();
-            }
-        }
+        base.LoadAllAssets();
     }
 }
 

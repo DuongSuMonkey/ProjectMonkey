@@ -4,19 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class DownloadAssetBundleFromServe : MonoBehaviour, IDownloadAssetbundle
+public class DownloadAssetBundleFromServe :IDownloadAssetbundle
 {
-    [SerializeField] private AssetBundle myAsset;
-    [SerializeField] private string path;
-    [SerializeField] private AssetLoadType loadType;
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private string singleAssetName;
-    [SerializeField] private List<string> multipleAssetNames = new List<string>();
     void Start()
     {
         GetAsset();
     }
-    public void GetAsset()
+    public override void GetAsset()
     {
         StartCoroutine(Download());
     }
@@ -36,32 +30,13 @@ public class DownloadAssetBundleFromServe : MonoBehaviour, IDownloadAssetbundle
                 Debug.Log(www);
                 myAsset = DownloadHandlerAssetBundle.GetContent(www);
                 LoadAudioData();
-                switch (loadType)
-                {
-                    case AssetLoadType.SingleAsset:
-                        if (!string.IsNullOrEmpty(singleAssetName))
-                        {
-                            LoadSingleAsset();
-                        }
-                        break;
-
-                    case AssetLoadType.MultipleAssets:
-                        if (multipleAssetNames.Count > 0)
-                        {
-                            LoadMultipleAssets();
-                        }
-                        break;
-
-                    case AssetLoadType.AllAssets:
-                        LoadAllAssets();
-                        break;
-                }
+                base.LoadAsset();
                 myAsset.Unload(false);
             }
                 www.Dispose();
             }
         }
-    private void LoadAudioData()
+    private  void LoadAudioData()
     {
         var assets = myAsset.LoadAllAssets();
         foreach (var prefab in assets)
@@ -73,52 +48,19 @@ public class DownloadAssetBundleFromServe : MonoBehaviour, IDownloadAssetbundle
             }
         }
     }
-    public void LoadSingleAsset()
+    public override void LoadSingleAsset()
     {
-        var prefab = myAsset.LoadAsset(singleAssetName);
-        Instantiate(prefab, canvas.transform);
+        base.LoadSingleAsset();
     }
 
-    public void LoadMultipleAssets()
+    public override void LoadMultipleAssets()
     {
-        foreach (var assetName in multipleAssetNames)
-        {
-            var prefab = myAsset.LoadAsset(assetName);
-            if (prefab != null && prefab.GetType() == typeof(GameObject))
-            {
-                GameObject gameObject = prefab as GameObject;
-                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-                if (rectTransform != null)
-                {
-                    Instantiate(gameObject, canvas.transform);
-                }
-                else
-                {
-                    Instantiate(gameObject);
-                }
-            }
-        }
+        base.LoadMultipleAssets();
     }
 
-    public void LoadAllAssets()
+    public override void LoadAllAssets()
     {
-        var assets = myAsset.LoadAllAssets();
-        foreach (var prefab in assets)
-        {
-            if (prefab.GetType() == typeof(GameObject))
-            {
-                GameObject gameObject = prefab as GameObject;
-                RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-                if (rectTransform != null)
-                {
-                    Instantiate(gameObject, canvas.transform);
-                }
-                else
-                {
-                    Instantiate(gameObject);
-                }
-            }
-        }
+        base.LoadAllAssets();
     }
 }
 

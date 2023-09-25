@@ -6685,7 +6685,6 @@ MonoBehaviour:
   - {fileID: 1451413586029080837}
   existingTouches: []
   pageController: {fileID: 3408915947721072668}
-  canShowFirstBlink: 1
 --- !u!114 &8038604329646925602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9729,7 +9728,6 @@ MonoBehaviour:
   - {fileID: 7734058140854826464}
   existingTouches: []
   pageController: {fileID: 4857213698472632087}
-  canShowFirstBlink: 1
 --- !u!114 &2863400672184057217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11711,7 +11709,6 @@ MonoBehaviour:
   - {fileID: 6546477835485574488}
   existingTouches: []
   pageController: {fileID: 8909113905655726432}
-  canShowFirstBlink: 1
 --- !u!114 &3739347148194452710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14795,7 +14792,6 @@ MonoBehaviour:
   - {fileID: 9172590840631740015}
   existingTouches: []
   pageController: {fileID: 1917771205624285110}
-  canShowFirstBlink: 1
 --- !u!114 &7529832796068421836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19231,7 +19227,6 @@ MonoBehaviour:
   - {fileID: 4405737546065892117}
   existingTouches: []
   pageController: {fileID: 136297365677520481}
-  canShowFirstBlink: 1
 --- !u!114 &4655092616441416699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44339,7 +44334,6 @@ MonoBehaviour:
   - {fileID: 5637007771085047253}
   existingTouches: []
   pageController: {fileID: 5350399837182689758}
-  canShowFirstBlink: 1
 --- !u!114 &798355735019910825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48251,7 +48245,6 @@ MonoBehaviour:
   - {fileID: 7817173630102682462}
   existingTouches: []
   pageController: {fileID: 8418338560096091207}
-  canShowFirstBlink: 1
 --- !u!114 &5646032149984420731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54768,7 +54761,6 @@ MonoBehaviour:
   - {fileID: 454660746811288053}
   existingTouches: []
   pageController: {fileID: 4845511440625247571}
-  canShowFirstBlink: 1
 --- !u!114 &1932757744046859182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71772,7 +71764,6 @@ MonoBehaviour:
   - {fileID: 5341430730118771762}
   existingTouches: []
   pageController: {fileID: 5424406486430294214}
-  canShowFirstBlink: 1
 --- !u!114 &159324668199355214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80453,7 +80444,6 @@ MonoBehaviour:
   - {fileID: 658345394999376354}
   existingTouches: []
   pageController: {fileID: 647414502043068894}
-  canShowFirstBlink: 1
 --- !u!114 &6197223363829429688
 MonoBehaviour:
   m_ObjectHideFlags: 0

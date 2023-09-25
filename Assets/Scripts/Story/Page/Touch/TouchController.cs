@@ -13,7 +13,6 @@ public class TouchController : Texts, ITouchController
     [SerializeField] private List<TouchUI> touchesUI;
     [SerializeField] private List<TouchUI> existingTouches = new List<TouchUI>();
     [SerializeField] private PageController pageController;
-    [SerializeField] private bool canShowFirstBlink = true;
     [SerializeField] private ITouchUIHandler touchUIHandler;
     [SerializeField] private ISearchText searchTextController;
     [SerializeField] private ITouchManager touchManager;

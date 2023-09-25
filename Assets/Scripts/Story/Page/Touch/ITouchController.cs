@@ -5,6 +5,5 @@ using UnityEngine;
 public interface ITouchController 
 {
     void AddEventTouch();
-    void ShowFirstBlink();
     void LoadComponents();
 }

@@ -10,6 +10,7 @@ public interface IBlinkController
     bool CanNextBlink(int currentIndex,List<TouchObject> touchObjects);
     void ShowBlink(List<TouchObject> touchObject);
     void CanBlink(List<TouchObject> touchObjects);
-    void ShowFirstBlink(List<TouchObject> touchObjects, List<TouchUI> existingTouches);
+    void ShowFirstBlink();
     void HideAllBlinks(List<TouchObject> touchObjects);
+    void UpdateFirstBlink(IPageController pageController);
 }

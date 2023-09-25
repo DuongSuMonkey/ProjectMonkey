@@ -16,15 +16,15 @@ public class TouchController : Texts, ITouchController
     [SerializeField] private bool canShowFirstBlink = true;
     [SerializeField] private ITouchUIHandler touchUIHandler;
     [SerializeField] private ISearchText searchTextController;
-    [SerializeField] private ITouchSelection touchSelection;
     [SerializeField] private ITouchManager touchManager;
+    [SerializeField] private IBlinkController blinkController;
     [SerializeField] private ITouchControllerInitializer touchControllerInitializer;
     private void Start()
     {
         searchTextController = new SearchTextController();
         touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
-        touchSelection = new TouchSelection(existingTouches, touchObjects, touchesUI);
         touchManager = new TouchManager(touchesUI, currentIndex, existingTouches, touchObjects, touchUIHandler);
+        blinkController = new BlinkController(touchesUI, currentIndex, touchObjects);
         AddEventTouch();
         HideAllTouchesUI();
         HideAllBlinks();
@@ -46,7 +46,6 @@ public class TouchController : Texts, ITouchController
     {
         pageController = GetComponentInParent<PageController>();
     }
-
     public override void LoadTexts()
     {
         pageController.LoadTexts(txtContents);
@@ -58,7 +57,7 @@ public class TouchController : Texts, ITouchController
 
     private void HideAllBlinks()
     {
-        touchUIHandler.HideAllBlinks(touchObjects);
+        blinkController.HideAllBlinks(touchObjects);
     }
     public void AddEventTouch()
     {
@@ -74,26 +73,9 @@ public class TouchController : Texts, ITouchController
         touchManager.SelectTouchObject(touchObject, index, pageController);
         searchTextController.Search(touchesUI[index], txtContents, this);
     } 
-    public void ShowFirstBlink()
-    {
-        for (int i = 0; i < touchObjects.Count; i++)
-        {
-            if (touchObjects[i].hasBlink)
-            {
-                touchObjects[i].blinkEffect.gameObject.SetActive(true);
-                currentIndex = i;
-                touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
-                canShowFirstBlink = false;
-                break;
-            }
-        }
-    }
     private void Update()
     {
-        if (pageController.IsFinal() && canShowFirstBlink)
-        {
-            ShowFirstBlink();
-        }
+        blinkController.UpdateFirstBlink(pageController);
     }
 }
 

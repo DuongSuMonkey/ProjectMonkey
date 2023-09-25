@@ -8,11 +8,13 @@ public class BlinkController : IBlinkController
     private List<TouchUI> touchesUI;
     private int currentIndex;
     private List<TouchObject> touchObjects;
+    private bool canShowFirstBlink;
     public BlinkController(List<TouchUI> touchesUI, int currentIndex, List<TouchObject> touchObjects)
     {
         this.touchesUI = touchesUI;
         this.currentIndex = currentIndex;
         this.touchObjects = touchObjects;
+        canShowFirstBlink = true;
     }
 
     public void HideBlinkEffect(TouchObject touchObject)
@@ -58,7 +60,15 @@ public class BlinkController : IBlinkController
             }
         }
     }
-    public void ShowFirstBlink(List<TouchObject> touchObjects, List<TouchUI> existingTouches)
+    public void UpdateFirstBlink(IPageController pageController)
+    {
+        if (pageController.IsFinal() && canShowFirstBlink)
+        {
+            ShowFirstBlink();
+        }
+    }
+
+    public void ShowFirstBlink()
     {
         for (int i = 0; i < touchObjects.Count; i++)
         {
@@ -66,6 +76,7 @@ public class BlinkController : IBlinkController
             {
                 touchObjects[i].blinkEffect.gameObject.SetActive(true);
                 currentIndex = i;
+                canShowFirstBlink = false;
                 break;
             }
         }

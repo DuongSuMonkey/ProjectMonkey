@@ -56,7 +56,6 @@ public class TouchUIHandler:ITouchUIHandler
             }
             ShowBlink(touchObjects);
         }
-        
     }
     public void ShowBlink(List<TouchObject> touchObjects)
     {
@@ -97,15 +96,6 @@ public class TouchUIHandler:ITouchUIHandler
             }
         }
     }
-    public void ShowFirstBlink(List<TouchObject> touchObjects, List<TouchUI> existingTouches)
-    {
-        blinkController.ShowFirstBlink(touchObjects, existingTouches);
-    }
-    public void HideAllBlinks(List<TouchObject> touchObjects)
-    {
-        blinkController.HideAllBlinks(touchObjects);
-    }
-
     public void HideAllTouchesUI(List<TouchUI> touchesUI)
     {
         foreach (var touch in touchesUI)

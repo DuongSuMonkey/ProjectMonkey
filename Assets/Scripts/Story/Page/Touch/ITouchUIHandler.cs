@@ -11,7 +11,5 @@ public interface ITouchUIHandler
     bool IsProcessingRemaining(List<TouchObject> touchObjects);
     TouchUI GetTouch();
     void HideAllTouch();
-    void ShowFirstBlink(List<TouchObject> touchObjects,List<TouchUI> existingTouches);
-    void HideAllBlinks(List<TouchObject> touchObjects);
     void HideAllTouchesUI(List<TouchUI> touchesUI);
 }

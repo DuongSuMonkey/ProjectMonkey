@@ -7,7 +7,6 @@ using UnityEngine;
 public class TouchControllerInitializer :ITouchControllerInitializer
 {
     private ITouchManager touchManager;
-
     public  TouchControllerInitializer(ITouchManager touchManager)
     {
         this.touchManager = touchManager;
@@ -22,11 +21,29 @@ public class TouchControllerInitializer :ITouchControllerInitializer
         SetPosition(touchObjects);
         SetScale(touchObjects);
     }
-
-    [Obsolete]
     public void LoadTouchObject(List<TouchObject> touchObjects,MonoBehaviour obj)
     {
-        touchManager.LoadTouchObjects(touchObjects, obj);
+        var touchObjectsArray = obj.GetComponentsInChildren<TouchObject>();
+        List<TouchObject> canBlinkObjects = new List<TouchObject>();
+        List<TouchObject> cannotBlinkObjects = new List<TouchObject>();
+
+        foreach (var touchObject in touchObjectsArray)
+        {
+            if (touchObject.hasBlink)
+            {
+                canBlinkObjects.Add(touchObject);
+            }
+            else
+            {
+                cannotBlinkObjects.Add(touchObject);
+            }
+        }
+
+        for (int i = canBlinkObjects.Count - 1; i >= 0; i--)
+        {
+            touchObjects.Add(canBlinkObjects[i]);
+        }
+        touchObjects.AddRange(cannotBlinkObjects);
     }
     public void LoadTouchesUI(List<TouchUI> touchesUI, List<TouchObject> touchObjects)
     {
@@ -60,13 +77,4 @@ public class TouchControllerInitializer :ITouchControllerInitializer
             touchUI.SetScale();
         }
     }
-
-    public void HideAllTouchesUI(List<TouchUI> touchObjects)
-    {
-        foreach (var touch in touchObjects)
-        {
-            touch.HideTouch();
-        }
-    }
-
 }

@@ -22,15 +22,15 @@ public class TouchManager : ITouchManager
         this.touchUIHandler= touchUIHandler;
     }
     
-    [System.Obsolete]
-    public void LoadTouchObjects(List<TouchObject> touchObjects,MonoBehaviour obj)
-    {
-        var touchObjectsArray = obj.GetComponentsInChildren<TouchObject>();
-        for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
-        {
-            touchObjects.Add(touchObjectsArray[i]);
-        }
-    }
+    //[System.Obsolete]
+    //public void LoadTouchObjects(List<TouchObject> touchObjects,MonoBehaviour obj)
+    //{
+    //    var touchObjectsArray = obj.GetComponentsInChildren<TouchObject>();
+    //    for (int i = touchObjectsArray.Length - 1; i >= 0; i--)
+    //    {
+    //        touchObjects.Add(touchObjectsArray[i]);
+    //    }
+    //}
 
     public void SelectTouchObject(TouchObject touchObject, int index,IPageController pageController)
     {

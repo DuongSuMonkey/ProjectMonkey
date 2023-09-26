@@ -14,24 +14,22 @@ public class TouchController : Texts, ITouchController
     [SerializeField] private List<TouchUI> existingTouches = new List<TouchUI>();
     [SerializeField] private PageController pageController;
     [SerializeField] private ITouchUIHandler touchUIHandler;
-    [SerializeField] private ISearchText searchTextController;
-    [SerializeField] private ITouchManager touchManager;
-    [SerializeField] private IBlinkController blinkController;
+    [SerializeField] private ISearchText searchText;
+    [SerializeField] private IAddEventTouchObject addEventTouch;
+    [SerializeField] private IBlinkHandler blinkHandler;
     [SerializeField] private ITouchControllerInitializer touchControllerInitializer;
     private void Start()
     {
-        searchTextController = new SearchTextController();
+        searchText = new SearchText();
         touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
-        touchManager = new TouchManager(touchesUI, currentIndex, existingTouches, touchObjects, touchUIHandler);
-        blinkController = new BlinkController(touchesUI, currentIndex, touchObjects);
+        addEventTouch = new AddEventTouchObject();
+        blinkHandler = new BlinkHandler(touchesUI, currentIndex, touchObjects);
         AddEventTouch();
-        HideAllTouchesUI();
-        HideAllBlinks();
     }
     private void Reset()
     {
-        touchManager = new TouchManager(touchesUI, currentIndex, existingTouches, touchObjects, touchUIHandler);
-        touchControllerInitializer = new TouchControllerInitializer(touchManager);
+        addEventTouch = new AddEventTouchObject();
+        touchControllerInitializer = new TouchControllerInitializer();
         LoadComponents();
     }
     public void LoadComponents()
@@ -49,32 +47,24 @@ public class TouchController : Texts, ITouchController
     {
         pageController.LoadTexts(txtContents);
     }
-    private void HideAllTouchesUI()
-    {
-        touchUIHandler.HideAllTouchesUI(touchesUI);
-    }
-
-    private void HideAllBlinks()
-    {
-        blinkController.HideAllBlinks(touchObjects);
-    }
     public void AddEventTouch()
     {
-        touchManager.AddEventTouch(touchObjects, HandleTouchSelection);
+        addEventTouch.AddEventTouch(touchObjects, HandleTouchSelection);
     }
-    private void HandleTouchSelection(TouchObject touchObject)
+    public void HandleTouchSelection(TouchObject touchObject)
     {
         int index = touchObjects.IndexOf(touchObject);
         TouchSelection(touchObject, index);
     }
     private void TouchSelection(TouchObject touchObject, int index)
     {
-        touchManager.SelectTouchObject(touchObject, index, pageController);
-        searchTextController.Search(touchesUI[index], txtContents, this);
+        touchUIHandler.Select(touchObject,index);
+        blinkHandler.Select();
+        searchText.Search(touchesUI[index], txtContents, this);
     } 
     private void Update()
     {
-        blinkController.UpdateFirstBlink(pageController);
+        blinkHandler.ShowFirstBlink(pageController);
     }
 }
 

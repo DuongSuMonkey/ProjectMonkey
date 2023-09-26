@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface ITouchController 
 {
-    void AddEventTouch();
-    void LoadComponents();
+   public void  HandleTouchSelection(TouchObject touchObject);
 }

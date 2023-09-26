@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Principal;
-using System.Text.RegularExpressions;
-using System.Threading;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
 
 public class TouchUIHandler:ITouchUIHandler
 {
@@ -15,78 +6,71 @@ public class TouchUIHandler:ITouchUIHandler
     private List<TouchUI> touchesUI;
     private int currentIndex;
     private List<TouchUI> existingTouches;
-    private IBlinkController blinkController;
-    private ITouchSelection touchSelection;
+    private ISpawnerTouchUI SpawnerTouchUI;
     public TouchUIHandler(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches, List<TouchObject> touchObjects)
     {
         this.touchesUI = touchesUI;
         this.currentIndex = currentIndex;
         this.existingTouches = existingTouches;
-        touchSelection = new TouchSelection(existingTouches,touchObjects,touchesUI);
-        blinkController = new BlinkController(touchesUI, currentIndex,touchObjects);
         this.touchObjects = touchObjects;
+        SpawnerTouchUI = new SpawnerTouchUI(existingTouches);
+        HideAllTouchesUI(touchesUI);
     }
-    public void ShowTouchCurrent(List<TouchObject> touchObjects, List<TouchUI> touchesUI)
+    public void ShowTouchUICurrent()
     {
-        if (!IsProcessingRemaining(touchObjects))
+        if (!IsProcessingRemaining())
         {
             return;
         }
-         blinkController.HideBlinkEffect(touchObjects[currentIndex]);
-         CreateTouch(touchObjects[currentIndex], currentIndex);
-         ShowBlinkNext(touchObjects);
+        SpawnTouchUI(touchObjects[currentIndex], currentIndex);
+        IncreaseCurrentIndex();
     }
-    public bool IsProcessingRemaining(List<TouchObject> touchObjects)
+    public void Select(TouchObject touchObject,int index)
     {
-        return blinkController.IsProcessingRemaining(currentIndex,touchObjects);
+        touchObject.Select();
+        HideAllexistingTouchesUI();
+        if (touchObject.countClick > 1 || touchesUI[index] != GetTouch())
+        {
+            ProcessDoubleClick(touchObject, index);
+            return;
+        }
+        ShowTouchUICurrent();
     }
-    private int IncreaseIndex()
+    public bool IsProcessingRemaining()
     {
-        return currentIndex++;
+       return currentIndex<touchObjects.Count;
     }
-    public void ShowBlinkNext(List<TouchObject> touchObjects)
+    public void IncreaseCurrentIndex()
     {
-        if (CanNextBlink(touchObjects))
+        if (CanIncreaseCurrentIndex())
         {
             if (touchObjects[currentIndex].isClick || !touchObjects[currentIndex].hasBlink)
             {
-                IncreaseIndex();
-                ShowBlinkNext(touchObjects);
+                currentIndex++;
+                IncreaseCurrentIndex();
 
             }
-            ShowBlink(touchObjects);
         }
     }
-    public void ShowBlink(List<TouchObject> touchObjects)
+    public bool CanIncreaseCurrentIndex()
     {
-        blinkController.ShowBlink(touchObjects);
-    }
-    public bool CanNextBlink(List<TouchObject> touchObjects)
-    {
-         return blinkController.CanNextBlink(currentIndex,touchObjects);
+         return currentIndex<touchObjects.Count-1;
     }
     public void ProcessDoubleClick(TouchObject touchObject, int index)
     {
-        blinkController.HideBlinkEffect(touchObject);
-        HideAllTouch();
-        CreateTouch(touchObject ,index);
+        HideAllexistingTouchesUI();
+        SpawnTouchUI(touchObject ,index);
     }
     public TouchUI GetTouch()
     {
         return touchesUI[currentIndex];
     }
-    public void CreateTouch(TouchObject touchObject, int index)
+    public void SpawnTouchUI(TouchObject touchObject, int index)
     {
-        Vector3 canvasPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        TouchUI touch = UnityEngine.Object.Instantiate(touchesUI[index], new Vector3(canvasPos.x, canvasPos.y, 0),
-           Quaternion.Euler(new Vector3(0, 0, UnityEngine.Random.Range(-15, 15))));
-        touch.gameObject.transform.SetParent(touchObject.transform);
-        touch.gameObject.transform.localScale = Vector3.one;
-        touchSelection.SelectTouchUI(touch);
-        touch.DestroyTouchCoroutine();
+        SpawnerTouchUI.SpamTouchUI(touchesUI,touchObject,index);
     }
 
-    public void HideAllTouch()
+    public void HideAllexistingTouchesUI()
     {
         foreach (TouchUI touch in existingTouches)
         {

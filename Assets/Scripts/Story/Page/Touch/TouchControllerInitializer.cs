@@ -6,10 +6,8 @@ using UnityEngine;
 
 public class TouchControllerInitializer :ITouchControllerInitializer
 {
-    private ITouchManager touchManager;
-    public  TouchControllerInitializer(ITouchManager touchManager)
+    public  TouchControllerInitializer()
     {
-        this.touchManager = touchManager;
     }
 
     [Obsolete]

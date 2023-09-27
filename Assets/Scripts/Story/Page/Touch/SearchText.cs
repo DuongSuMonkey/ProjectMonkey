@@ -4,10 +4,19 @@ using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
-public class SearchText : ISearchText
+public class SearchText : ISearchText,ITouchObserver
 {
-
-    public void Search(TouchUI TouchUI, List<TextMeshProUGUI> txtContents, MonoBehaviour obj)
+    private List<TextMeshProUGUI> txtContents;
+    private MonoBehaviour obj;
+    private List<TouchObject> touchesObject;
+    private Coroutine originalTextColorCoroutine;
+    public SearchText(List<TextMeshProUGUI> txtContents, MonoBehaviour obj, List<TouchObject> touchesObject)
+    {
+        this.txtContents=txtContents;
+        this.obj = obj;
+        this.touchesObject = touchesObject;
+    }
+    public void Search(TouchObject touchObject)
     {
         for (int i = 0; i < txtContents.Count; i++)
         {
@@ -18,23 +27,31 @@ public class SearchText : ISearchText
             {
                 doubleTextContent = Regex.Replace(txtContents[i].text, @"[,.;!?]", "") + " " + Regex.Replace(txtContents[i+1].text, @"[,.;!?]", "");
             }
-            if (TouchUI.txtContent.text.Equals(textContent) || TouchUI.txtContent.text.Equals(textContentNoS))
+            if (touchObject.touchUI.txtContent.text.Equals(textContent) || touchObject.touchUI.txtContent.text.Equals(textContentNoS))
             {
                 txtContents[i].color = Color.red;
                 txtContents[i].GetComponent<Animator>().SetTrigger("isHightlight");
-                obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
-            }else if (TouchUI.txtContent.text.Equals(doubleTextContent))
+                if (originalTextColorCoroutine != null)
+                {
+                    obj.StopCoroutine(originalTextColorCoroutine);
+                }
+                originalTextColorCoroutine = obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
+            }
+            else if (touchObject.touchUI.txtContent.text.Equals(doubleTextContent))
             {
                 txtContents[i].color = Color.red;
                 txtContents[i+1].color = Color.red;
                 txtContents[i].GetComponent<Animator>().SetTrigger("isHightlight");
                 txtContents[i+1].GetComponent<Animator>().SetTrigger("isHightlight");
-                obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
-                obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i+1]));
+                if (originalTextColorCoroutine != null)
+                {
+                    obj.StopCoroutine(originalTextColorCoroutine);
+                }
+                originalTextColorCoroutine = obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i]));
+                originalTextColorCoroutine = obj.StartCoroutine(OriginalTextColorCoroutine(txtContents[i+1]));
             }
         }
     }
-
     public IEnumerator OriginalTextColorCoroutine(TextMeshProUGUI textContent)
     {
         yield return new WaitForSeconds(1f);
@@ -47,5 +64,10 @@ public class SearchText : ISearchText
         {
             textcontent.color = Color.black;
         }
+    }
+
+    public void OnTouchSelected(TouchObject touchObject)
+    {
+        Search(touchObject);
     }
 }

@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using System.Reflection;
 
-public class TouchController : Texts, ITouchController
+public class TouchManager : Texts, ITouchManager, ITouchSubject
 {
     [SerializeField] private List<TouchObject> touchObjects;
     [SerializeField] private List<TouchUI> touchesUI;
@@ -18,17 +18,20 @@ public class TouchController : Texts, ITouchController
     [SerializeField] private IAddEventTouchObject addEventTouch;
     [SerializeField] private IBlinkHandler blinkHandler;
     [SerializeField] private ITouchControllerInitializer touchControllerInitializer;
+    [SerializeField] private List<ITouchObserver> touchObservers = new List<ITouchObserver>();
     private void Start()
     {
-        searchText = new SearchText();
+        searchText = new SearchText(txtContents, this, touchObjects);
         touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
         addEventTouch = new AddEventTouchObject();
-        blinkHandler = new BlinkHandler(touchesUI, currentIndex, touchObjects);
+        blinkHandler = new BlinkHandler(currentIndex, touchObjects);
         AddEventTouch();
+        AddObserver(searchText as ITouchObserver);
+        AddObserver(touchUIHandler as ITouchObserver);
+        AddObserver(blinkHandler as ITouchObserver);
     }
     private void Reset()
     {
-        addEventTouch = new AddEventTouchObject();
         touchControllerInitializer = new TouchControllerInitializer();
         LoadComponents();
     }
@@ -53,18 +56,35 @@ public class TouchController : Texts, ITouchController
     }
     public void HandleTouchSelection(TouchObject touchObject)
     {
-        int index = touchObjects.IndexOf(touchObject);
-        TouchSelection(touchObject, index);
+        NotifyObservers(touchObject);
     }
-    private void TouchSelection(TouchObject touchObject, int index)
-    {
-        touchUIHandler.Select(touchObject,index);
-        blinkHandler.Select();
-        searchText.Search(touchesUI[index], txtContents, this);
-    } 
+    //private void TouchSelection(TouchObject touchObject)
+    //{
+    //    int index = touchObjects.IndexOf(touchObject);
+    //    touchUIHandler.Select(touchObject,index);
+    //    blinkHandler.Select();
+    //    searchText.Search(touchObject);
+    //} 
     private void Update()
     {
         blinkHandler.ShowFirstBlink(pageController);
+    }
+    public void AddObserver(ITouchObserver observer)
+    {
+        touchObservers.Add(observer);
+    }
+
+    public void RemoveObserver(ITouchObserver observer)
+    {
+        touchObservers.Remove(observer);
+    }
+
+    public void NotifyObservers(TouchObject touchObject)
+    {
+        foreach (ITouchObserver observer in touchObservers)
+        {
+            observer.OnTouchSelected(touchObject);
+        }
     }
 }
 

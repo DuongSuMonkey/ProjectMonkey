@@ -4,7 +4,6 @@ using UnityEngine;
 
 public interface IBlinkHandler 
 {
-    void GetFirstBlink();
     void ShowFirstBlink(IPageController pageController);
     void Select();
 }

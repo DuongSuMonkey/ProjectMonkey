@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISpawnerTouchUI 
 {
-    void SpamTouchUI(List<TouchUI> touchesUI,TouchObject touchObject, int index);
+    void SpamTouchUI(List<TouchUI> touchesUI,TouchObject touchObject);
 }

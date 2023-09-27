@@ -5379,7 +5379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 7155654335332426133}
-  touchesController: {fileID: 2531388751207171988}
+  touchControllers: {fileID: 2531388751207171988}
   audioSource:
   - {fileID: 4703834608721527095}
   audioClip:
@@ -5774,11 +5774,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 8163874144461763128}
-  touchesController: {fileID: 423364424244895088}
+  touchControllers: {fileID: 423364424244895088}
   audioSource:
   - {fileID: 7725342450351184769}
   audioClip:
-  - {fileID: 8300000, guid: c648fe3a93d470e4e87c2bca01db9211, type: 3}
+  - {fileID: 8300000, guid: ce5dfdc3494052f4188d11306615ce14, type: 3}
 --- !u!1 &763587386947708270
 GameObject:
   m_ObjectHideFlags: 0
@@ -10274,7 +10274,7 @@ MonoBehaviour:
   - {fileID: 5424406486430294214}
   - {fileID: 8418338560096091207}
   currentIndex: 0
-  isStart: 1
+  isStart: 0
 --- !u!1 &1273526844015652282
 GameObject:
   m_ObjectHideFlags: 0
@@ -14444,7 +14444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 3886538970507328745}
-  touchesController: {fileID: 3347739770739631764}
+  touchControllers: {fileID: 3347739770739631764}
   audioSource:
   - {fileID: 7855862691646645833}
   audioClip:
@@ -20082,11 +20082,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 6902009658334687890}
-  touchesController: {fileID: 164399336689525655}
+  touchControllers: {fileID: 164399336689525655}
   audioSource:
   - {fileID: 3240998985592264681}
   audioClip:
-  - {fileID: 8300000, guid: c648fe3a93d470e4e87c2bca01db9211, type: 3}
+  - {fileID: 8300000, guid: b933796eb7b062a408473b0b55b24dfc, type: 3}
 --- !u!1 &2312426038462219531
 GameObject:
   m_ObjectHideFlags: 0
@@ -36092,7 +36092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 2173087967752037759}
-  touchesController: {fileID: 572024422331961117}
+  touchControllers: {fileID: 572024422331961117}
   audioSource:
   - {fileID: 5632844463078144299}
   audioClip:
@@ -42584,11 +42584,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 3930063546848535756}
-  touchesController: {fileID: 5538343013396300177}
+  touchControllers: {fileID: 5538343013396300177}
   audioSource:
   - {fileID: 664376817145814926}
   audioClip:
-  - {fileID: 8300000, guid: c648fe3a93d470e4e87c2bca01db9211, type: 3}
+  - {fileID: 8300000, guid: 3fcbb7e929ae5484e9c8df1eb9222f76, type: 3}
 --- !u!1 &4703697308619740335
 GameObject:
   m_ObjectHideFlags: 0
@@ -54896,11 +54896,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 2281362081108909195}
-  touchesController: {fileID: 1378373142603394907}
+  touchControllers: {fileID: 1378373142603394907}
   audioSource:
   - {fileID: 5180124113859515347}
   audioClip:
-  - {fileID: 8300000, guid: c648fe3a93d470e4e87c2bca01db9211, type: 3}
+  - {fileID: 8300000, guid: cac7f71c5508fd84787ad7cdf71d7404, type: 3}
 --- !u!1 &5879926567065006328
 GameObject:
   m_ObjectHideFlags: 0
@@ -55431,7 +55431,7 @@ MonoBehaviour:
   syncTexts:
   - {fileID: 3449349784803006640}
   - {fileID: 8065897013391446676}
-  touchesController: {fileID: 3214054389961539509}
+  touchControllers: {fileID: 3214054389961539509}
   audioSource:
   - {fileID: 7427763449194681953}
   - {fileID: 8376745162898878160}
@@ -67796,11 +67796,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 4919764874923752648}
-  touchesController: {fileID: 8208789560325940970}
+  touchControllers: {fileID: 8208789560325940970}
   audioSource:
   - {fileID: 537379392684297191}
   audioClip:
-  - {fileID: 8300000, guid: c648fe3a93d470e4e87c2bca01db9211, type: 3}
+  - {fileID: 8300000, guid: a8417e30142c55f4cbf330ff4a5f0997, type: 3}
 --- !u!1 &7336918614443032376
 GameObject:
   m_ObjectHideFlags: 0
@@ -68989,7 +68989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 8356776096888109482}
-  touchesController: {fileID: 3890107951001954559}
+  touchControllers: {fileID: 3890107951001954559}
   audioSource:
   - {fileID: 7329872325715689800}
   audioClip:

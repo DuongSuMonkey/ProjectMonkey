@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlinkHandler : IBlinkHandler
+public class BlinkHandler : IBlinkHandler,ITouchObserver
 {
-    private List<TouchUI> touchesUI;
     private int currentIndex;
     private List<TouchObject> touchObjects;
     private bool canShowFirstBlink;
     private IHideBlinkEffect hideBlinkEffect;
     private IShowBlinkEffect showBlinkEffect;
-    public BlinkHandler(List<TouchUI> touchesUI, int currentIndex, List<TouchObject> touchObjects)
+    public BlinkHandler(int currentIndex, List<TouchObject> touchObjects)
     {
-        this.touchesUI = touchesUI;
         this.currentIndex = currentIndex;
         this.touchObjects = touchObjects;
         canShowFirstBlink = true;
@@ -68,5 +66,10 @@ public class BlinkHandler : IBlinkHandler
             }
             showBlinkEffect.ShowBlink(currentIndex, touchObjects);
         }
+    }
+
+    public void OnTouchSelected(TouchObject touchObject)
+    {
+        Select();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PageController : MonoBehaviour, IPageController
 {
     [SerializeField] private List<SyncText> syncTexts;
-    [SerializeField] protected TouchController touchesController;
+    [SerializeField] protected TouchManager touchControllers;
     [SerializeField] protected List<AudioSource> audioSource;
     [SerializeField] private List<AudioClip> audioClip;
     public List<SyncText> SyncText { get => syncTexts; }
@@ -34,16 +34,16 @@ public class PageController : MonoBehaviour, IPageController
     }
     public void LoadComponents()
     {
-        LoadTouches();
-        LoadChangTextColors();
+        LoadTouchController();
+        LoadSyncText();
         LoadAudios();
         LoadAudioClips();
     }
-    public void LoadTouches()
+    public void LoadTouchController()
     {
-        touchesController = GetComponentInChildren<TouchController>();
+        touchControllers = GetComponentInChildren<TouchManager>();
     }
-    private void LoadChangTextColors()
+    private void LoadSyncText()
     {
         SyncText[] texts = GetComponentsInChildren<SyncText>();
         syncTexts.AddRange(texts);
@@ -70,9 +70,9 @@ public class PageController : MonoBehaviour, IPageController
     }
     public void HideAllSyncText()
     {
-        foreach (var changeTextColor in SyncText)
+        foreach (var syncText in syncTexts)
         {
-            changeTextColor.gameObject.SetActive(false);
+            syncText.gameObject.SetActive(false);
         }
     }
     public void ShowFirstSyncText()

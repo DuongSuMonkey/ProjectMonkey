@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class TouchUIHandler:ITouchUIHandler
+public class TouchUIHandler:ITouchUIHandler, ITouchObserver
 {
     private List<TouchObject> touchObjects;
     private List<TouchUI> touchesUI;
@@ -22,16 +22,16 @@ public class TouchUIHandler:ITouchUIHandler
         {
             return;
         }
-        SpawnTouchUI(touchObjects[currentIndex], currentIndex);
+        SpawnTouchUI(touchObjects[currentIndex]);
         IncreaseCurrentIndex();
     }
-    public void Select(TouchObject touchObject,int index)
+    public void Select(TouchObject touchObject)
     {
         touchObject.Select();
         HideAllexistingTouchesUI();
-        if (touchObject.countClick > 1 || touchesUI[index] != GetTouch())
+        if (touchObject.countClick > 1 || touchObject.touchUI != GetTouch())
         {
-            ProcessDoubleClick(touchObject, index);
+            ProcessDoubleClick(touchObject);
             return;
         }
         ShowTouchUICurrent();
@@ -56,18 +56,18 @@ public class TouchUIHandler:ITouchUIHandler
     {
          return currentIndex<touchObjects.Count-1;
     }
-    public void ProcessDoubleClick(TouchObject touchObject, int index)
+    public void ProcessDoubleClick(TouchObject touchObject)
     {
         HideAllexistingTouchesUI();
-        SpawnTouchUI(touchObject ,index);
+        SpawnTouchUI(touchObject );
     }
     public TouchUI GetTouch()
     {
         return touchesUI[currentIndex];
     }
-    public void SpawnTouchUI(TouchObject touchObject, int index)
+    public void SpawnTouchUI(TouchObject touchObject)
     {
-        SpawnerTouchUI.SpamTouchUI(touchesUI,touchObject,index);
+        SpawnerTouchUI.SpamTouchUI(touchesUI,touchObject);
     }
 
     public void HideAllexistingTouchesUI()
@@ -86,6 +86,11 @@ public class TouchUIHandler:ITouchUIHandler
         {
             touch.HideTouch();
         }
+    }
+
+    public void OnTouchSelected(TouchObject touchObject)
+    {
+        Select(touchObject);
     }
 }
 

@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface ITouchUIHandler
 {
-    void Select(TouchObject touchObject, int index);
+    void Select(TouchObject touchObject);
 }

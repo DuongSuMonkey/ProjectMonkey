@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface ISearchText 
 {
-    void Search(TouchUI touchUI, List<TextMeshProUGUI> txtsContent, MonoBehaviour obj);
+    void Search(TouchObject touchObject);
 }

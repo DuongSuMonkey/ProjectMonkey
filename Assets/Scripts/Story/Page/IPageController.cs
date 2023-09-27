@@ -9,6 +9,6 @@ public interface IPageController
     bool IsFinal();
     void HideAllSyncText();
     void ShowFirstSyncText();
-    void LoadTouches();
+    void LoadTouchController();
     void LoadTexts(List<TextMeshProUGUI> txtContents);
 }

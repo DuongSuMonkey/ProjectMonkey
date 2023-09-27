@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
-public class SearchText : ISearchText,ITouchObserver
+public class SearchText : ISearchText
 {
     private List<TextMeshProUGUI> txtContents;
     private MonoBehaviour obj;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlinkHandler : IBlinkHandler,ITouchObserver
+public class BlinkHandler : IBlinkHandler
 {
     private int currentIndex;
     private List<TouchObject> touchObjects;

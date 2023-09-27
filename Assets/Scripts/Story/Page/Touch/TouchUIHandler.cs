@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class TouchUIHandler:ITouchUIHandler, ITouchObserver
+public class TouchUIHandler:ITouchUIHandler
 {
     private List<TouchObject> touchObjects;
     private List<TouchUI> touchesUI;

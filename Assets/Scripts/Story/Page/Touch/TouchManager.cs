@@ -26,9 +26,9 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
         addEventTouch = new AddEventTouchObject();
         blinkHandler = new BlinkHandler(currentIndex, touchObjects);
         AddEventTouch();
-        AddObserver(searchText as ITouchObserver);
-        AddObserver(touchUIHandler as ITouchObserver);
-        AddObserver(blinkHandler as ITouchObserver);
+        AddObserver(searchText);
+        AddObserver(touchUIHandler);
+        AddObserver(blinkHandler);
     }
     private void Reset()
     {

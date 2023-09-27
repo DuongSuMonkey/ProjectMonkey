@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public interface ISearchText 
+public interface ISearchText: ITouchObserver
 {
     void Search(TouchObject touchObject);
 }

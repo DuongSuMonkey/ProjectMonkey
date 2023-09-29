@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class JsonPagePath : MonoBehaviour
 {
-    public string path;
+    public string pathPage;
     public TouchObject touchObjectPrefab;
     
 }

@@ -42,6 +42,10 @@ public class TouchControllerInitializer :ITouchControllerInitializer
             touchObjects.Add(canBlinkObjects[i]);
         }
         touchObjects.AddRange(cannotBlinkObjects);
+        foreach(TouchObject touchObject in touchObjects)
+        {
+            touchObject.Reset();
+        }
     }
     public void LoadTouchesUI(List<TouchUI> touchesUI, List<TouchObject> touchObjects)
     {

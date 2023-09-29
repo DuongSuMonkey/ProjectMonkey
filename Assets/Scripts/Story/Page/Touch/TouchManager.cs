@@ -12,7 +12,7 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
     [SerializeField] private List<TouchObject> touchObjects;
     [SerializeField] private List<TouchUI> touchesUI;
     [SerializeField] private List<TouchUI> existingTouches = new List<TouchUI>();
-    [SerializeField] private PageController pageController;
+    [SerializeField] private IPageController pageController;
     [SerializeField] private ITouchUIHandler touchUIHandler;
     [SerializeField] private ISearchText searchText;
     [SerializeField] private IAddEventTouchObject addEventTouch;
@@ -21,6 +21,7 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
     [SerializeField] private List<ITouchObserver> touchObservers = new List<ITouchObserver>();
     private void Start()
     {
+        pageController = GetComponentInParent<IPageController>();
         searchText = new SearchText(txtContents, this, touchObjects);
         touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
         addEventTouch = new AddEventTouchObject();
@@ -44,7 +45,7 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
 
     private void LoadPageController()
     {
-        pageController = GetComponentInParent<PageController>();
+        pageController = GetComponentInParent<IPageController>();
     }
     public override void LoadTexts()
     {

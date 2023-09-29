@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IJsonColliderBuilder 
+public interface ISetWordByID 
 {
-    void GetCollider();
+    void SetWordById(string path);
 }

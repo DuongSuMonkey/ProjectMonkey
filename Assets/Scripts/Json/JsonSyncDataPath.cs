@@ -6,6 +6,6 @@ using UnityEngine;
 
 public class JsonSyncDataPath : MonoBehaviour
 {
-    public string path;
+    public string pathPage;
     public TextMeshProUGUI textPrefab;
 }

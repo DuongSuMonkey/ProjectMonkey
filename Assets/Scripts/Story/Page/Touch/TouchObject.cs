@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spine.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -12,35 +13,34 @@ public class TouchObject : MonoBehaviour
     public event Action<TouchObject>  OnClicked;
     public int countClick;
     public bool isClick=false;
-    public Transform blinkEffect;
+    public SkeletonGraphic blinkEffect;
     public TouchUI touchUI;
     public bool hasBlink=true;
     public PolygonCollider2D polygonCollider;
 
-    [Obsolete]
-    private void Reset()
+    public void Reset()
     {
         GetTouchUI();
         GetBlinkEffect();
         SetPosition();
+        SetChildrenPosition();
     }
     public void GetTouchUI()
     {
         touchUI = GetComponentInChildren<TouchUI>();
     }
 
-    [Obsolete]
     public void GetBlinkEffect()
     {
-        blinkEffect = gameObject.transform.FindChild("SpineBlink");
+        blinkEffect = GetComponentInChildren<SkeletonGraphic>();
     }
     public void SetChildrenPosition()
     {
         polygonCollider = GetComponent<PolygonCollider2D>();
         Vector2 center = GetPolygonColliderCenter(polygonCollider);
         touchUI.GetComponent<RectTransform>().localPosition = center;
-        touchUI.Reset();
         blinkEffect.GetComponent<RectTransform>().localPosition = center;
+        touchUI.Reset();
     }
     Vector2 GetPolygonColliderCenter(PolygonCollider2D collider)
     {

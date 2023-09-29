@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IJsonColliderBuilder 
+public interface ISyncDataRetriever 
 {
-    void GetCollider();
+    void GetSyncText();
 }

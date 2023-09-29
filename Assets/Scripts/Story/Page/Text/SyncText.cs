@@ -13,7 +13,7 @@ public class SyncText :Texts, ISyncText
     [SerializeField] protected float timer;
     public int syncDataIndex = 0;
     public bool IsFinal { get => isFinal;}
-    public GetSyncDataFromJson getSyncDataFromJson;
+    public SyncDataRetriever getSyncDataFromJson;
     public List<SyncData> syncData;
     void Start()
     {
@@ -41,7 +41,7 @@ public class SyncText :Texts, ISyncText
     }
     public void LoadTimeText()
     {
-        getSyncDataFromJson = GetComponent<GetSyncDataFromJson>();
+        getSyncDataFromJson = GetComponent<SyncDataRetriever>();
     }
     public void GetContent()
     {

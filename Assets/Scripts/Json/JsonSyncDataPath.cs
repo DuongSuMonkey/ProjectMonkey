@@ -8,4 +8,5 @@ public class JsonSyncDataPath : MonoBehaviour
 {
     public string pathPage;
     public TextMeshProUGUI textPrefab;
+
 }

@@ -2,6 +2,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class GetSyncData : IGetSyncData
@@ -37,5 +38,20 @@ public class GetSyncData : IGetSyncData
 
             }
         }
+    }
+    public List<string> GetSyncDataPaths(string pathPage, string syncDataPath, List<string> filesPath)
+    {
+        string jsonContent = File.ReadAllText(pathPage);
+        JObject jsonObject = JObject.Parse(jsonContent);
+        JArray touchArray = (JArray)jsonObject["text"];
+        for (int i = 0; i < touchArray.Count; i++)
+        {
+            int items = (int)jsonObject["text"][i]["word_id"];
+            string folderPath = @"d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\";
+            string[] files = Directory.GetFiles(folderPath, items + ".json", SearchOption.AllDirectories);
+            syncDataPath = files[0];
+            filesPath.AddRange(files);
+        }
+        return filesPath;
     }
 }

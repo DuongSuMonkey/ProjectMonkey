@@ -6,14 +6,12 @@ using UnityEngine;
 
 public class SyncText :Texts, ISyncText
 {
-    [SerializeField] private PageController pageController;
     [SerializeField] private Color targetColor=Color.red;
-    [SerializeField] private bool isFinal=false;
+    [SerializeField] private bool isFinish=false;
     [SerializeField] protected float timeChange;
     [SerializeField] protected float timer;
     public int syncDataIndex = 0;
-    public bool IsFinal { get => isFinal;}
-    public SyncDataRetriever getSyncDataFromJson;
+    public bool IsFinish { get => isFinish;}
     public List<SyncData> syncData;
     void Start()
     {
@@ -28,54 +26,21 @@ public class SyncText :Texts, ISyncText
     public void LoadComponents()
     {
        LoadTexts();
-       LoadPageController();
-       LoadTimeText();
-       GetTime();
-       GetContent();
-    }
-    public void GetTime()
-    {
-        foreach (var data in getSyncDataFromJson.syncData) {
-            syncData.Add(data);
-        }
-    }
-    public void LoadTimeText()
-    {
-        getSyncDataFromJson = GetComponent<SyncDataRetriever>();
-    }
-    public void GetContent()
-    {
-        for(int i=0;i< getSyncDataFromJson.txtContents.Count;i++)
-        {
-            if (i > txtContents.Count - 1)
-            {
-                TextMeshProUGUI text = Instantiate(getSyncDataFromJson.textPrefab, this.transform);
-                text.rectTransform.localPosition = Vector3.zero;
-                text.rectTransform.localScale = Vector3.one;
-                txtContents.Add(text);
-            }
-            txtContents[i].text = getSyncDataFromJson.txtContents[i];
-        }
     }
     public override void LoadTexts()
     {
         TextMeshProUGUI[] texts = GetComponentsInChildren<TextMeshProUGUI>();
-        AddText(texts);
-    }
-    private void LoadPageController()
-    {
-        pageController = GetComponentInParent<PageController>();
+        txtContents.AddRange(texts);
     }
     private void Update()
     {
         ChangeTime();
         ChangeColor();
-
     }
     public void ChangeTextColorFinal()
     {
         txtContents[currentIndex - 1].color = Color.black;
-        isFinal = true;
+        isFinish = true;
     }
     public void ChangeTime()
     {
@@ -101,7 +66,7 @@ public class SyncText :Texts, ISyncText
             syncDataIndex++;
             timer = 0.0f;
         }
-        else if (currentIndex == txtContents.Count  && !isFinal)
+        else if (currentIndex == txtContents.Count  && !isFinish)
         {
             Invoke(nameof(ChangeTextColorFinal), syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000);
         }

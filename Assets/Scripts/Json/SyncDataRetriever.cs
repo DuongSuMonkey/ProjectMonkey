@@ -3,70 +3,88 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class SyncDataRetriever : MonoBehaviour, ISyncDataRetriever
 {
     [Header("Path")]
     [SerializeField] public string syncDataPath = "";
-    public List<string> filesPath;
-    public string pathPage;
+    [SerializeField] private List<string> filesPath;
+    [SerializeField] private string pathPage;
     [Header("Components")]
     [SerializeField] private JsonSyncDataPath jsonPath;
-    public PageController pageController;
+    [SerializeField] private IPageController pageController;
+    [SerializeField] private IGetSyncData getSyncData;
     [SerializeField] private SyncText syncText;
-    public List<string> txtContents;
-    public TextMeshProUGUI textPrefab;
-    public List<SyncData> syncData;
-    private IGetSyncData getSyncData;
+    [SerializeField] private List<string> txtContents;
+    [SerializeField] private TextMeshProUGUI textPrefab;
+    [SerializeField] private List<SyncData> syncData;
     private void Reset()
     {
+        LoadComponents();
+    }
+    public void LoadComponents()
+    {
+        GetPagePath();
+        getSyncData = new GetSyncData(syncDataPath, txtContents, syncData);
         GetSyncDataPath();
-        GetSyncText();
         GetPageController();
         SetSyncDataPath();
         GetTextPrefab();
-        getSyncData = new GetSyncData(syncDataPath, txtContents, syncData);
         GetSyncDatas();
+        GetSyncText();
+        SetDataSyncText();
     }
-    public void GetSyncDataPath()
+    public void GetPagePath()
     {
         jsonPath = GetComponent<JsonSyncDataPath>();
         pathPage = jsonPath.pathPage;
-        string jsonContent = File.ReadAllText(pathPage);
-        JObject jsonObject = JObject.Parse(jsonContent);
-        JArray touchArray = (JArray)jsonObject["text"];
-        for (int i = 0; i < touchArray.Count; i++)
-        {
-            int items = (int)jsonObject["text"][i]["word_id"];
-            string folderPath = @"d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\";
-            string[] files = Directory.GetFiles(folderPath, items + ".json", SearchOption.AllDirectories);
-            syncDataPath = files[0];
-            filesPath.AddRange(files);
-        }
-       
     }
     public void GetPageController()
     {
-        pageController = GetComponentInParent<PageController>();
-    }
-    public void SetSyncDataPath()
-    {
-        for (int i = 0; i < pageController.SyncText.Count; i++)
-        {
-            pageController.SyncText[i].GetComponent<SyncDataRetriever>().syncDataPath = filesPath[i];
-        }
-    }
-    public void GetTextPrefab()
-    {
-        textPrefab=jsonPath.textPrefab;
+        pageController = GetComponentInParent<IPageController>();
     }
     public void GetSyncText()
     {
         syncText = GetComponent<SyncText>();
     }
+    public void GetTextPrefab()
+    {
+        textPrefab = jsonPath.textPrefab;
+    }
+    public void GetSyncDataPath()
+    {
+        filesPath=getSyncData.GetSyncDataPaths(pathPage, syncDataPath, filesPath);
+    }
     public void GetSyncDatas()
     {
         getSyncData.GetSyncDatas(syncDataPath);
+    }
+    public void SetSyncDataPath()
+    {
+        for (int i = 0; i < pageController.getSyncTexts().Count; i++)
+        {
+            pageController.getSyncTexts()[i].GetComponent<SyncDataRetriever>().syncDataPath = filesPath[i];
+        }
+    }
+    public void SetDataSyncText()
+    {
+        for (int i = 0; i < txtContents.Count; i++)
+        {
+            if (i > syncText.txtContents.Count - 1)
+            {
+                TextMeshProUGUI text = Instantiate(textPrefab, this.transform);
+                text.rectTransform.localPosition = Vector3.zero;
+                text.rectTransform.localScale = Vector3.one;
+                syncText.txtContents.Add(text);
+            }
+            syncText.txtContents[i].text = txtContents[i];
+        }
+        foreach (var data in syncData)
+        {
+            syncText.syncData.Add(data);
+        }
+      
     }
 }

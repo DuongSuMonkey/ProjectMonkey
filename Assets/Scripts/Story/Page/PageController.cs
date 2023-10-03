@@ -25,7 +25,7 @@ public class PageController : MonoBehaviour, IPageController
     {
         for (int i = 0; i < syncTexts.Count; i++)
         {
-            if (i < syncTexts.Count - 1 && syncTexts[i].IsFinal)
+            if (i < syncTexts.Count - 1 && syncTexts[i].IsFinish)
             {
                 syncTexts[i].gameObject.SetActive(false);
                 syncTexts[++i].gameObject.SetActive(true);
@@ -64,9 +64,9 @@ public class PageController : MonoBehaviour, IPageController
             audioClip.Add(Clip);
         }
     }
-    public bool IsFinal()
+    public bool IsSyncFinish()
     {
-        return syncTexts[syncTexts.Count-1].IsFinal;
+        return syncTexts[syncTexts.Count-1].IsFinish;
     }
     public void HideAllSyncText()
     {
@@ -79,12 +79,9 @@ public class PageController : MonoBehaviour, IPageController
     {
         syncTexts[0].gameObject.SetActive(true);
     }
-    public void LoadTexts(List<TextMeshProUGUI>txtContents)
+
+    public List<SyncText> getSyncTexts()
     {
-        foreach (var syncText in SyncText)
-        {
-            TextMeshProUGUI[] texts = syncText.GetComponentsInChildren<TextMeshProUGUI>();
-            txtContents.AddRange(texts);
-        }
+        return syncTexts;
     }
 }

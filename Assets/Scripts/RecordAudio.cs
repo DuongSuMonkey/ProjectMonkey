@@ -4,15 +4,13 @@ using UnityEngine.UI;
 
 public class RecordAudio : MonoBehaviour
 {
-    public Button recordButton;
+    [SerializeField] private Button recordButton;
     [SerializeField] private bool isRecording = false;
     [SerializeField] private AudioClip recordedClip;
+    [SerializeField] private string fileName;
+    [SerializeField] private string filePath;
 
-    // Các biến để lưu đường dẫn lưu trữ file ghi âm
-    [SerializeField] private string filename = "recordedClip.wav";
-    [SerializeField] private string filepath;
-
-    const int FREQUENCY = 44100; // Tần số ghi âm - 44,100Hz là tần số chuẩn cho âm thanh CD
+    private const int FREQUENCY = 44100; // Tần số ghi âm - 44,100Hz là tần số chuẩn cho âm thanh CD
 
     void Start()
     {
@@ -26,15 +24,14 @@ public class RecordAudio : MonoBehaviour
         }
 
         recordButton.onClick.AddListener(StartStopRecording);
-        filepath = Application.persistentDataPath + "/" + filename;
-     //   filepath = "D:/ProjectMonkey/RecordAudio" + "/" + filename; // Đường dẫn lưu file ghi âm
     }
 
     void StartStopRecording()
     {
         if (!isRecording)
         {
-            recordedClip = Microphone.Start(null, false, 10, FREQUENCY); // Ghi âm trong vòng 10 giây
+            fileName = GenerateRandomString();
+            recordedClip = Microphone.Start(null, false,5, FREQUENCY); // Ghi âm trong vòng 10 giây
 
             // Khi bắt đầu ghi âm, thay đổi text của button thành "Stop Recording"
             recordButton.GetComponentInChildren<TextMeshProUGUI>().text = "Stop Recording";
@@ -45,11 +42,35 @@ public class RecordAudio : MonoBehaviour
 
             // Khi dừng ghi âm, thay đổi text của button thành "Start Recording"
             recordButton.GetComponentInChildren<TextMeshProUGUI>().text = "Start Recording";
-
+            filePath = Application.persistentDataPath + "/" + fileName;
             // Lưu file ghi âm
-            SavWav.SaveWav(filepath, recordedClip);
+            SavWav.SaveWav(filePath, recordedClip);
         }
 
         isRecording = !isRecording; // Đảo ngược trạng thái ghi âm
+    }
+    public  string GetRecordingTime()
+    {
+        // Lấy thời gian hiện tại của hệ thống
+        float recordingTime = Time.time;
+
+        // Chuyển thời gian thành định dạng chuỗi
+        string recordingTimeString = recordingTime.ToString("mm:ss");
+
+        return recordingTimeString;
+    }
+    public  string GenerateRandomString()
+    {
+        // Tạo một mảng các kí tự
+        char[] chars = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+        // Tạo một chuỗi kí tự ngẫu nhiên có độ dài từ 5 đến 10 kí tự
+        string randomString = "";
+        for (int i = 0; i < Random.Range(5, 10); i++)
+        {
+            randomString += chars[Random.Range(0,chars.Length)];
+        }
+
+        return randomString;
     }
 }

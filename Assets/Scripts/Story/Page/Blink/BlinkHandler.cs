@@ -29,7 +29,7 @@ public class BlinkHandler : IBlinkHandler
     }
     public void ShowFirstBlink(IPageController pageController)
     {
-        if (pageController.IsFinal() && canShowFirstBlink)
+        if (pageController.IsSyncFinish() && canShowFirstBlink)
         {
             GetFirstBlink();
         }

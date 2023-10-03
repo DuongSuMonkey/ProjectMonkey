@@ -49,7 +49,15 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
     }
     public override void LoadTexts()
     {
-        pageController.LoadTexts(txtContents);
+        List<TextMeshProUGUI> contents= new List<TextMeshProUGUI>();
+        foreach(var syncText in pageController.getSyncTexts())
+        {
+            contents.AddRange(syncText.txtContents);
+        }
+        foreach(var text in contents)
+        {
+            txtContents.Add(text);
+        }
     }
     public void AddEventTouch()
     {
@@ -59,13 +67,6 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
     {
         NotifyObservers(touchObject);
     }
-    //private void TouchSelection(TouchObject touchObject)
-    //{
-    //    int index = touchObjects.IndexOf(touchObject);
-    //    touchUIHandler.Select(touchObject,index);
-    //    blinkHandler.Select();
-    //    searchText.Search(touchObject);
-    //} 
     private void Update()
     {
         blinkHandler.ShowFirstBlink(pageController);

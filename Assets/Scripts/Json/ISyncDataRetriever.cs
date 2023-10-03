@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISyncDataRetriever 
 {
-    void GetSyncText();
+    void SetDataSyncText();
 }

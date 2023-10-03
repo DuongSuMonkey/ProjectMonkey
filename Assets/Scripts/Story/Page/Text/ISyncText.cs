@@ -7,6 +7,4 @@ public interface ISyncText
     void ChangeTextColorFinal();
     void ChangeTime();
     void ChangeColor();
-    void GetTime();
-    void GetContent();
 }

@@ -15221,13 +15221,11 @@ MonoBehaviour:
   - {fileID: 2063513076618188190}
   - {fileID: 5772884357132541218}
   currentIndex: 0
-  pageController: {fileID: 4845511440625247571}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 1656584953355427221}
   syncData:
   - timeStart: 0
     timeEnd: 1200
@@ -15374,7 +15372,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\1gi7enbqa2wkvwo6hlkvvxcmealqafph_234728\40000168.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_7.json
   jsonPath: {fileID: 5609608053365273286}
-  pageController: {fileID: 4845511440625247571}
   syncText: {fileID: 6902009658334687890}
   txtContents:
   - Finally,
@@ -26147,13 +26144,11 @@ MonoBehaviour:
   - {fileID: 9086310922227766045}
   - {fileID: 3652953177372205008}
   currentIndex: 0
-  pageController: {fileID: 5424406486430294214}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 4539543200922777850}
   syncData:
   - timeStart: 0
     timeEnd: 400
@@ -26300,7 +26295,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\nxhthuoqpaopxknqgmvtj7hizydssrdn_234728\40000166.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_9.json
   jsonPath: {fileID: 3677650835007321585}
-  pageController: {fileID: 5424406486430294214}
   syncText: {fileID: 2281362081108909195}
   txtContents:
   - The
@@ -34622,13 +34616,11 @@ MonoBehaviour:
   - {fileID: 1987080050560412561}
   - {fileID: 3805819355344416659}
   currentIndex: 0
-  pageController: {fileID: 136297365677520481}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 38708233293413745}
   syncData:
   - timeStart: 0
     timeEnd: 350
@@ -34772,7 +34764,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\yawq796itjukn4yq0m7gmcbpanjhckzy_234728\40000198.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_3.json
   jsonPath: {fileID: 7725613664450636730}
-  pageController: {fileID: 136297365677520481}
   syncText: {fileID: 7155654335332426133}
   txtContents:
   - I
@@ -37447,13 +37438,11 @@ MonoBehaviour:
   - {fileID: 8112125701201342871}
   - {fileID: 3863670002749856973}
   currentIndex: 0
-  pageController: {fileID: 1917771205624285110}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 8728309204408032725}
   syncData:
   - timeStart: 0
     timeEnd: 900
@@ -37606,7 +37595,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\sc0os6im92jsza0sop9zdvd5dav9d4ld_234728\40000193.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_1.json
   jsonPath: {fileID: 6113019272296275478}
-  pageController: {fileID: 1917771205624285110}
   syncText: {fileID: 3886538970507328745}
   txtContents:
   - Hey,
@@ -47528,13 +47516,11 @@ MonoBehaviour:
   - {fileID: 2163718310429700390}
   - {fileID: 2471795924185565671}
   currentIndex: 0
-  pageController: {fileID: 8909113905655726432}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 2136834318873640667}
   syncData:
   - timeStart: 0
     timeEnd: 570
@@ -47684,7 +47670,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\hso5db9knzilkcrfdj8qjkxsacnvn1pd_234728\40000173.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_8.json
   jsonPath: {fileID: 969762063306327428}
-  pageController: {fileID: 8909113905655726432}
   syncText: {fileID: 8163874144461763128}
   txtContents:
   - Now
@@ -57146,13 +57131,11 @@ MonoBehaviour:
   - {fileID: 7071436109053866776}
   - {fileID: 3172854875583668618}
   currentIndex: 0
-  pageController: {fileID: 647414502043068894}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 8720471522753951057}
   syncData:
   - timeStart: 0
     timeEnd: 350
@@ -57305,7 +57288,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ernub6nudkq7zllzcdvd1qbfnrv8gyum_234728\40000167.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_6.json
   jsonPath: {fileID: 4297262315806514522}
-  pageController: {fileID: 647414502043068894}
   syncText: {fileID: 4919764874923752648}
   txtContents:
   - Of
@@ -65605,13 +65587,11 @@ MonoBehaviour:
   - {fileID: 4687691292477960825}
   - {fileID: 1175131496016288988}
   currentIndex: 0
-  pageController: {fileID: 8418338560096091207}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 2142804720083119836}
   syncData:
   - timeStart: 0
     timeEnd: 520
@@ -65767,7 +65747,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\umedhwmucxlaarwo3wgenju6nlp5sasd_234728\40000180.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_10.json
   jsonPath: {fileID: 8767660244675680596}
-  pageController: {fileID: 8418338560096091207}
   syncText: {fileID: 3930063546848535756}
   txtContents:
   - It's
@@ -66609,7 +66588,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'you '
+  m_text: you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -67045,13 +67024,11 @@ MonoBehaviour:
   - {fileID: 4548453638974090219}
   - {fileID: 6833792812676426178}
   currentIndex: 0
-  pageController: {fileID: 5350399837182689758}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 4787949582222910198}
   syncData:
   - timeStart: 0
     timeEnd: 640
@@ -67196,7 +67173,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
   jsonPath: {fileID: 7366035102770369379}
-  pageController: {fileID: 5350399837182689758}
   syncText: {fileID: 3449349784803006640}
   txtContents:
   - Let's
@@ -68496,13 +68472,11 @@ MonoBehaviour:
   - {fileID: 2403423113329970685}
   - {fileID: 4310229297069816971}
   currentIndex: 0
-  pageController: {fileID: 3408915947721072668}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 583916257035642551}
   syncData:
   - timeStart: 0
     timeEnd: 370
@@ -68658,7 +68632,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\5vm0m9f8um2dmnzlnmuzi5ncwmehifwn_234728\40000182.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_4.json
   jsonPath: {fileID: 5696326186161549386}
-  pageController: {fileID: 3408915947721072668}
   syncText: {fileID: 8356776096888109482}
   txtContents:
   - I
@@ -69241,13 +69214,11 @@ MonoBehaviour:
   - {fileID: 3533856533826481862}
   - {fileID: 4571643811070904589}
   currentIndex: 0
-  pageController: {fileID: 5350399837182689758}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 349704200065262072}
   syncData:
   - timeStart: 0
     timeEnd: 790
@@ -69383,7 +69354,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
   jsonPath: {fileID: 5115805838142595190}
-  pageController: {fileID: 5350399837182689758}
   syncText: {fileID: 8065897013391446676}
   txtContents:
   - Sounds
@@ -75915,13 +75885,11 @@ MonoBehaviour:
   - {fileID: 4256066167578782406}
   - {fileID: 4916497190164210173}
   currentIndex: 0
-  pageController: {fileID: 4857213698472632087}
   targetColor: {r: 1, g: 0, b: 0, a: 1}
   isFinal: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
-  getSyncDataFromJson: {fileID: 5447132630142035773}
   syncData:
   - timeStart: 0
     timeEnd: 670
@@ -76068,7 +76036,6 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\kgvbaqleuqc3adbdceresl860rnqqtcs_234728\40000199.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_5.json
   jsonPath: {fileID: 5559433536070396460}
-  pageController: {fileID: 4857213698472632087}
   syncText: {fileID: 2173087967752037759}
   txtContents:
   - Don't

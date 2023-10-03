@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISyncText
+public interface ISyncTextColor 
 {
+    void TextColorSync(MonoBehaviour obj);
     void SyncFinalTextColor();
-    void TextColorSync();
 }

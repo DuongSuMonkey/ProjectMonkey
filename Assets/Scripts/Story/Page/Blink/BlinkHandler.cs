@@ -10,14 +10,16 @@ public class BlinkHandler : IBlinkHandler
     private bool canShowFirstBlink;
     private IHideBlinkEffect hideBlinkEffect;
     private IShowBlinkEffect showBlinkEffect;
-    public BlinkHandler(int currentIndex, List<TouchObject> touchObjects)
+    private IPageController pageController;
+    public BlinkHandler(int currentIndex, List<TouchObject> touchObjects, IPageController pageController)
     {
         this.currentIndex = currentIndex;
         this.touchObjects = touchObjects;
         canShowFirstBlink = true;
-        hideBlinkEffect=new HideBlinkEffect();
-        showBlinkEffect=new ShowBlinkEffect();
+        hideBlinkEffect = new HideBlinkEffect();
+        showBlinkEffect = new ShowBlinkEffect();
         HideAllBlinks(touchObjects);
+        this.pageController = pageController;
     }
     public void HideAllBlinks(List<TouchObject> touchObjects)
     {
@@ -51,8 +53,11 @@ public class BlinkHandler : IBlinkHandler
 
     public void Select()
     {
-        hideBlinkEffect.HideBlink(touchObjects[currentIndex]);
-        ShowBlinkNext();
+        if (pageController.IsSyncFinish())
+        {
+            hideBlinkEffect.HideBlink(touchObjects[currentIndex]);
+            ShowBlinkNext();
+        }
     }
     public void ShowBlinkNext()
     {

@@ -1,11 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
-public class DownloadAssetBundleFromServe :IDownloadAssetbundle
+public class DownloadAssetBundleFromServe :DownloadAssetbundle
 {
+    public Slider progressBar;
+    public TextMeshProUGUI txtProgress;
     void Start()
     {
         GetAsset();
@@ -19,8 +23,14 @@ public class DownloadAssetBundleFromServe :IDownloadAssetbundle
         string url = path;
         using (UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(url))
         {
-
-            yield return www.SendWebRequest();
+            www.SendWebRequest();
+            while (!www.isDone)
+            {
+                float progress = Mathf.Clamp01(www.downloadProgress / 0.9f);
+                txtProgress.text = progress.ToString("P0");
+                progressBar.value = progress;
+                yield return null;
+            }
             if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.LogWarning("Error" + url + "" + www.error);

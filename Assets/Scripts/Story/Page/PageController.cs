@@ -80,7 +80,7 @@ public class PageController : MonoBehaviour, IPageController
         syncTexts[0].gameObject.SetActive(true);
     }
 
-    public List<SyncText> getSyncTexts()
+    public List<SyncText> GetSyncTexts()
     {
         return syncTexts;
     }

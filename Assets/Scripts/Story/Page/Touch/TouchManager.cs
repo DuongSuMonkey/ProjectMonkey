@@ -22,10 +22,10 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
     private void Start()
     {
         pageController = GetComponentInParent<IPageController>();
-        searchText = new SearchText(txtContents, this, touchObjects);
-        touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects);
+        searchText = new SearchText(txtContents, this, touchObjects,pageController);
+        touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects,pageController);
         addEventTouch = new AddEventTouchObject();
-        blinkHandler = new BlinkHandler(currentIndex, touchObjects);
+        blinkHandler = new BlinkHandler(currentIndex, touchObjects,pageController);
         AddEventTouch();
         AddObserver(searchText);
         AddObserver(touchUIHandler);
@@ -50,7 +50,7 @@ public class TouchManager : Texts, ITouchManager, ITouchSubject
     public override void LoadTexts()
     {
         List<TextMeshProUGUI> contents= new List<TextMeshProUGUI>();
-        foreach(var syncText in pageController.getSyncTexts())
+        foreach(var syncText in pageController.GetSyncTexts())
         {
             contents.AddRange(syncText.txtContents);
         }

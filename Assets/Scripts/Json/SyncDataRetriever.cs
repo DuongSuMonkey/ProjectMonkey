@@ -63,9 +63,9 @@ public class SyncDataRetriever : MonoBehaviour, ISyncDataRetriever
     }
     public void SetSyncDataPath()
     {
-        for (int i = 0; i < pageController.getSyncTexts().Count; i++)
+        for (int i = 0; i < pageController.GetSyncTexts().Count; i++)
         {
-            pageController.getSyncTexts()[i].GetComponent<SyncDataRetriever>().syncDataPath = filesPath[i];
+            pageController.GetSyncTexts()[i].GetComponent<SyncDataRetriever>().syncDataPath = filesPath[i];
         }
     }
     public void SetDataSyncText()

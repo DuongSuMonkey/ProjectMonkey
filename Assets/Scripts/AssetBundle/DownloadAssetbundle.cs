@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public abstract class IDownloadAssetbundle:MonoBehaviour
+public abstract class DownloadAssetbundle:MonoBehaviour
 {
     [SerializeField] protected AssetBundle myAsset;
     [SerializeField] protected string path;
@@ -10,7 +11,6 @@ public abstract class IDownloadAssetbundle:MonoBehaviour
     [SerializeField] protected string singleAssetName;
     [SerializeField] protected List<string> multipleAssetNames = new List<string>();
     [SerializeField] protected Canvas canvas;
-
     public  abstract void GetAsset();
   
     public virtual void LoadSingleAsset()

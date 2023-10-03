@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadAssetbundlefromlocal : IDownloadAssetbundle
+public class LoadAssetbundlefromlocal : DownloadAssetbundle
 {
 
     void Start()

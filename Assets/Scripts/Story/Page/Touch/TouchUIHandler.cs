@@ -7,13 +7,16 @@ public class TouchUIHandler:ITouchUIHandler
     private int currentIndex;
     private List<TouchUI> existingTouches;
     private ISpawnerTouchUI SpawnerTouchUI;
-    public TouchUIHandler(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches, List<TouchObject> touchObjects)
+    private IPageController pageController;
+    public TouchUIHandler(List<TouchUI> touchesUI, int currentIndex, List<TouchUI> existingTouches,
+        List<TouchObject> touchObjects,IPageController pageController)
     {
         this.touchesUI = touchesUI;
         this.currentIndex = currentIndex;
         this.existingTouches = existingTouches;
         this.touchObjects = touchObjects;
         SpawnerTouchUI = new SpawnerTouchUI(existingTouches);
+        this.pageController = pageController;
         HideAllTouchesUI(touchesUI);
     }
     public void ShowTouchUICurrent()
@@ -27,14 +30,17 @@ public class TouchUIHandler:ITouchUIHandler
     }
     public void Select(TouchObject touchObject)
     {
-        touchObject.Select();
-        HideAllexistingTouchesUI();
-        if (touchObject.countClick > 1 || touchObject.touchUI != GetTouch())
+        if (pageController.IsSyncFinish())
         {
-            ProcessDoubleClick(touchObject);
-            return;
+            touchObject.Select();
+            HideAllexistingTouchesUI();
+            if (touchObject.countClick > 1 || touchObject.touchUI != GetTouch())
+            {
+                ProcessDoubleClick(touchObject);
+                return;
+            }
+            ShowTouchUICurrent();
         }
-        ShowTouchUICurrent();
     }
     public bool IsProcessingRemaining()
     {

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2681175428
+CRC: 1307508507
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5c8434d8ecb4b309e6bebbcdf58ded9c
+    Hash: 20e17e5c66b4987234c1ef7489409284
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e19b6a9c6d32fa4d36d51986cce31c10
+    Hash: 77d101941cc4282a8b1b820cd5c5442d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,8 +38,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 6d732631103f5b44dad54354a195125f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 08eecbf02c2212d4094cd1ad0160f8dd, type: 3}
@@ -51,6 +49,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2e8d1c88a82dd1a479fe2b377d909c7c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 053f4d9fc5dbd3047b0f2ea1f6794e86, type: 3}
 - Class: 114
@@ -133,6 +133,8 @@ Assets:
 - Assets/Resources/audios/frying pan.mp3
 - "Assets/Resources/audios/Let\u2019s Make a Salad Bowl!.mp3"
 - Assets/Resources/audios/The salad bowl looks so delicious!.mp3
+- Assets/Resources/png-clipart-microphone-computer-icons-dictation-machine-microphone-electronics-microphone
+  (1).png
 - Assets/Prefabs/MenuPanel.prefab
 - Assets/Resources/Images 1/MenuOptionBg.png
 - Assets/Resources/audios/spatula.mp3
@@ -144,10 +146,11 @@ Assets:
 - Assets/Resources/audios/cheese grater.mp3
 - Assets/Resources/Images 1/FlipBook_Normal.png
 - Assets/Resources/audios/Sounds great.mp3
+- Assets/Resources/png-clipart-greater-than-sign-less-than-sign-at-sign-and-symbol-angle-sign_preview_rev_1.png
 - Assets/Resources/audios/boiling water.mp3
-- Assets/Resources/audios/lettuce.mp3
 - Assets/Resources/Images 1/PauseImg.png
 - Assets/Resources/Images 1/Play.png
+- Assets/Resources/audios/lettuce.mp3
 - Assets/Resources/audios/sink.mp3
 - Assets/Resources/audios/knife.mp3
 - Assets/Resources/images/m7ONzmMXmQkaJ8mj3jrSdI1672904703799_trong.png
@@ -183,12 +186,13 @@ Assets:
 - Assets/Prefabs/Story1.prefab
 - Assets/Resources/Images 1/BlinkImg.png
 - Assets/Resources/Images 1/Background.png
-- Assets/Resources/audios/Don_t forget to add some cheese!.mp3
+- Assets/Resources/istockphoto-1193300702-612x612.png
 - Assets/Resources/audios/pork.mp3
 - Assets/Resources/audios/egg.mp3
 - Assets/Resources/images/ZWSAJtLuPueiEa9JpFPyqy1672904703749_trong.png
 - Assets/Resources/images/j2FtITkWXWvEA2eeiolqNH1672904703836_trong.png
 - Assets/Resources/Images 1/Share.png
 - Assets/Resources/audios/I will boil the eggs and fry the pork.mp3
+- Assets/Resources/audios/Don_t forget to add some cheese!.mp3
 Dependencies:
 - D:/ProjectMonkey/Assets/../AssetBundle/textmeshpro

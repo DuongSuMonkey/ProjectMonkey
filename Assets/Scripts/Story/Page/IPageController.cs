@@ -7,6 +7,6 @@ using UnityEngine;
 
 public interface IPageController 
 {
-    List<SyncText> getSyncTexts();
+    List<SyncText> GetSyncTexts();
     bool IsSyncFinish();
 }

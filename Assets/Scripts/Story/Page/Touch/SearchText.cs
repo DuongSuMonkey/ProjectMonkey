@@ -10,11 +10,13 @@ public class SearchText : ISearchText
     private MonoBehaviour obj;
     private List<TouchObject> touchesObject;
     private Coroutine originalTextColorCoroutine;
-    public SearchText(List<TextMeshProUGUI> txtContents, MonoBehaviour obj, List<TouchObject> touchesObject)
+    private IPageController pageController;
+    public SearchText(List<TextMeshProUGUI> txtContents, MonoBehaviour obj, List<TouchObject> touchesObject, IPageController pageController)
     {
-        this.txtContents=txtContents;
+        this.txtContents = txtContents;
         this.obj = obj;
         this.touchesObject = touchesObject;
+        this.pageController = pageController;
     }
     public void Search(TouchObject touchObject)
     {
@@ -68,6 +70,9 @@ public class SearchText : ISearchText
 
     public void OnTouchSelected(TouchObject touchObject)
     {
-        Search(touchObject);
+        if (pageController.IsSyncFinish())
+        {
+            Search(touchObject);
+        } 
     }
 }

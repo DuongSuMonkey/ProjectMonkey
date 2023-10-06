@@ -132,6 +132,7 @@ namespace BookCurlPro
                 paper .Front.gameObject.SetActive(false);
             }
             papers[currentPaper].Front.gameObject.SetActive(true);
+            papers[papers.Length - 1].Back.gameObject.SetActive(false);
         }
 
         /// <summary>
@@ -313,6 +314,7 @@ namespace BookCurlPro
 
             Right = papers[currentPaper - 1].Back.GetComponent<Image>();
             BookUtility.ShowPage(Right.gameObject);
+            Right.gameObject.SetActive(true);
             Right.transform.position = RightPageTransform.transform.position;
             Right.transform.localEulerAngles = new Vector3(0, 0, 0);
 
@@ -369,15 +371,27 @@ namespace BookCurlPro
                 {
                     papers[currentPaper].Front.gameObject.SetActive(true);
                     papers[currentPaper-1].Front.gameObject.SetActive(false);
+                    IPageController pageController = papers[currentPaper].Front.GetComponent<IPageController>();
+                    pageController.ReLoad();
                     papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().Reload();
-
+                }
+                else
+                {
+                    papers[currentPaper - 1].Front.gameObject.SetActive(false);
                 }
             }
             else
             {
-                papers[currentPaper].Front.gameObject.SetActive(false);
-                IPageController pageController = papers[currentPaper - 1].Front.GetComponent<IPageController>();
-                pageController.ReLoad();
+                if (currentPaper < papers.Length)
+                {
+                    papers[currentPaper].Front.gameObject.SetActive(false);
+                    IPageController pageController = papers[currentPaper - 1].Front.GetComponent<IPageController>();
+                    pageController.ReLoad();
+                }
+                else
+                {
+                    papers[currentPaper-1].Back.gameObject.SetActive(false);
+                }
             }
         }
         public void ReleasePage()

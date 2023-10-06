@@ -120,17 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &19968154 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4777034426127066693, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-  m_PrefabInstance: {fileID: 8601062522029739383}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a2fe08884d4e94ba00da342e968b4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &38542586
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,17 +922,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493255491}
   m_CullTransparentMesh: 1
---- !u!114 &622737992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5291793358050426085, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-  m_PrefabInstance: {fileID: 8601062522029739383}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a2fe08884d4e94ba00da342e968b4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &706743147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,17 +2595,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1619218623171688420, guid: 0aa511007f1db47408571cf59f11c26d, type: 3}
   m_PrefabInstance: {fileID: 60368183}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1731335492 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5504387184144217838, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-  m_PrefabInstance: {fileID: 8601062522029739383}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1837274070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,17 +2909,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9081540373118750818, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
   m_PrefabInstance: {fileID: 263438138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2054950099 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1844419083152291263, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-  m_PrefabInstance: {fileID: 8601062522029739383}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &81973853355291962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3359,30 +3315,6 @@ PrefabInstance:
     - target: {fileID: 1310470036641212169, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4450395861031092190, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-      propertyPath: txtContents.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4450395861031092190, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-      propertyPath: 'touchesUI.Array.data[0]'
-      value: 
-      objectReference: {fileID: 19968154}
-    - target: {fileID: 4450395861031092190, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-      propertyPath: 'touchesUI.Array.data[1]'
-      value: 
-      objectReference: {fileID: 622737992}
-    - target: {fileID: 4450395861031092190, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-      propertyPath: 'touchObjects.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2054950099}
-    - target: {fileID: 4450395861031092190, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-      propertyPath: 'touchObjects.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1731335492}
-    - target: {fileID: 6645381947985184570, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -16,8 +16,7 @@ public class SyncDataRetriever : MonoBehaviour, ISyncDataRetriever
     [SerializeField] private JsonSyncDataPath jsonPath;
     [SerializeField] private IPageController pageController;
     [SerializeField] private IGetSyncData getSyncData;
-    [SerializeField] private SyncText syncText;
-    [SerializeField] private List<string> txtContents;
+    [SerializeField] private SyncTextController syncTextController;
     [SerializeField] private TextMeshProUGUI textPrefab;
     [SerializeField] private List<SyncData> syncData;
     private void Reset()
@@ -27,7 +26,7 @@ public class SyncDataRetriever : MonoBehaviour, ISyncDataRetriever
     public void LoadComponents()
     {
         GetPagePath();
-        getSyncData = new GetSyncData(syncDataPath, txtContents, syncData);
+        getSyncData = new GetSyncData(syncDataPath, syncData);
         GetSyncDataPath();
         GetPageController();
         SetSyncDataPath();
@@ -47,7 +46,7 @@ public class SyncDataRetriever : MonoBehaviour, ISyncDataRetriever
     }
     public void GetSyncText()
     {
-        syncText = GetComponent<SyncText>();
+        syncTextController = GetComponent<SyncTextController>();
     }
     public void GetTextPrefab()
     {
@@ -70,21 +69,25 @@ public class SyncDataRetriever : MonoBehaviour, ISyncDataRetriever
     }
     public void SetDataSyncText()
     {
-        for (int i = 0; i < txtContents.Count; i++)
+        for (int i = 0; i < syncData.Count; i++)
         {
-            if (i > syncText.txtContents.Count - 1)
+            if (i > syncTextController.txtContents.Count - 1)
             {
                 TextMeshProUGUI text = Instantiate(textPrefab, this.transform);
                 text.rectTransform.localPosition = Vector3.zero;
                 text.rectTransform.localScale = Vector3.one;
-                syncText.txtContents.Add(text);
+                syncTextController.txtContents.Add(text);
             }
-            syncText.txtContents[i].text = txtContents[i];
+            syncTextController.txtContents[i].text = syncData[i].word;
         }
-        foreach (var data in syncData)
+        for (int i = 0; i < syncData.Count; i++)
         {
-            syncText.syncData.Add(data);
+            if (i > syncTextController.syncData.Count - 1)
+            {
+                syncTextController.syncData.Add(syncData[i]);
+            }
+            syncTextController.syncData[i] = syncData[i];
         }
-      
+
     }
 }

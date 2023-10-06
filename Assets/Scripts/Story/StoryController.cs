@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class StoryController : MonoBehaviour
     [SerializeField] private List<PageController> pages;
     [SerializeField] private int currentIndex=0;
     public bool isStart=true;
+    [SerializeField] private Vector3 mousePosition;
     private void Start()
     {
         if (isStart)
@@ -32,12 +33,4 @@ public class StoryController : MonoBehaviour
         PageController[] page = GetComponentsInChildren<PageController>();
         pages.AddRange(page);
     }
-    public void NextPage()
-    {
-        pages[currentIndex].gameObject.SetActive(false);
-        currentIndex++;
-        pages[currentIndex].gameObject.SetActive(true);
-
-    }
-    
 }

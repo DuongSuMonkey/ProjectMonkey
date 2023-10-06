@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +11,7 @@ public class RecordAudio : MonoBehaviour
     [SerializeField] private AudioClip recordedClip;
     [SerializeField] private string fileName;
     [SerializeField] private string filePath;
-
+    [SerializeField] private Button playButton;
     private const int FREQUENCY = 44100; // Tần số ghi âm - 44,100Hz là tần số chuẩn cho âm thanh CD
 
     void Start()
@@ -24,6 +26,8 @@ public class RecordAudio : MonoBehaviour
         }
 
         recordButton.onClick.AddListener(StartStopRecording);
+        playButton.onClick.AddListener(PlayRecordedAudio);
+        playButton.gameObject.SetActive(false);
     }
 
     void StartStopRecording()
@@ -45,6 +49,7 @@ public class RecordAudio : MonoBehaviour
             filePath = Application.persistentDataPath + "/" + fileName;
             // Lưu file ghi âm
             SavWav.SaveWav(filePath, recordedClip);
+            playButton.gameObject.SetActive(true);
         }
 
         isRecording = !isRecording; // Đảo ngược trạng thái ghi âm
@@ -73,4 +78,15 @@ public class RecordAudio : MonoBehaviour
 
         return randomString;
     }
+    void PlayRecordedAudio()
+    {
+        PlayAudio();
+    }
+
+    public void PlayAudio()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(recordedClip);
+    }
+
 }

@@ -5379,7 +5379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 7155654335332426133}
-  touchControllers: {fileID: 2531388751207171988}
+  touchManager: {fileID: 2531388751207171988}
   audioSource:
   - {fileID: 4703834608721527095}
   audioClip:
@@ -5774,7 +5774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 8163874144461763128}
-  touchControllers: {fileID: 423364424244895088}
+  touchManager: {fileID: 423364424244895088}
   audioSource:
   - {fileID: 7725342450351184769}
   audioClip:
@@ -10273,6 +10273,7 @@ MonoBehaviour:
   - {fileID: 8418338560096091207}
   currentIndex: 0
   isStart: 0
+  mousePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1273526844015652282
 GameObject:
   m_ObjectHideFlags: 0
@@ -14441,7 +14442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 3886538970507328745}
-  touchControllers: {fileID: 3347739770739631764}
+  touchManager: {fileID: 3347739770739631764}
   audioSource:
   - {fileID: 7855862691646645833}
   audioClip:
@@ -15222,23 +15223,29 @@ MonoBehaviour:
   - {fileID: 5772884357132541218}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 1200
+    word: Finally,
   - timeStart: 1200
     timeEnd: 1490
+    word: I
   - timeStart: 1490
     timeEnd: 1700
+    word: will
   - timeStart: 1700
     timeEnd: 2100
+    word: add
   - timeStart: 2100
     timeEnd: 2260
+    word: the
   - timeStart: 2260
     timeEnd: 3580
+    word: dressing.
 --- !u!82 &3240998985592264681
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15372,28 +15379,27 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\1gi7enbqa2wkvwo6hlkvvxcmealqafph_234728\40000168.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_7.json
   jsonPath: {fileID: 5609608053365273286}
-  syncText: {fileID: 6902009658334687890}
-  txtContents:
-  - Finally,
-  - I
-  - will
-  - add
-  - the
-  - dressing.
+  syncTextController: {fileID: 6902009658334687890}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 1200
+    word: Finally,
   - timeStart: 1200
     timeEnd: 1490
+    word: I
   - timeStart: 1490
     timeEnd: 1700
+    word: will
   - timeStart: 1700
     timeEnd: 2100
+    word: add
   - timeStart: 2100
     timeEnd: 2260
+    word: the
   - timeStart: 2260
     timeEnd: 3580
+    word: dressing.
 --- !u!114 &5609608053365273286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20074,7 +20080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 6902009658334687890}
-  touchControllers: {fileID: 164399336689525655}
+  touchManager: {fileID: 164399336689525655}
   audioSource:
   - {fileID: 3240998985592264681}
   audioClip:
@@ -26145,23 +26151,29 @@ MonoBehaviour:
   - {fileID: 3652953177372205008}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 400
+    word: The
   - timeStart: 400
     timeEnd: 1080
+    word: salad
   - timeStart: 1080
     timeEnd: 1300
+    word: bowl
   - timeStart: 1300
     timeEnd: 1670
+    word: looks
   - timeStart: 1670
     timeEnd: 2220
+    word: so
   - timeStart: 2220
     timeEnd: 3400
+    word: delicious!
 --- !u!82 &5180124113859515347
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26295,28 +26307,27 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\nxhthuoqpaopxknqgmvtj7hizydssrdn_234728\40000166.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_9.json
   jsonPath: {fileID: 3677650835007321585}
-  syncText: {fileID: 2281362081108909195}
-  txtContents:
-  - The
-  - salad
-  - bowl
-  - looks
-  - so
-  - delicious!
+  syncTextController: {fileID: 2281362081108909195}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 400
+    word: The
   - timeStart: 400
     timeEnd: 1080
+    word: salad
   - timeStart: 1080
     timeEnd: 1300
+    word: bowl
   - timeStart: 1300
     timeEnd: 1670
+    word: looks
   - timeStart: 1670
     timeEnd: 2220
+    word: so
   - timeStart: 2220
     timeEnd: 3400
+    word: delicious!
 --- !u!114 &3677650835007321585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34617,21 +34628,26 @@ MonoBehaviour:
   - {fileID: 3805819355344416659}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 350
+    word: I
   - timeStart: 350
     timeEnd: 580
+    word: will
   - timeStart: 580
     timeEnd: 980
+    word: shred
   - timeStart: 980
     timeEnd: 1370
+    word: some
   - timeStart: 1370
     timeEnd: 2330
+    word: lettuce.
 --- !u!82 &4703834608721527095
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34764,25 +34780,24 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\yawq796itjukn4yq0m7gmcbpanjhckzy_234728\40000198.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_3.json
   jsonPath: {fileID: 7725613664450636730}
-  syncText: {fileID: 7155654335332426133}
-  txtContents:
-  - I
-  - will
-  - shred
-  - some
-  - lettuce.
+  syncTextController: {fileID: 7155654335332426133}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 350
+    word: I
   - timeStart: 350
     timeEnd: 580
+    word: will
   - timeStart: 580
     timeEnd: 980
+    word: shred
   - timeStart: 980
     timeEnd: 1370
+    word: some
   - timeStart: 1370
     timeEnd: 2330
+    word: lettuce.
 --- !u!114 &7725613664450636730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36078,7 +36093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 2173087967752037759}
-  touchControllers: {fileID: 572024422331961117}
+  touchManager: {fileID: 572024422331961117}
   audioSource:
   - {fileID: 5632844463078144299}
   audioClip:
@@ -37439,27 +37454,35 @@ MonoBehaviour:
   - {fileID: 3863670002749856973}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 900
+    word: Hey,
   - timeStart: 900
     timeEnd: 1090
+    word: do
   - timeStart: 1090
     timeEnd: 1300
+    word: you
   - timeStart: 1300
     timeEnd: 1660
+    word: want
   - timeStart: 1660
     timeEnd: 1850
+    word: to
   - timeStart: 1850
     timeEnd: 2100
+    word: eat
   - timeStart: 2100
     timeEnd: 2450
+    word: some
   - timeStart: 2450
     timeEnd: 3530
+    word: salads?
 --- !u!82 &7855862691646645833
 AudioSource:
   m_ObjectHideFlags: 0
@@ -37595,34 +37618,33 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\sc0os6im92jsza0sop9zdvd5dav9d4ld_234728\40000193.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_1.json
   jsonPath: {fileID: 6113019272296275478}
-  syncText: {fileID: 3886538970507328745}
-  txtContents:
-  - Hey,
-  - do
-  - you
-  - want
-  - to
-  - eat
-  - some
-  - salads?
+  syncTextController: {fileID: 3886538970507328745}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 900
+    word: Hey,
   - timeStart: 900
     timeEnd: 1090
+    word: do
   - timeStart: 1090
     timeEnd: 1300
+    word: you
   - timeStart: 1300
     timeEnd: 1660
+    word: want
   - timeStart: 1660
     timeEnd: 1850
+    word: to
   - timeStart: 1850
     timeEnd: 2100
+    word: eat
   - timeStart: 2100
     timeEnd: 2450
+    word: some
   - timeStart: 2450
     timeEnd: 3530
+    word: salads?
 --- !u!114 &6113019272296275478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42567,7 +42589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 3930063546848535756}
-  touchControllers: {fileID: 5538343013396300177}
+  touchManager: {fileID: 5538343013396300177}
   audioSource:
   - {fileID: 664376817145814926}
   audioClip:
@@ -47517,25 +47539,32 @@ MonoBehaviour:
   - {fileID: 2471795924185565671}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 570
+    word: Now
   - timeStart: 570
     timeEnd: 730
+    word: we
   - timeStart: 730
     timeEnd: 1010
+    word: need
   - timeStart: 1010
     timeEnd: 1260
+    word: to
   - timeStart: 1260
     timeEnd: 1680
+    word: mix
   - timeStart: 1680
     timeEnd: 1920
+    word: them
   - timeStart: 1920
     timeEnd: 2770
+    word: together.
 --- !u!82 &7725342450351184769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -47670,31 +47699,30 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\hso5db9knzilkcrfdj8qjkxsacnvn1pd_234728\40000173.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_8.json
   jsonPath: {fileID: 969762063306327428}
-  syncText: {fileID: 8163874144461763128}
-  txtContents:
-  - Now
-  - we
-  - need
-  - to
-  - mix
-  - them
-  - together.
+  syncTextController: {fileID: 8163874144461763128}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 570
+    word: Now
   - timeStart: 570
     timeEnd: 730
+    word: we
   - timeStart: 730
     timeEnd: 1010
+    word: need
   - timeStart: 1010
     timeEnd: 1260
+    word: to
   - timeStart: 1260
     timeEnd: 1680
+    word: mix
   - timeStart: 1680
     timeEnd: 1920
+    word: them
   - timeStart: 1920
     timeEnd: 2770
+    word: together.
 --- !u!114 &969762063306327428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54873,7 +54901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 2281362081108909195}
-  touchControllers: {fileID: 1378373142603394907}
+  touchManager: {fileID: 1378373142603394907}
   audioSource:
   - {fileID: 5180124113859515347}
   audioClip:
@@ -55408,7 +55436,7 @@ MonoBehaviour:
   syncTexts:
   - {fileID: 3449349784803006640}
   - {fileID: 8065897013391446676}
-  touchControllers: {fileID: 3214054389961539509}
+  touchManager: {fileID: 3214054389961539509}
   audioSource:
   - {fileID: 7427763449194681953}
   - {fileID: 8376745162898878160}
@@ -57132,27 +57160,35 @@ MonoBehaviour:
   - {fileID: 3172854875583668618}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 350
+    word: Of
   - timeStart: 350
     timeEnd: 820
+    word: course
   - timeStart: 820
     timeEnd: 1040
+    word: we
   - timeStart: 1040
     timeEnd: 1220
+    word: need
   - timeStart: 1220
     timeEnd: 1610
+    word: some
   - timeStart: 1610
     timeEnd: 1880
+    word: fruits
   - timeStart: 1880
     timeEnd: 2160
+    word: and
   - timeStart: 2160
     timeEnd: 3280
+    word: vegetables.
 --- !u!82 &537379392684297191
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57288,34 +57324,33 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ernub6nudkq7zllzcdvd1qbfnrv8gyum_234728\40000167.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_6.json
   jsonPath: {fileID: 4297262315806514522}
-  syncText: {fileID: 4919764874923752648}
-  txtContents:
-  - Of
-  - course
-  - we
-  - need
-  - some
-  - fruits
-  - and
-  - vegetables.
+  syncTextController: {fileID: 4919764874923752648}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 350
+    word: Of
   - timeStart: 350
     timeEnd: 820
+    word: course
   - timeStart: 820
     timeEnd: 1040
+    word: we
   - timeStart: 1040
     timeEnd: 1220
+    word: need
   - timeStart: 1220
     timeEnd: 1610
+    word: some
   - timeStart: 1610
     timeEnd: 1880
+    word: fruits
   - timeStart: 1880
     timeEnd: 2160
+    word: and
   - timeStart: 2160
     timeEnd: 3280
+    word: vegetables.
 --- !u!114 &4297262315806514522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65588,29 +65623,38 @@ MonoBehaviour:
   - {fileID: 1175131496016288988}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 520
+    word: It's
   - timeStart: 520
     timeEnd: 800
+    word: fun
   - timeStart: 800
     timeEnd: 1010
+    word: to
   - timeStart: 1010
     timeEnd: 1230
+    word: make
   - timeStart: 1230
     timeEnd: 1900
+    word: something
   - timeStart: 1900
     timeEnd: 2910
+    word: together.
   - timeStart: 2910
     timeEnd: 3330
+    word: Now
   - timeStart: 3330
     timeEnd: 3660
+    word: let's
   - timeStart: 3660
     timeEnd: 4500
+    word: enjoy!
 --- !u!82 &664376817145814926
 AudioSource:
   m_ObjectHideFlags: 0
@@ -65747,37 +65791,36 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\umedhwmucxlaarwo3wgenju6nlp5sasd_234728\40000180.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_10.json
   jsonPath: {fileID: 8767660244675680596}
-  syncText: {fileID: 3930063546848535756}
-  txtContents:
-  - It's
-  - fun
-  - to
-  - make
-  - something
-  - together.
-  - Now
-  - let's
-  - enjoy!
+  syncTextController: {fileID: 3930063546848535756}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 520
+    word: It's
   - timeStart: 520
     timeEnd: 800
+    word: fun
   - timeStart: 800
     timeEnd: 1010
+    word: to
   - timeStart: 1010
     timeEnd: 1230
+    word: make
   - timeStart: 1230
     timeEnd: 1900
+    word: something
   - timeStart: 1900
     timeEnd: 2910
+    word: together.
   - timeStart: 2910
     timeEnd: 3330
+    word: Now
   - timeStart: 3330
     timeEnd: 3660
+    word: let's
   - timeStart: 3660
     timeEnd: 4500
+    word: enjoy!
 --- !u!114 &8767660244675680596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67025,21 +67068,26 @@ MonoBehaviour:
   - {fileID: 6833792812676426178}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 640
+    word: Let's
   - timeStart: 640
     timeEnd: 930
+    word: make
   - timeStart: 930
     timeEnd: 1060
+    word: a
   - timeStart: 1060
     timeEnd: 1780
+    word: salad
   - timeStart: 1780
     timeEnd: 2300
+    word: bowl!
 --- !u!82 &7427763449194681953
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67173,25 +67221,24 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
   jsonPath: {fileID: 7366035102770369379}
-  syncText: {fileID: 3449349784803006640}
-  txtContents:
-  - Let's
-  - make
-  - a
-  - salad
-  - bowl!
+  syncTextController: {fileID: 3449349784803006640}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 640
+    word: Let's
   - timeStart: 640
     timeEnd: 930
+    word: make
   - timeStart: 930
     timeEnd: 1060
+    word: a
   - timeStart: 1060
     timeEnd: 1780
+    word: salad
   - timeStart: 1780
     timeEnd: 2300
+    word: bowl!
 --- !u!114 &7366035102770369379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67764,7 +67811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 4919764874923752648}
-  touchControllers: {fileID: 8208789560325940970}
+  touchManager: {fileID: 8208789560325940970}
   audioSource:
   - {fileID: 537379392684297191}
   audioClip:
@@ -68473,29 +68520,38 @@ MonoBehaviour:
   - {fileID: 4310229297069816971}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 370
+    word: I
   - timeStart: 370
     timeEnd: 660
+    word: will
   - timeStart: 660
     timeEnd: 1150
+    word: boil
   - timeStart: 1150
     timeEnd: 1330
+    word: the
   - timeStart: 1330
     timeEnd: 2010
+    word: eggs
   - timeStart: 2010
     timeEnd: 2390
+    word: and
   - timeStart: 2390
     timeEnd: 2770
+    word: fry
   - timeStart: 2770
     timeEnd: 2980
+    word: the
   - timeStart: 2980
     timeEnd: 3640
+    word: pork.
 --- !u!82 &7329872325715689800
 AudioSource:
   m_ObjectHideFlags: 0
@@ -68632,37 +68688,36 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\5vm0m9f8um2dmnzlnmuzi5ncwmehifwn_234728\40000182.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_4.json
   jsonPath: {fileID: 5696326186161549386}
-  syncText: {fileID: 8356776096888109482}
-  txtContents:
-  - I
-  - will
-  - boil
-  - the
-  - eggs
-  - and
-  - fry
-  - the
-  - pork.
+  syncTextController: {fileID: 8356776096888109482}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 370
+    word: I
   - timeStart: 370
     timeEnd: 660
+    word: will
   - timeStart: 660
     timeEnd: 1150
+    word: boil
   - timeStart: 1150
     timeEnd: 1330
+    word: the
   - timeStart: 1330
     timeEnd: 2010
+    word: eggs
   - timeStart: 2010
     timeEnd: 2390
+    word: and
   - timeStart: 2390
     timeEnd: 2770
+    word: fry
   - timeStart: 2770
     timeEnd: 2980
+    word: the
   - timeStart: 2980
     timeEnd: 3640
+    word: pork.
 --- !u!114 &5696326186161549386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68954,7 +69009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncTexts:
   - {fileID: 8356776096888109482}
-  touchControllers: {fileID: 3890107951001954559}
+  touchManager: {fileID: 3890107951001954559}
   audioSource:
   - {fileID: 7329872325715689800}
   audioClip:
@@ -69215,15 +69270,17 @@ MonoBehaviour:
   - {fileID: 4571643811070904589}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 790
+    word: Sounds
   - timeStart: 790
     timeEnd: 1690
+    word: great!
 --- !u!82 &8376745162898878160
 AudioSource:
   m_ObjectHideFlags: 0
@@ -69354,16 +69411,15 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\ma21idnlkobflrerogsiu1hqjxevmnx1_234728\40000175.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_2.json
   jsonPath: {fileID: 5115805838142595190}
-  syncText: {fileID: 8065897013391446676}
-  txtContents:
-  - Sounds
-  - great!
+  syncTextController: {fileID: 8065897013391446676}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 790
+    word: Sounds
   - timeStart: 790
     timeEnd: 1690
+    word: great!
 --- !u!114 &5115805838142595190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75886,23 +75942,29 @@ MonoBehaviour:
   - {fileID: 4916497190164210173}
   currentIndex: 0
   targetColor: {r: 1, g: 0, b: 0, a: 1}
-  isFinal: 0
+  isFinish: 0
   timeChange: 0
   timer: 0
   syncDataIndex: 0
   syncData:
   - timeStart: 0
     timeEnd: 670
+    word: Don't
   - timeStart: 670
     timeEnd: 1270
+    word: forget
   - timeStart: 1270
     timeEnd: 1510
+    word: to
   - timeStart: 1510
     timeEnd: 1840
+    word: add
   - timeStart: 1840
     timeEnd: 2200
+    word: some
   - timeStart: 2200
     timeEnd: 3110
+    word: cheese!
 --- !u!82 &5632844463078144299
 AudioSource:
   m_ObjectHideFlags: 0
@@ -76036,28 +76098,27 @@ MonoBehaviour:
   - d:\4057_1_4307_1688701526\4057_1_4307_1688701526\word\kgvbaqleuqc3adbdceresl860rnqqtcs_234728\40000199.json
   pathPage: D:\\4057_1_4307_1688701526\\4057_1_4307_1688701526\\4131_page_5.json
   jsonPath: {fileID: 5559433536070396460}
-  syncText: {fileID: 2173087967752037759}
-  txtContents:
-  - Don't
-  - forget
-  - to
-  - add
-  - some
-  - cheese!
+  syncTextController: {fileID: 2173087967752037759}
   textPrefab: {fileID: 2850367001406878069, guid: 7282896d9efb1c74087988031f2f23d9, type: 3}
   syncData:
   - timeStart: 0
     timeEnd: 670
+    word: Don't
   - timeStart: 670
     timeEnd: 1270
+    word: forget
   - timeStart: 1270
     timeEnd: 1510
+    word: to
   - timeStart: 1510
     timeEnd: 1840
+    word: add
   - timeStart: 1840
     timeEnd: 2200
+    word: some
   - timeStart: 2200
     timeEnd: 3110
+    word: cheese!
 --- !u!114 &5559433536070396460
 MonoBehaviour:
   m_ObjectHideFlags: 0

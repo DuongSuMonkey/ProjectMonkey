@@ -8,12 +8,10 @@ using UnityEngine;
 public class GetSyncData : IGetSyncData
 {
     private string path;
-    private List<string> txtContents;
     private List<SyncData> syncData;
-    public GetSyncData(string path, List<string> txtContents, List<SyncData> syncData)
+    public GetSyncData(string path, List<SyncData> syncData)
     {
         this.path = path;
-        this.txtContents = txtContents;
         this.syncData = syncData;
     }
 
@@ -30,10 +28,10 @@ public class GetSyncData : IGetSyncData
                 float e = float.Parse(datas[j]["e"].ToString());
                 float s = float.Parse(datas[j]["s"].ToString());
                 string text = datas[j]["w"].ToString();
-                txtContents.Add(text);
                 SyncData newSyncData = new SyncData();
                 newSyncData.timeStart = s;
                 newSyncData.timeEnd = e;
+                newSyncData.word=text;
                 syncData.Add(newSyncData);
 
             }

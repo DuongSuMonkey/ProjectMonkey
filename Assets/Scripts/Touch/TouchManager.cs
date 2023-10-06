@@ -51,15 +51,7 @@ public class TouchManager : MonoBehaviour, ITouchManager, ITouchSubject
     }
     public  void LoadTexts()
     {
-        List<TextMeshProUGUI> contents= new List<TextMeshProUGUI>();
-        foreach(var syncText in pageController.GetSyncTexts())
-        {
-            contents.AddRange(syncText.txtContents);
-        }
-        foreach(var text in contents)
-        {
-            txtContents.Add(text);
-        }
+        pageController.LoadTexts(txtContents);
     }
     public void AddEventTouch()
     {

@@ -3,9 +3,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 using System;
-using Unity.VisualScripting;
-using System.Linq;
-
 namespace BookCurlPro
 {
     public enum FlipMode
@@ -93,7 +90,7 @@ namespace BookCurlPro
         /// <summary>
         /// should be true when the page tween forward or backward after release
         /// </summary>
-       [SerializeField]private bool tweening = false;
+        bool tweening = false;
 
         // Use this for initialization
         void Start()
@@ -113,7 +110,7 @@ namespace BookCurlPro
             float pageHeight = BookPanel.rect.height;
 
 
-            ClippingPlane.rectTransform.sizeDelta = new Vector2(pageWidth * 4 + pageHeight, pageHeight + pageHeight * 2);
+            ClippingPlane.rectTransform.sizeDelta = new Vector2(pageWidth * 2 + pageHeight, pageHeight + pageHeight * 2);
 
             //hypotenous (diagonal) page length
             float hyp = Mathf.Sqrt(pageWidth * pageWidth + pageHeight * pageHeight);
@@ -130,13 +127,11 @@ namespace BookCurlPro
 
             LeftPageShadow.rectTransform.sizeDelta = new Vector2(pageWidth, shadowPageHeight);
             LeftPageShadow.rectTransform.pivot = new Vector2(1, (pageWidth / 2) / shadowPageHeight);
-            foreach(var page in papers)
+            foreach(var paper in papers)
             {
-                page.Front.gameObject.SetActive(false);
+                paper .Front.gameObject.SetActive(false);
             }
-            papers[0].Front.gameObject.SetActive(true);
-            papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().PlayOneShot(
-     papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().clip);
+            papers[currentPaper].Front.gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -296,10 +291,6 @@ namespace BookCurlPro
 
                 DragRightPageToPoint(transformPointMousePosition(Input.mousePosition));
             }
-            else
-            {
-
-            }
 
         }
         public void DragRightPageToPoint(Vector3 point)
@@ -313,27 +304,21 @@ namespace BookCurlPro
             currentPaper += 1;
 
             UpdatePages();
-            
-            Right = papers[currentPaper - 1].Back.GetComponent<Image>();
-            BookUtility.ShowPage(Right.gameObject);
-            Right.transform.position = RightPageTransform.transform.position;
-            Right.transform.localEulerAngles = new Vector3(0, 0, 0);
-            if (currentPaper == papers.Length)
-            {
-               // Right.gameObject.SetActive(true);
-                return;
-            }
-            papers[currentPaper-1].Front.GetComponent<Image>().gameObject.SetActive(false);
-            Left = papers[currentPaper].Front.GetComponent<Image>();
+
+            Left = papers[currentPaper - 1].Front.GetComponent<Image>();
             BookUtility.ShowPage(Left.gameObject);
-            Left.gameObject.SetActive(true); 
             Left.rectTransform.pivot = new Vector2(0, 0);
             Left.transform.position = RightPageTransform.transform.position;
             Left.transform.localEulerAngles = new Vector3(0, 0, 0);
 
+            Right = papers[currentPaper - 1].Back.GetComponent<Image>();
+            BookUtility.ShowPage(Right.gameObject);
+            Right.transform.position = RightPageTransform.transform.position;
+            Right.transform.localEulerAngles = new Vector3(0, 0, 0);
 
             if (enableShadowEffect) Shadow.gameObject.SetActive(true);
             ClippingPlane.gameObject.SetActive(true);
+
             UpdateBookRTLToPoint(f);
         }
         public void OnMouseDragLeftPage()
@@ -351,6 +336,7 @@ namespace BookCurlPro
             pageDragging = true;
             mode = FlipMode.LeftToRight;
             f = point;
+
             UpdatePages();
 
             ClippingPlane.rectTransform.pivot = new Vector2(0, 0.35f);
@@ -376,22 +362,22 @@ namespace BookCurlPro
         public void OnMouseRelease()
         {
             if (interactable)
-            {
                 ReleasePage();
+            if (mode == FlipMode.RightToLeft)
+            {
+                if (currentPaper < papers.Length)
+                {
+                    papers[currentPaper].Front.gameObject.SetActive(true);
+                    papers[currentPaper-1].Front.gameObject.SetActive(false);
+                    papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().Reload();
 
-                if (mode == FlipMode.RightToLeft)
-                {
-                    if (currentPaper < papers.Length)
-                    {
-                        papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().PlayOneShot(
-                             papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().clip);
-                    }
                 }
-                else
-                {
-                    papers[currentPaper - 1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().PlayOneShot(
-                        papers[currentPaper - 1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().clip);
-                }
+            }
+            else
+            {
+                papers[currentPaper].Front.gameObject.SetActive(false);
+                IPageController pageController = papers[currentPaper - 1].Front.GetComponent<IPageController>();
+                pageController.ReLoad();
             }
         }
         public void ReleasePage()
@@ -402,7 +388,7 @@ namespace BookCurlPro
                 float distanceToLeft = Vector2.Distance(c, ebl);
                 float distanceToRight = Vector2.Distance(c, ebr);
                 if (distanceToRight < distanceToLeft && mode == FlipMode.RightToLeft)
-                   TweenBack();
+                    TweenBack();
                 else if (distanceToRight > distanceToLeft && mode == FlipMode.LeftToRight)
                     TweenBack();
                 else

@@ -6,4 +6,5 @@ public interface ISyncTextColor
 {
     void TextColorSync(MonoBehaviour obj);
     void SyncFinalTextColor();
+    void Reload();
 }

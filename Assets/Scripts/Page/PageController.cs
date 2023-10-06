@@ -30,6 +30,7 @@ public class PageController : MonoBehaviour, IPageController
             {
                 syncTexts[i].gameObject.SetActive(false);
                 syncTexts[++i].gameObject.SetActive(true);
+
             }
         }
     }
@@ -84,5 +85,27 @@ public class PageController : MonoBehaviour, IPageController
     public List<SyncTextController> GetSyncTexts()
     {
         return syncTexts;
+    }
+    public void ReLoad()
+    {
+        syncTexts[syncTexts.Count-1].gameObject.SetActive(false);
+        syncTexts[0].gameObject.SetActive(true);
+        foreach (var syncText in syncTexts)
+        {
+            syncText.Reload();
+        }
+    }
+
+    public void LoadTexts(List<TextMeshProUGUI> txtContents)
+    {
+        List<TextMeshProUGUI> contents = new List<TextMeshProUGUI>();
+        foreach (var syncText in syncTexts)
+        {
+            contents.AddRange(syncText.txtContents);
+        }
+        foreach (var text in contents)
+        {
+            txtContents.Add(text);
+        }
     }
 }

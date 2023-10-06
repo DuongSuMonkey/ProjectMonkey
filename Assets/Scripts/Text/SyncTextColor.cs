@@ -68,4 +68,14 @@ public class SyncTextColor : ISyncTextColor
             timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
         }
     }
+
+    public void Reload()
+    {
+        isFinish= false;
+        currentIndex = 1;
+        timer = 0.0f;
+        timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
+        txtContents[0].color = targetColor;
+        syncDataIndex = 0;
+    }
 }

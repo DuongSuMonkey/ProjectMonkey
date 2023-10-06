@@ -9,4 +9,6 @@ public interface IPageController
 {
     List<SyncTextController> GetSyncTexts();
     bool IsSyncFinish();
+    void ReLoad();
+    void LoadTexts(List<TextMeshProUGUI> txtContents);
 }

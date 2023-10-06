@@ -8,12 +8,12 @@ public class SyncTextController :Texts, ISyncTextController
 {
     [SerializeField] private Color targetColor=Color.red;
     [SerializeField] private bool isFinish=false;
-    [SerializeField] protected float timeChange;
-    [SerializeField] protected float timer;
-    public int syncDataIndex = 0;
-    public bool IsFinish { get => isFinish;}
-    public List<SyncData> syncData;
-    private ISyncTextColor syncTextColor;
+    [SerializeField] private float timeChange;
+    [SerializeField] private float timer;
+    [SerializeField] private int syncDataIndex = 0;
+    [SerializeField] public bool IsFinish { get => isFinish;}
+    [SerializeField] public List<SyncData> syncData;
+    [SerializeField] private ISyncTextColor syncTextColor;
     void Start()
     {
         timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
@@ -38,6 +38,11 @@ public class SyncTextController :Texts, ISyncTextController
     {
         //  TimerSync();
             TextColorSync();
+    }
+    public void Reload()
+    {
+        syncTextColor.Reload();
+        isFinish = false;
     }
     public void SyncFinalTextColor()
     {

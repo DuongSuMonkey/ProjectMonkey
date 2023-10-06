@@ -19,19 +19,22 @@ public class TouchManager : MonoBehaviour, ITouchManager, ITouchSubject
     [SerializeField] private IAddEventTouchObject addEventTouch;
     [SerializeField] private IBlinkHandler blinkHandler;
     [SerializeField] private ITouchControllerInitializer touchControllerInitializer;
+    [SerializeField] private ISpawnerTouchUI spawnerTouchUI;
     [SerializeField] private List<ITouchObserver> touchObservers = new List<ITouchObserver>();
     [SerializeField] private int currentIndex = 0;
     private void Start()
     {
         pageController = GetComponentInParent<IPageController>();
         searchText = new SearchText(txtContents, this, touchObjects,pageController);
-        touchUIHandler = new TouchUIHandler(touchesUI, currentIndex, existingTouches, touchObjects,pageController);
+        touchUIHandler = new TouchUIHandler(touchesUI, existingTouches,pageController);
         addEventTouch = new AddEventTouchObject();
         blinkHandler = new BlinkHandler(currentIndex, touchObjects,pageController);
+        spawnerTouchUI=new SpawnerTouchUI(existingTouches,pageController);
         AddEventTouch();
         AddObserver((ITouchObserver)searchText);
         AddObserver((ITouchObserver)touchUIHandler);
         AddObserver((ITouchObserver)blinkHandler);
+        AddObserver((ITouchObserver)spawnerTouchUI);
     }
     private void Reset()
     {

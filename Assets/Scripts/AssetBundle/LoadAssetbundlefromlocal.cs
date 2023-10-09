@@ -21,6 +21,7 @@ public class LoadAssetbundlefromlocal : DownloadAssetbundle
 
     public override void LoadAsset()
     {
+        LoadMaterial();
         base.LoadAsset();
     }
     public override void LoadSingleAsset()
@@ -36,6 +37,19 @@ public class LoadAssetbundlefromlocal : DownloadAssetbundle
     public override void LoadAllAssets()
     {
         base.LoadAllAssets();
+    }
+    private void LoadMaterial()
+    {
+        var assets = myAsset.LoadAllAssets();
+        foreach (var prefab in assets)
+        {
+            if (prefab.GetType() == typeof(Material))
+            {
+                Material material = prefab as Material;
+                Debug.Log(material);
+           
+            }
+        }
     }
 }
 

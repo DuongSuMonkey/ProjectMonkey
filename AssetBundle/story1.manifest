@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2519021675
+CRC: 608382070
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ad28dc59a1ee19cf4376b248f9a682d3
+    Hash: 3347e1e26d7cf43ff391b7fe3f484e60
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d24222e7f364ad90aec80a83d1102508
+    Hash: d54ad63fe5bb12b4f12d0821a8a7c15c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -34,9 +34,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 6d732631103f5b44dad54354a195125f, type: 3}
 - Class: 114
@@ -50,7 +54,7 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2e8d1c88a82dd1a479fe2b377d909c7c, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  Script: {fileID: 11500000, guid: d5db910d1d5395c43915144358d7a121, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 053f4d9fc5dbd3047b0f2ea1f6794e86, type: 3}
 - Class: 114
@@ -70,6 +74,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 12b0b98acbcda44468a7ae4e35000abe, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -79,6 +85,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 76a2fe08884d4e94ba00da342e968b4a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d25a36e093ae80d4a85db14d64e4afb4, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -87,9 +95,13 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 224
   Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: Assembly-CSharp
   ClassName: .SyncData
+- AssemblyName: Assembly-CSharp
+  ClassName: BookCurlPro.Paper
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
@@ -98,6 +110,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.RectOffset
 - AssemblyName: UnityEngine.UI
@@ -123,76 +137,143 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: spine-unity
   ClassName: Spine.Unity.MeshGenerator/Settings
 Assets:
-- Assets/Resources/audios/apple.mp3
-- Assets/Resources/audios/cucumber.mp3
 - Assets/Resources/Images 1/LRC_Image.png
-- Assets/Resources/audios/dressing.mp3
-- Assets/Resources/images/sK2dF8gy6Ou6nAWXbfmQgL1672904703791_trong.png
-- Assets/Resources/audios/carrot.mp3
 - Assets/Resources/images/tyBrNbK7J3RQNyp5iFyOgk1672904703758_trong.png
-- Assets/Resources/audios/frying pan.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/SkeletonGraphic/Spine-SkeletonGraphic-Outline.shader
+- Assets/Resources/audios/spatula.mp3
+- Assets/Spine/Editor/spine-unity/Editor/ImporterPresets/StraightAlphaPresetTemplate.png
+- Assets/Resources/Images 1/RestartImg.png
+- Assets/Spine/Runtime/spine-unity/Materials/SkeletonGraphicDefault.mat
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Sprite/SpritesVertexLit-Outline.shader
+- Assets/Resources/audios/cheese grater.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/SkeletonGraphic/Spine-SkeletonGraphic-TintBlack-Outline.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Fill-Outline.shader
+- Assets/Resources/audios/Sounds great.mp3
+- Assets/Resources/Images 1/Play.png
+- Assets/Blink/skeleton.json
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Lit.shader
+- Assets/Resources/Images 1/FlipBookImg.png
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/SpriteDepthNormalsTexture.shader
+- Assets/Resources/audios/Now we need to mix them together.mp3
+- Assets/Resources/audios/chopping board.mp3
+- Assets/Prefabs/TouchObject.prefab
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/CameraDepthTexture.shader
+- Assets/Resources/audios/cheese.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-TintBlack.shader
+- Assets/Resources/audios/fork.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Special-Skeleton-Grayscale.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/BlendModes/Spine-Skeleton-PMA-Additive.shader
+- Assets/Resources/audios/cooking pot.mp3
+- Assets/Blink/skeleton_hd_Atlas.asset
+- Assets/Resources/audios/bowl.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/BlendModes/Spine-Skeleton-PMA-Screen.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/SkeletonGraphic/Spine-SkeletonGraphic.shader
+- Assets/Resources/images/ZWSAJtLuPueiEa9JpFPyqy1672904703749_trong.png
+- Assets/Resources/audios/egg.mp3
+- Assets/Blink/skeleton_hdr.png
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Sprite/SpritesPixelLit-Outline.shader
+- Assets/Blink/SpineBlink.prefab
+- Assets/Resources/images/sK2dF8gy6Ou6nAWXbfmQgL1672904703791_trong.png
+- Assets/Resources/Images 1/BlinkImg.png
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-TintBlack-Outline.shader
 - "Assets/Resources/audios/Let\u2019s Make a Salad Bowl!.mp3"
-- Assets/Resources/audios/The salad bowl looks so delicious!.mp3
 - Assets/Resources/png-clipart-microphone-computer-icons-dictation-machine-microphone-electronics-microphone
   (1).png
 - Assets/Prefabs/MenuPanel.prefab
-- Assets/Resources/Images 1/MenuOptionBg.png
-- Assets/Resources/audios/spatula.mp3
-- Assets/Resources/Images 1/RestartImg.png
-- Assets/Resources/images/vcxJRLt9ebNd5KPtHWw1Gl1672904703709_trong.png
-- Assets/Prefabs/Page.prefab
-- Assets/Resources/Images 1/Ellipse 78.png
-- Assets/Resources/Images 1/nen-removebg-preview.png
-- Assets/Resources/audios/cheese grater.mp3
-- Assets/Resources/Images 1/FlipBook_Normal.png
-- Assets/Resources/audios/Sounds great.mp3
-- Assets/Resources/png-clipart-greater-than-sign-less-than-sign-at-sign-and-symbol-angle-sign_preview_rev_1.png
-- Assets/Resources/audios/boiling water.mp3
-- Assets/Resources/Images 1/PauseImg.png
-- Assets/Resources/Images 1/Play.png
+- Assets/Resources/audios/frying pan.mp3
+- Assets/Spine/Runtime/spine-unity/SkeletonDataModifierAssets/BlendModeMaterials/SkeletonPMAAdditive.mat
+- Assets/Blink/skeleton_hdr.atlas.txt
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/CameraNormalsTexture.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Utility/Hidden-Spine-Bones.shader
+- Assets/Spine/Runtime/spine-unity/Materials/SkeletonGraphicTintBlack.mat
 - Assets/Resources/audios/lettuce.mp3
-- Assets/Resources/audios/sink.mp3
+- Assets/Resources/Images 1/PauseImg.png
+- Assets/Spine/Runtime/spine-unity/Shaders/BlendModes/Spine-Skeleton-PMA-Multiply.shader
+- Assets/Spine/version.txt
+- Assets/Resources/images/ONwVWDqBvuLzO9JRN2rmTH1672904703776_trong.png
+- Assets/Resources/audios/pineapple.mp3
+- Assets/Resources/audios/Hey, do you want to eat some salads_.mp3
+- Assets/Resources/images/Lg4oU6Aq4DxsWdwLByyCax1672904703767_trong.png
+- Assets/Resources/audios/It_s fun to make something together. Now let_s enjoy!.mp3
+- Assets/Resources/audios/pork.mp3
+- Assets/Resources/Images 1/Background.png
+- Assets/Resources/audios/I will boil the eggs and fry the pork.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/CameraDepthNormalsTexture.shader
+- Assets/Spine/CHANGELOG.md
+- Assets/Resources/audios/dressing.mp3
+- Assets/Resources/audios/apple.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/SpritesUnlit.shader
+- Assets/Resources/audios/The salad bowl looks so delicious!.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-OutlineOnly-ZWrite.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Special-Skeleton-Grayscale-Outline.shader
+- Assets/Prefabs/MenuDetail.prefab
+- Assets/Resources/images/vcxJRLt9ebNd5KPtHWw1Gl1672904703709_trong.png
+- Assets/Resources/Images 1/nen-removebg-preview.png
+- Assets/Blink/skeleton_hd.png
+- Assets/Blink/skeleton_hdr_Atlas.asset
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Lit-ZWrite-Outline.shader
+- Assets/Spine/Runtime/spine-unity/SkeletonDataModifierAssets/BlendModeMaterials/SkeletonPMAScreen.mat
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Fill.shader
+- Assets/Spine/Runtime/spine-unity/SkeletonDataModifierAssets/BlendModeMaterials/Default
+  BlendModeMaterials.asset
+- Assets/Resources/png-clipart-greater-than-sign-less-than-sign-at-sign-and-symbol-angle-sign_preview_rev_1.png
+- Assets/Resources/audios/spoon.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/SkeletonGraphic/Spine-SkeletonGraphic-TintBlack.shader
 - Assets/Resources/audios/knife.mp3
 - Assets/Resources/images/m7ONzmMXmQkaJ8mj3jrSdI1672904703799_trong.png
-- Assets/Resources/Images 1/FlipBookImg.png
-- Assets/Resources/audios/Now we need to mix them together.mp3
-- Assets/Resources/audios/spoon.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/BlendModes/Spine-Skeleton-PMA-Additive-Outline.shader
 - Assets/Resources/Images 1/CloseBtn.png
-- Assets/Resources/audios/chopping board.mp3
-- Assets/Resources/audios/tap.mp3
+- Assets/Spine/Runtime/spine-unity/Materials/SkeletonGraphicTintBlackOutline.mat
 - Assets/Resources/audios/boy.mp3
-- Assets/Prefabs/TouchObject.prefab
-- Assets/Resources/audios/Let_s make a salad bowl.mp3
-- Assets/Resources/audios/pineapple.mp3
-- Assets/Resources/images/ONwVWDqBvuLzO9JRN2rmTH1672904703776_trong.png
-- Assets/Prefabs/Text (TMP).prefab
-- Assets/Resources/audios/cheese.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Lit-Outline.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/SpritesPixelLit.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Sprite/SpritesUnlit-Outline.shader
+- Assets/Prefabs/BookPro.prefab
 - Assets/Resources/audios/I will shred some lettuce.mp3
-- Assets/Resources/audios/Of course we need some fruits and vegetables..mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Tint-Outline.shader
 - Assets/Resources/Images 1/MenuBorder.png
 - Assets/Resources/images/uQx8vLnhByvU8BGfJnpxur1672904703648_trong.png
 - Assets/Prefabs/RecordAudio.prefab
-- Assets/Resources/audios/Hey, do you want to eat some salads_.mp3
-- Assets/Resources/audios/gas stove.mp3
-- Assets/Resources/audios/fork.mp3
-- Assets/Resources/audios/bowl.mp3
-- Assets/Resources/images/Lg4oU6Aq4DxsWdwLByyCax1672904703767_trong.png
-- Assets/Resources/images/mTslr1cBESgjHOKfuCbXVL1672904703734_trong.png
-- Assets/Resources/audios/cooking pot.mp3
-- Assets/Resources/audios/It_s fun to make something together. Now let_s enjoy!.mp3
-- Assets/Resources/Images 1/GuidingHand.png
-- Assets/Resources/audios/salad bowl.mp3
+- Assets/Resources/audios/Of course we need some fruits and vegetables..mp3
+- Assets/Blink/skeleton_hd.atlas.txt
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Tint.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Utility/HiddenPass.mat
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/README.md
 - Assets/Resources/audios/Finally, I will add the dressing..mp3
+- Assets/Spine/Runtime/spine-unity/Materials/SkeletonGraphicDefaultOutline.mat
 - Assets/Prefabs/Story1.prefab
-- Assets/Resources/Images 1/BlinkImg.png
-- Assets/Resources/Images 1/Background.png
-- Assets/Resources/istockphoto-1193300702-612x612.png
-- Assets/Resources/audios/pork.mp3
-- Assets/Resources/audios/egg.mp3
-- Assets/Resources/images/ZWSAJtLuPueiEa9JpFPyqy1672904703749_trong.png
-- Assets/Resources/images/j2FtITkWXWvEA2eeiolqNH1672904703836_trong.png
-- Assets/Resources/Images 1/Share.png
-- Assets/Resources/audios/I will boil the eggs and fry the pork.mp3
 - Assets/Resources/audios/Don_t forget to add some cheese!.mp3
+- Assets/Spine/package.json
+- Assets/Spine/Runtime/spine-unity/SkeletonDataModifierAssets/BlendModeMaterials/SkeletonPMAMultiply.mat
+- Assets/Resources/audios/cucumber.mp3
+- Assets/Spine/Editor/spine-unity/Editor/Resources/SpineAssetDatabaseMarker.txt
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Outline.shader
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/BlendModes/Spine-Skeleton-PMA-Screen-Outline.shader
+- Assets/Blink/skeleton_SkeletonData.asset
+- Assets/Resources/audios/carrot.mp3
+- Assets/Resources/Images 1/MenuOptionBg.png
+- Assets/Blink/skeleton_hdr_Material.mat
+- Assets/Prefabs/Page.prefab
+- Assets/Resources/Images 1/Ellipse 78.png
+- Assets/Blink/skeleton_hd_Material.mat
+- Assets/Resources/Images 1/FlipBook_Normal.png
+- Assets/Resources/audios/boiling water.mp3
+- Assets/Resources/audios/sink.mp3
+- Assets/Resources/audios/tap.mp3
+- Assets/Resources/audios/Let_s make a salad bowl.mp3
+- Assets/Prefabs/Text (TMP).prefab
+- Assets/Spine/Runtime/spine-unity/Shaders/Outline/BlendModes/Spine-Skeleton-PMA-Multiply-Outline.shader
+- Assets/Resources/audios/gas stove.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Lit-ZWrite.shader
+- Assets/Resources/Images 1/GuidingHand.png
+- Assets/Spine/Editor/spine-unity/Editor/ImporterPresets/PMAPresetTemplate.png
+- Assets/Spine/Runtime/spine-unity/Shaders/Sprite/SpritesVertexLit.shader
+- Assets/Resources/audios/salad bowl.mp3
+- Assets/Spine/Runtime/spine-unity/Shaders/Utility/HiddenPass.shader
+- Assets/Resources/images/mTslr1cBESgjHOKfuCbXVL1672904703734_trong.png
+- Assets/Resources/istockphoto-1193300702-612x612.png
+- Assets/Resources/Images 1/Share.png
+- Assets/Resources/images/j2FtITkWXWvEA2eeiolqNH1672904703836_trong.png
 Dependencies:
 - D:/ProjectMonkey/Assets/../AssetBundle/textmeshpro

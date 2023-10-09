@@ -36,12 +36,12 @@ public class PageController : MonoBehaviour, IPageController
     }
     public void LoadComponents()
     {
-        LoadTouchController();
+        LoadTouchManader();
         LoadSyncText();
         LoadAudios();
         LoadAudioClips();
     }
-    public void LoadTouchController()
+    public void LoadTouchManader()
     {
         TouchManager = GetComponentInChildren<TouchManager>();
     }
@@ -88,8 +88,8 @@ public class PageController : MonoBehaviour, IPageController
     }
     public void ReLoad()
     {
-        syncTexts[syncTexts.Count-1].gameObject.SetActive(false);
-        syncTexts[0].gameObject.SetActive(true);
+        HideAllSyncText();
+        ShowFirstSyncText();
         foreach (var syncText in syncTexts)
         {
             syncText.Reload();

@@ -14,7 +14,7 @@ public class TouchManager : MonoBehaviour, ITouchManager, ITouchSubject
     [SerializeField] private List<TouchUI> touchesUI;
     [SerializeField] public List<TouchUI> existingTouches = new List<TouchUI>();
     [SerializeField] private IPageController pageController;
-    [SerializeField] private ITouchUIHandler touchUIHandler;
+    [SerializeField] private ITouchHandler touchHandler;
     [SerializeField] private ISearchText searchText;
     [SerializeField] private IAddEventTouchObject addEventTouch;
     [SerializeField] private IBlinkHandler blinkHandler;
@@ -26,13 +26,13 @@ public class TouchManager : MonoBehaviour, ITouchManager, ITouchSubject
     {
         pageController = GetComponentInParent<IPageController>();
         searchText = new SearchText(txtContents, this, touchObjects,pageController);
-        touchUIHandler = new TouchUIHandler(touchesUI, existingTouches,pageController);
+        touchHandler = new TouchHandler(pageController);
         addEventTouch = new AddEventTouchObject();
         blinkHandler = new BlinkHandler(currentIndex, touchObjects,pageController);
-        spawnerTouchUI=new SpawnerTouchUI(existingTouches,pageController);
+        spawnerTouchUI=new SpawnerTouchUI(touchesUI,existingTouches,pageController);
         AddEventTouch();
         AddObserver((ITouchObserver)searchText);
-        AddObserver((ITouchObserver)touchUIHandler);
+        AddObserver((ITouchObserver)touchHandler);
         AddObserver((ITouchObserver)blinkHandler);
         AddObserver((ITouchObserver)spawnerTouchUI);
     }

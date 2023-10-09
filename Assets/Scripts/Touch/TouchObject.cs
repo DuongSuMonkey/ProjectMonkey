@@ -11,7 +11,6 @@ using UnityEngine.UI;
 public class TouchObject : MonoBehaviour
 {
     public event Action<TouchObject>  OnClicked;
-    public int countClick;
     public bool isClick=false;
     public SkeletonGraphic blinkEffect;
     public TouchUI touchUI;
@@ -63,7 +62,6 @@ public class TouchObject : MonoBehaviour
     public void Select()
     {
        isClick = true;
-       countClick++;
     }
     public void SetAnchors()
     {

@@ -132,6 +132,7 @@ namespace BookCurlPro
                 paper .Front.gameObject.SetActive(false);
             }
             papers[currentPaper].Front.gameObject.SetActive(true);
+            papers[currentPaper].Front.GetComponent<IPageController>().ReLoad();
             papers[papers.Length - 1].Back.gameObject.SetActive(false);
         }
 
@@ -356,7 +357,6 @@ namespace BookCurlPro
             Left.transform.position = LeftPageTransform.transform.position;
             Left.transform.localEulerAngles = new Vector3(0, 0, 0);
 
-
             if (enableShadowEffect) ShadowLTR.gameObject.SetActive(true);
             ClippingPlane.gameObject.SetActive(true);
             UpdateBookLTRToPoint(f);
@@ -371,9 +371,9 @@ namespace BookCurlPro
                 {
                     papers[currentPaper].Front.gameObject.SetActive(true);
                     papers[currentPaper-1].Front.gameObject.SetActive(false);
+                    papers[currentPaper-1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake = false;
                     IPageController pageController = papers[currentPaper].Front.GetComponent<IPageController>();
                     pageController.ReLoad();
-                    papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().Reload();
                 }
                 else
                 {
@@ -385,6 +385,8 @@ namespace BookCurlPro
                 if (currentPaper < papers.Length)
                 {
                     papers[currentPaper].Front.gameObject.SetActive(false);
+                    papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake= false;
+                    papers[currentPaper - 1].Front.gameObject.SetActive(true);
                     IPageController pageController = papers[currentPaper - 1].Front.GetComponent<IPageController>();
                     pageController.ReLoad();
                 }

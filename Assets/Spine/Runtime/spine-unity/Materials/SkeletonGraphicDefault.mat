@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SkeletonGraphicDefault
-  m_Shader: {fileID: 4800000, guid: fa95b0fb6983c0f40a152e6f9aa82bfb, type: 3}
+  m_Shader: {fileID: 4800000, guid: 522f03282fd79be47b306e2ef4b593fd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -72,6 +72,7 @@ Material:
     - _CanvasGroupCompatible: 0
     - _ColorMask: 15
     - _Cutoff: 0.5
+    - _DarkColorAlphaAdditive: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
@@ -89,6 +90,7 @@ Material:
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilReadMask: 255
+    - _StencilRef: 1
     - _StencilWriteMask: 255
     - _StraightAlphaInput: 1
     - _ThresholdEnd: 0.25
@@ -97,6 +99,7 @@ Material:
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
+    - _Black: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

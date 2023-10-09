@@ -14,6 +14,7 @@ public class TouchUI : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] public Image background;
 
+
     public void Reset()
     {
         LoadComponents();

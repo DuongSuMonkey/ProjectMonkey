@@ -235,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7824172305301613911}
   touchUI: {fileID: 2285625258435976690}
@@ -586,7 +585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4136605123653106915}
   touchUI: {fileID: 8822193917127515266}
@@ -2232,7 +2230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1566650520226871564}
   touchUI: {fileID: 4796461838708775455}
@@ -2399,7 +2396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 799108464221062700}
   touchUI: {fileID: 1629253963326926768}
@@ -3314,7 +3310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6028765033064238100}
   touchUI: {fileID: 1582589911688959838}
@@ -3558,7 +3553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4400190911126708470}
   touchUI: {fileID: 1141463491831437015}
@@ -3934,7 +3928,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3fcbb7e929ae5484e9c8df1eb9222f76, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4194,7 +4188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8683380546048519220}
   touchUI: {fileID: 8996687139580669719}
@@ -4517,7 +4510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 832263955449089559}
   touchUI: {fileID: 8593741613249459397}
@@ -5920,7 +5912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6576721303719178217}
   touchUI: {fileID: 4777034426127066693}
@@ -6616,7 +6607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 5933265843805442613}
   touchUI: {fileID: 5291793358050426085}
@@ -8089,7 +8079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7226386277298025119}
   touchUI: {fileID: 6631343565433386192}
@@ -9955,7 +9944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8826420920041430405}
   touchUI: {fileID: 2292322436837577085}
@@ -10363,7 +10351,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b933796eb7b062a408473b0b55b24dfc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10611,7 +10599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2881081673987966632}
   touchUI: {fileID: 6493463540173262864}
@@ -10856,7 +10843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1226628630953734525}
   touchUI: {fileID: 5037246840604777657}
@@ -11108,7 +11094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7989836321689147195}
   touchUI: {fileID: 7269948911906990343}
@@ -12173,7 +12158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 9141415280859119894}
   touchUI: {fileID: 6764390949935883275}
@@ -12906,7 +12890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6493850768133620283}
   touchUI: {fileID: 5234534696030826941}
@@ -13171,7 +13154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 5191394760700163041}
   touchUI: {fileID: 6746014116519455649}
@@ -13521,7 +13503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 3809169335928773361}
   touchUI: {fileID: 3159339375388425469}
@@ -13802,7 +13783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1061134268897253364}
   touchUI: {fileID: 7543355373632123192}
@@ -14034,7 +14014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 637853010257526649}
   touchUI: {fileID: 3196376653250682677}
@@ -14271,7 +14250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 3046873988120447082}
   touchUI: {fileID: 7800011116145164188}
@@ -14843,7 +14821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7670120264530037955}
   touchUI: {fileID: 244918383289708553}
@@ -15325,7 +15302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8889460203281613767}
   touchUI: {fileID: 3822367811323009392}
@@ -16994,7 +16970,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce5dfdc3494052f4188d11306615ce14, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -17577,7 +17553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7397930873579300568}
   touchUI: {fileID: 7442777796224712516}
@@ -18309,7 +18284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4138323052830466869}
   touchUI: {fileID: 7741685667174126800}
@@ -18520,7 +18494,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c648fe3a93d470e4e87c2bca01db9211, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -20224,7 +20198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 5373354362149638722}
   touchUI: {fileID: 3937368024880279533}
@@ -22723,7 +22696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 65927980070741580}
   touchUI: {fileID: 5308746961571438109}
@@ -23991,7 +23963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2669939849936793523}
   touchUI: {fileID: 5626562219788548945}
@@ -24952,7 +24923,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 16e83b04fbd33f043a7f381fee248be3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -25712,7 +25683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6705988325725355852}
   touchUI: {fileID: 2292686631394825940}
@@ -26147,7 +26117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6494485265332995519}
   touchUI: {fileID: 2622176719833538802}
@@ -28539,7 +28508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4617265200618367772}
   touchUI: {fileID: 6146064312431364735}
@@ -28909,7 +28877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1234049093599852531}
   touchUI: {fileID: 3564663800865041972}
@@ -29414,7 +29381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7740602450600580493}
   touchUI: {fileID: 7890860007079931174}
@@ -30796,7 +30762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7612711951087498979}
   touchUI: {fileID: 7814425835817464973}
@@ -33439,7 +33404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4055964802626902520}
   touchUI: {fileID: 8868028733330943777}
@@ -34155,7 +34119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7613471410297680963}
   touchUI: {fileID: 8167744209531743580}
@@ -35086,7 +35049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 3363591354271710797}
   touchUI: {fileID: 3166070555730448355}
@@ -35611,7 +35573,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a8417e30142c55f4cbf330ff4a5f0997, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -38328,7 +38290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8321411012592358670}
   touchUI: {fileID: 929259928623448154}
@@ -39440,7 +39401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 3080524502145587639}
   touchUI: {fileID: 6524941550406723491}
@@ -39685,7 +39645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1696792806227877309}
   touchUI: {fileID: 1880159684087528340}
@@ -40242,7 +40201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8149954434128347182}
   touchUI: {fileID: 244970168709058946}
@@ -41222,7 +41180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2106945568033971295}
   touchUI: {fileID: 8962848200021081521}
@@ -41745,7 +41702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 864589237643520268}
   touchUI: {fileID: 610901253964449134}
@@ -44836,7 +44792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1270327961072340299}
   touchUI: {fileID: 6811313411695353474}
@@ -45490,7 +45445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4564335432153582937}
   touchUI: {fileID: 7885409546104931219}
@@ -47627,7 +47581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2014347669062126882}
   touchUI: {fileID: 1478745869527320497}
@@ -48600,7 +48553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 9014835754019637189}
   touchUI: {fileID: 1063286405899565561}
@@ -49480,7 +49432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 5908865063768107758}
   touchUI: {fileID: 2305525683789901437}
@@ -50049,7 +50000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 9201733156417580544}
   touchUI: {fileID: 1004275626674217342}
@@ -51390,7 +51340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 556652879959729517}
   touchUI: {fileID: 5737198140523426569}
@@ -52729,7 +52678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8633811484389370703}
   touchUI: {fileID: 6689018056449864769}
@@ -54602,7 +54550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4387226276186171476}
   touchUI: {fileID: 6317937994795848588}
@@ -57096,7 +57043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7344254063964422531}
   touchUI: {fileID: 6857457686450773234}
@@ -57462,7 +57408,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cac7f71c5508fd84787ad7cdf71d7404, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -58011,7 +57957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1536800009841240062}
   touchUI: {fileID: 4543489655701124940}
@@ -59607,7 +59552,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8f5e191443977a547b6848e72b5ddb10, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -61326,7 +61271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 327876276015885514}
   touchUI: {fileID: 8094876896104693973}
@@ -62184,7 +62128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4313099490163158709}
   touchUI: {fileID: 1207236092714625720}
@@ -64566,7 +64509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2278877386591390316}
   touchUI: {fileID: 8066032193883798368}
@@ -65772,7 +65714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 407827363988650471}
   touchUI: {fileID: 8352807900633633276}
@@ -66229,7 +66170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 153556333018557061}
   touchUI: {fileID: 4949961835197102386}
@@ -67275,7 +67215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6882431556218537375}
   touchUI: {fileID: 7661881281401843999}
@@ -67864,7 +67803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4572018743316543992}
   touchUI: {fileID: 1341013379792356118}
@@ -69094,7 +69032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6697833928317485085}
   touchUI: {fileID: 2001950735061647479}
@@ -70531,7 +70468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2374921782540541078}
   touchUI: {fileID: 2168143084993248334}
@@ -72750,7 +72686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4766794320920441295}
   touchUI: {fileID: 7917463408513359826}
@@ -73988,7 +73923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2203233510699219176}
   touchUI: {fileID: 4251827897385698606}
@@ -74601,7 +74535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7211781874432489850}
   touchUI: {fileID: 6429141214935039186}
@@ -75304,7 +75237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 4915346585539584416}
   touchUI: {fileID: 1817060604999471448}
@@ -75614,7 +75546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1268258782719993902}
   touchUI: {fileID: 4390595996774328345}
@@ -75950,7 +75881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 425409169288268465}
   touchUI: {fileID: 8133509181432785381}
@@ -76351,7 +76281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2557286798762396635}
   touchUI: {fileID: 4553881628542828286}
@@ -76642,7 +76571,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cfd982f7361dd51439196c291dbefa37, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -77749,7 +77678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6449881509248162680}
   touchUI: {fileID: 3119352174623350681}
@@ -78710,7 +78638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 1786215805530603821}
   touchUI: {fileID: 8581782807216001258}
@@ -79603,7 +79530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 6193295370248266528}
   touchUI: {fileID: 2942908046406796763}
@@ -79755,7 +79681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 677677115666503886}
   touchUI: {fileID: 4591452047617341285}
@@ -79915,7 +79840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 7508205683459896388}
   touchUI: {fileID: 421905010704867383}
@@ -80792,7 +80716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 8698271185411275036}
   touchUI: {fileID: 5734439213886438923}
@@ -81075,7 +80998,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9f827df3c23b25c4586217c837131c91, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -82321,7 +82244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 56453026071404327}
   touchUI: {fileID: 1085515684790898060}
@@ -83814,7 +83736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 2886134327252765924}
   touchUI: {fileID: 7670458670984210213}
@@ -84640,7 +84561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 871900016030417471}
   touchUI: {fileID: 57644980776801984}
@@ -85255,7 +85175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af46104cba02c141aa9eb33740575e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countClick: 0
   isClick: 0
   blinkEffect: {fileID: 3740915933596523211}
   touchUI: {fileID: 8775363208687847155}

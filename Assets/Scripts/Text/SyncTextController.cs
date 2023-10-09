@@ -14,7 +14,7 @@ public class SyncTextController :Texts, ISyncTextController
     [SerializeField] public bool IsFinish { get => isFinish;}
     [SerializeField] public List<SyncData> syncData;
     [SerializeField] private ISyncTextColor syncTextColor;
-    void Start()
+    void Awake()
     {
         timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
         txtContents[0].color = targetColor;
@@ -36,60 +36,32 @@ public class SyncTextController :Texts, ISyncTextController
     }
     private void Update()
     {
-        //  TimerSync();
-            TextColorSync();
+         TextColorSync();
     }
     public void Reload()
     {
-        syncTextColor.Reload();
-        isFinish = false;
+        if (syncTextColor != null)
+        {
+            syncTextColor.Reload();
+            isFinish = false;
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.playOnAwake = true;
+            audioSource.PlayOneShot(audioSource.clip);
+        }
     }
     public void SyncFinalTextColor()
     {
         syncTextColor.SyncFinalTextColor();
-       // txtContents[txtContents.Count - 1].color = Color.black;
         this.isFinish = true;
     }
-    //public void TimerSync()
-    //{
-    //    if (currentIndex < txtContents.Count)
-    //    {
-    //        timer += Time.deltaTime;
-    //    }
-    //}
     public void TextColorSync()
     {
         syncTextColor.TextColorSync(this);
-        #region
-        //UpdateTimeSync();
-        //if (timer >= timeChange && currentIndex < txtContents.Count)
-        //{
-        //    foreach (var txtContent in txtContents)
-        //    {
-        //        txtContent.color = Color.black;
-        //    }
-        //    txtContents[currentIndex].color = targetColor;
-        //    currentIndex++;
-        //    syncDataIndex++;
-        //    timer = 0.0f;
-        //}
-        //else if (currentIndex == txtContents.Count && !isFinish)
-        //{
-        //    Invoke(nameof(SyncFinalTextColor), syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000);
-        //}
-        #endregion
     }
 
     public bool IsFinishSync()
     {
        return this.isFinish;
     }
-    //protected void UpdateTimeSync()
-    //{
-    //    if (currentIndex < txtContents.Count)
-    //    {
-    //        timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
-    //    }
-    //}
 }
 

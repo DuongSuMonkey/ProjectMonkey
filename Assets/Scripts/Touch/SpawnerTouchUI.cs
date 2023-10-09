@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SpawnerTouchUI : ISpawnerTouchUI,ITouchObserver
 {
+
+    private List<TouchUI> touchesUI;
     private List<TouchUI> existingTouches;
     private IPageController pageController;
-    public SpawnerTouchUI(List<TouchUI> existingTouches, IPageController pageController)
+    public SpawnerTouchUI(List<TouchUI> touchesUI,List<TouchUI> existingTouches, IPageController pageController)
     {
         this.existingTouches = existingTouches;
         this.pageController = pageController;
+        this.touchesUI = touchesUI;
+        HideAllTouchesUI(this.touchesUI);
     }
     public void OnTouchSelected(TouchObject touchObject)
     {
@@ -26,8 +30,8 @@ public class SpawnerTouchUI : ISpawnerTouchUI,ITouchObserver
         touch.gameObject.transform.SetParent(touchObject.transform);
         touch.gameObject.transform.localScale = Vector3.one;
         existingTouches.Add(touch);
-        touch.DestroyTouchCoroutine();
         touch.Select();
+        touch.DestroyTouchCoroutine();
     }
     public void HideAllexistingTouchesUI()
     {
@@ -37,6 +41,13 @@ public class SpawnerTouchUI : ISpawnerTouchUI,ITouchObserver
             {
                 touch.HideTouch();
             }
+        }
+    }
+    public void HideAllTouchesUI(List<TouchUI> touchesUI)
+    {
+        foreach (var touch in touchesUI)
+        {
+            touch.HideTouch();
         }
     }
 

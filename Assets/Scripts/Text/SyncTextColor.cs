@@ -74,8 +74,8 @@ public class SyncTextColor : ISyncTextColor
         isFinish= false;
         currentIndex = 1;
         timer = 0.0f;
+        syncDataIndex = 0;
         timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
         txtContents[0].color = targetColor;
-        syncDataIndex = 0;
     }
 }

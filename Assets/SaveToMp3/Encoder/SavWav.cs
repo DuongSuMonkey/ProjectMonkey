@@ -75,18 +75,18 @@ public static class SavWav {
 		yield return TrimSilence(new List<float>(samples), threshold, clip.channels, clip.frequency, false, false, callback);
 	}
 
-	/// <summary>
-	/// Trim silence for audio
-	/// </summary>
-	/// <param name="samples">List of audio samples</param>
-	/// <param name="threshold">Silence threshold</param>
-	/// <param name="channels">Channels. 1 - mono, 2 - stereo</param>
-	/// <param name="hz">HZ. recommend is 44000</param>
-	/// <param name="_3D">is 3d sound?</param>
-	/// <param name="stream">Is streaming sound?</param>
-	/// <param name="callback">On end trim event></param>
-	/// <returns></returns>
-	public static IEnumerator TrimSilence(List<float> samples, float threshold, int channels, int hz, bool _3D, bool stream, Action<AudioClip> callback) {
+    /// <summary>
+    /// Trim silence for audio
+    /// </summary>
+    /// <param name="samples">List of audio samples</param>
+    /// <param name="threshold">Silence threshold</param>
+    /// <param name="channels">Channels. 1 - mono, 2 - stereo</param>
+    /// <param name="hz">HZ. recommend is 44000</param>
+    /// <param name="_3D">is 3d sound?</param>
+    /// <param name="stream">Is streaming sound?</param>
+    /// <param name="callback">On end trim event></param>
+    /// <returns></returns>
+    public static IEnumerator TrimSilence(List<float> samples, float threshold, int channels, int hz, bool _3D, bool stream, Action<AudioClip> callback) {
 		int i;
 
 		for (i = 0; i < samples.Count; i++) {

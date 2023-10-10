@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITouchControllerInitializer 
-{ 
+public interface IInitializerController
+{
     void LoadComponents(List<TouchUI> touchesUI, List<TouchObject> touchObjects, MonoBehaviour obj);
 }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TouchControllerInitializer :ITouchControllerInitializer
+public class TouchInitializer :ITouchInitializer
 {
-    public  TouchControllerInitializer()
+    public  TouchInitializer()
     {
     }
 

@@ -547,7 +547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1731678922660138892, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321604350853708393, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9081540373118750818, guid: 16e5adc44f3a4c345ada40bf7e9a454b, type: 3}
       propertyPath: m_Pivot.x
@@ -644,6 +648,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4526025306193833493, guid: a9b9e93306b56c34180d0a2f56402b0e, type: 3}
   m_PrefabInstance: {fileID: 6945053875987893377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &515085942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515085944}
+  - component: {fileID: 515085943}
+  m_Layer: 0
+  m_Name: Config
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515085943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515085942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7def341620858864faa80512c1d22e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &515085944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515085942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.1975522, y: 0.46849728, z: 1750.4584}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716915339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 811880711166056352, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
@@ -865,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAsset: {fileID: 0}
-  path: https://drive.google.com/u/0/uc?id=1FGCJaifnHVk0NbAP3EZ5rG7ZCkqwLOYT&export=download
+  path: https://drive.google.com/u/0/uc?id=10ubPrNAY_0cuoRifTIb0AgWvMvvlsK9b&export=download
   loadType: 1
   singleAssetName: Story1
   multipleAssetNames:
@@ -1508,7 +1556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 811880711166056352, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1310470036641212169, guid: 92aa2b4dfb98188489b30c606a111497, type: 3}
       propertyPath: m_Pivot.x
@@ -1604,3 +1652,4 @@ SceneRoots:
   - {fileID: 1436935724}
   - {fileID: 1962164720}
   - {fileID: 1620547176}
+  - {fileID: 515085944}

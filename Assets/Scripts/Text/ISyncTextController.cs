@@ -4,7 +4,6 @@ using UnityEngine;
 
 public interface ISyncTextController
 {
-    void SyncFinalTextColor();
-    void TextColorSync();
+    void Reload();
     bool IsFinishSync();
 }

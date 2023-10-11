@@ -80,11 +80,7 @@ public class TouchManager : MonoBehaviour, ITouchManager, ITouchSubject
     }
     private void Update()
     {
-        if (pageController != null)
-        {
-            touchUIController.ShowFirstBlink(pageController);
-          //  blinkHandler.ShowFirstBlink(pageController);
-        }
+       touchUIController.ShowFirstBlink(pageController);
     }
     public void AddObserver(ITouchObserver observer)
     {

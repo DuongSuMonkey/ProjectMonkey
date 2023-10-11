@@ -9,4 +9,5 @@ public class Config
     public string graphics;
     public bool sound;
     public string control;
+    public string title;
 }

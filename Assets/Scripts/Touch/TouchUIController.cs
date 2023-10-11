@@ -24,10 +24,8 @@ public class TouchUIController : ITouchUIController,ITouchObserver
     }
     public void Select(TouchObject touchObject)
     {
-        ITouchObserver spawnerTouchUIObserver = spawnerTouchUI as ITouchObserver;
-        spawnerTouchUIObserver.OnTouchSelected(touchObject);
-        ITouchObserver blinkHandlerObserver = blinkHandler as ITouchObserver;
-        blinkHandlerObserver.OnTouchSelected(touchObject);
+        spawnerTouchUI.SpamTouchUI(touchObject);
+        blinkHandler.Select();
     }
     public void OnTouchSelected(TouchObject touchObject)
     {

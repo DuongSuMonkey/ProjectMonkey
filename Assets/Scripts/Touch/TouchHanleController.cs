@@ -22,10 +22,8 @@ public class TouchHanleController : ITouchHanleController,ITouchObserver
     }
     public void Select(TouchObject touchObject)
     {
-        ITouchObserver touchHandlerObserver = touchHandler as ITouchObserver;
-        touchHandlerObserver.OnTouchSelected(touchObject);
-        ITouchObserver searchTextObserver = searchText as ITouchObserver;
-        searchTextObserver.OnTouchSelected(touchObject);
+        touchHandler.Select(touchObject);
+        searchText.Search(touchObject);
     }
     public void OnTouchSelected(TouchObject touchObject)
     {

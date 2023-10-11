@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,28 +10,24 @@ public class SyncTextColor : ISyncTextColor
     private List<TextMeshProUGUI> txtContents;
     private Color targetColor;
     private bool isFinish;
-    private float timeChange;
-    private float timer;
-    private int syncDataIndex = 0;
     private int currentIndex;
-    private List<SyncData> syncData;
+    private ITimer time;
 
     public SyncTextColor(List<TextMeshProUGUI> txtContents, Color targetColor,
-        List<SyncData> syncData,int currentIndex, float timer, float timeChange)
+        List<SyncData> syncData)
     {
         this.txtContents = txtContents;
         this.targetColor = targetColor;
-        this.syncData = syncData;
-        this.currentIndex = currentIndex;
-        this.timer = timer;
+        this.currentIndex = 1;
+        time = new Timer(txtContents, syncData);
         isFinish = false;
     }
 
     public void TextColorSync(MonoBehaviour obj)
     {
-        TimerSync();
-        UpdateTimeSync();
-        if (timer >= timeChange && currentIndex < txtContents.Count)
+        time.Sync();
+        time.UpdateTimeSync();
+        if (time.CanSync())
         {
             foreach (var txtContent in txtContents)
             {
@@ -39,43 +36,30 @@ public class SyncTextColor : ISyncTextColor
 
             txtContents[currentIndex].color = targetColor;
             currentIndex++;
-            syncDataIndex++;
-            timer = 0.0f;
+            time.IncreateIndex();
+            time.ResetTime();
         }
         else if (currentIndex == txtContents.Count && !isFinish)
         {
-            timeChange = syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000;
-            obj.Invoke(nameof(SyncFinalTextColor),timeChange);
+            obj.StartCoroutine(SyncFinalTextColor());
         }
     }
-
-    public void SyncFinalTextColor()
-    {
-        txtContents[currentIndex-1].color = Color.black;
+    IEnumerator SyncFinalTextColor() {
+        yield return new WaitForSeconds(time.TimeSyncFinal());
+        txtContents[currentIndex - 1].color = Color.black;
         isFinish = true;
-    }
-    public void TimerSync()
-    {
-        if (currentIndex < txtContents.Count)
-        {
-            timer += Time.deltaTime;
-        }
-    }
-    protected void UpdateTimeSync()
-    {
-        if (currentIndex < txtContents.Count)
-        {
-            timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
-        }
     }
 
     public void Reload()
     {
         isFinish= false;
         currentIndex = 1;
-        timer = 0.0f;
-        syncDataIndex = 0;
-        timeChange = syncData[syncDataIndex].timeEnd / 1000 - syncData[syncDataIndex].timeStart / 1000;
+        time.Reload();
         txtContents[0].color = targetColor;
+    }
+
+    public bool IsFinish()
+    {
+       return this.isFinish;
     }
 }

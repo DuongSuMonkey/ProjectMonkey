@@ -16,7 +16,8 @@ public class ConfigManager : MonoBehaviour
         bool sound = AudioListener.volume > 0;
 
         // Lấy loại điều khiển
-        string control = "Keyboard";
+        string control = "Mouse";
+        string title = "Hey,do you want to eat some salads?";
 
         // Tạo đối tượng Config và gán thông tin cấu hình
         Config config = new Config();
@@ -24,6 +25,7 @@ public class ConfigManager : MonoBehaviour
         config.graphics = graphics;
         config.sound = sound;
         config.control = control;
+        config.title = title;
 
         // Lưu cấu hình vào file JSON
         string json = JsonUtility.ToJson(config);

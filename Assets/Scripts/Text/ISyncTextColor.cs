@@ -5,6 +5,6 @@ using UnityEngine;
 public interface ISyncTextColor 
 {
     void TextColorSync(MonoBehaviour obj);
-    void SyncFinalTextColor();
     void Reload();
+    bool IsFinish();
 }

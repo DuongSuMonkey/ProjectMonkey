@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class RecordAudio : MonoBehaviour
 {
@@ -12,13 +15,15 @@ public class RecordAudio : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] private string filePath;
     [SerializeField] private Button playButton;
+    [SerializeField] private TextMeshProUGUI score;
     private const int FREQUENCY = 44100; // Tần số ghi âm - 44,100Hz là tần số chuẩn cho âm thanh CD
+    private ICallApi callApi;
 
+    [System.Obsolete]
     void Start()
     {
         int minFreq, maxFreq;
         Microphone.GetDeviceCaps(null, out minFreq, out maxFreq); // Lấy thông số tần số từ thiết bị âm thanh
-        recordButton.GetComponentInChildren<TextMeshProUGUI>().text = "Start Recording";
         if (minFreq == 0 && maxFreq == 0)
         {
             Debug.LogError("Không tìm thấy thiết bị ghi âm.");
@@ -28,42 +33,44 @@ public class RecordAudio : MonoBehaviour
         recordButton.onClick.AddListener(StartStopRecording);
         playButton.onClick.AddListener(PlayRecordedAudio);
         playButton.gameObject.SetActive(false);
+        callApi = new CallApi();
+        score.gameObject.SetActive(false);
     }
 
+    [System.Obsolete]
     void StartStopRecording()
     {
         if (!isRecording)
         {
             fileName = GenerateRandomString();
-            recordedClip = Microphone.Start(null, false,5, FREQUENCY); // Ghi âm trong vòng 10 giây
+            recordedClip = Microphone.Start(null, false,5, FREQUENCY);
 
             // Khi bắt đầu ghi âm, thay đổi text của button thành "Stop Recording"
-            recordButton.GetComponentInChildren<TextMeshProUGUI>().text = "Stop Recording";
         }
         else
         {
             Microphone.End(null); // Dừng ghi âm
 
-            // Khi dừng ghi âm, thay đổi text của button thành "Start Recording"
-            recordButton.GetComponentInChildren<TextMeshProUGUI>().text = "Start Recording";
             filePath = Application.persistentDataPath + "/" + fileName;
             // Lưu file ghi âm
             SavWav.SaveWav(filePath, recordedClip);
             playButton.gameObject.SetActive(true);
+            StartCoroutine(callApi.PostApiRequest(filePath + ".wav","dog",score));
+
         }
 
-        isRecording = !isRecording; // Đảo ngược trạng thái ghi âm
+        isRecording = !isRecording;
     }
-    public  string GetRecordingTime()
-    {
-        // Lấy thời gian hiện tại của hệ thống
-        float recordingTime = Time.time;
+    //public  string GetRecordingTime()
+    //{
+    //    // Lấy thời gian hiện tại của hệ thống
+    //    float recordingTime = Time.time;
 
-        // Chuyển thời gian thành định dạng chuỗi
-        string recordingTimeString = recordingTime.ToString("mm:ss");
+    //    // Chuyển thời gian thành định dạng chuỗi
+    //    string recordingTimeString = recordingTime.ToString("mm:ss");
 
-        return recordingTimeString;
-    }
+    //    return recordingTimeString;
+    //}
     public  string GenerateRandomString()
     {
         // Tạo một mảng các kí tự

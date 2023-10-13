@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 2766498000350685089}
   - component: {fileID: 6388250979956631262}
   m_Layer: 0
-  m_Name: RecordAudio
+  m_Name: Speaking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

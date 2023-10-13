@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 719675914
+CRC: 1254005065
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 79ba29aab330b4924a27affd8456bac6
+    Hash: f9bf53a3a48e135cddba79c65dcef197
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 82aa46f9910868a5c295224eaf7b65d9
+    Hash: 0b6da3294f129e9a7f7fd7162128acf7
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -234,7 +234,7 @@ Assets:
 - Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Tint-Outline.shader
 - Assets/Resources/Images 1/MenuBorder.png
 - Assets/Resources/images/uQx8vLnhByvU8BGfJnpxur1672904703648_trong.png
-- Assets/Prefabs/RecordAudio.prefab
+- Assets/Prefabs/Speaking.prefab
 - Assets/Resources/audios/Of course we need some fruits and vegetables..mp3
 - Assets/Blink/skeleton_hd.atlas.txt
 - Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Tint.shader

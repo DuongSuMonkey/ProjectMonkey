@@ -913,14 +913,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAsset: {fileID: 0}
-  path: https://drive.google.com/u/0/uc?id=1ByB6OwgfTKOehIoivauX9ly2eLF-36cO&export=download
+  path: https://drive.google.com/u/0/uc?id=1jHbFmh5Om1tXaJqMrUYAr95_9dbdpX3z&export=download
   loadType: 1
   singleAssetName: Story1
   multipleAssetNames:
   - MenuDetail
   - BookPro
+  - Speaking
   - MenuPanel
-  - RecordAudio
   canvas: {fileID: 6750277007239234247}
   progressBar: {fileID: 38542587}
   txtProgress: {fileID: 158829858}
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   multipleAssetNames:
   - MenuDetail
   - BookPro
-  - RecordAudio
+  - Speaking
   - MenuPanel
   canvas: {fileID: 6750277007239234247}
 --- !u!4 &1962164720
@@ -1107,7 +1107,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1200978339823860637, guid: 0b78c2a510b3d754081801d643e1c2a8, type: 3}
       propertyPath: m_Name
-      value: RecordAudio
+      value: Speaking
       objectReference: {fileID: 0}
     - target: {fileID: 1200978339823860637, guid: 0b78c2a510b3d754081801d643e1c2a8, type: 3}
       propertyPath: m_IsActive

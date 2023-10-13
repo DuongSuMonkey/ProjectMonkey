@@ -10,13 +10,13 @@ public class DetailMenu : MonoBehaviour
     [SerializeField] private Button readBtn;
     [SerializeField] private BookPro bookPro;
     [SerializeField] private GameObject menuPanel;
-    [SerializeField] private RecordAudio recordAudio;
+    [SerializeField] private SpeakingController recordAudio;
     private void Start()
     {
         listenBtn.onClick.AddListener(()=>Listen());
         readBtn.onClick.AddListener(()=>Read());
         bookPro = FindAnyObjectByType<BookPro>();
-        recordAudio=FindAnyObjectByType<RecordAudio>();
+        recordAudio=FindAnyObjectByType<SpeakingController>();
         menuPanel = GameObject.Find("MenuPanel(Clone)");
         bookPro.gameObject.SetActive(false);
         menuPanel.SetActive(false);

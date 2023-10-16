@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class LoadAssetbundlefromlocal : DownloadAssetbundle
 {
-
     void Start()
     {
         GetAsset();

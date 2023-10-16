@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1254005065
+CRC: 878693406
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f9bf53a3a48e135cddba79c65dcef197
+    Hash: 4d0e0d55e364fa01848bab4669139ef7
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 0b6da3294f129e9a7f7fd7162128acf7
+    Hash: ab1c70f92ac1570bf29202996ed38f5d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -148,6 +148,7 @@ Assets:
 - Assets/Resources/audios/cheese grater.mp3
 - Assets/Spine/Runtime/spine-unity/Shaders/Outline/SkeletonGraphic/Spine-SkeletonGraphic-TintBlack-Outline.shader
 - Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Fill-Outline.shader
+- Assets/Resources/Default.anim
 - Assets/Resources/audios/Sounds great.mp3
 - Assets/Resources/Images 1/Play.png
 - Assets/Blink/skeleton.json
@@ -178,7 +179,7 @@ Assets:
 - Assets/Resources/Images 1/BlinkImg.png
 - Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-TintBlack-Outline.shader
 - "Assets/Resources/audios/Let\u2019s Make a Salad Bowl!.mp3"
-- Assets/Resources/png-clipart-microphone-computer-icons-dictation-machine-microphone-electronics-microphone
+- Assets/Resources/Images 2/png-clipart-microphone-computer-icons-dictation-machine-microphone-electronics-microphone
   (1).png
 - Assets/Prefabs/MenuPanel.prefab
 - Assets/Resources/audios/frying pan.mp3
@@ -187,6 +188,7 @@ Assets:
 - Assets/Spine/Runtime/spine-unity/Shaders/Sprite/CameraNormalsTexture.shader
 - Assets/Spine/Runtime/spine-unity/Shaders/Utility/Hidden-Spine-Bones.shader
 - Assets/Spine/Runtime/spine-unity/Materials/SkeletonGraphicTintBlack.mat
+- Assets/Resources/Images 2/r6rek93io5ie5do603vkqvk919.png
 - Assets/Resources/audios/lettuce.mp3
 - Assets/Resources/Images 1/PauseImg.png
 - Assets/Spine/Runtime/spine-unity/Shaders/BlendModes/Spine-Skeleton-PMA-Multiply.shader
@@ -217,7 +219,7 @@ Assets:
 - Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Fill.shader
 - Assets/Spine/Runtime/spine-unity/SkeletonDataModifierAssets/BlendModeMaterials/Default
   BlendModeMaterials.asset
-- Assets/Resources/png-clipart-greater-than-sign-less-than-sign-at-sign-and-symbol-angle-sign_preview_rev_1.png
+- Assets/Resources/Images 2/png-clipart-greater-than-sign-less-than-sign-at-sign-and-symbol-angle-sign_preview_rev_1.png
 - Assets/Resources/audios/spoon.mp3
 - Assets/Spine/Runtime/spine-unity/Shaders/SkeletonGraphic/Spine-SkeletonGraphic-TintBlack.shader
 - Assets/Resources/audios/knife.mp3
@@ -237,15 +239,17 @@ Assets:
 - Assets/Prefabs/Speaking.prefab
 - Assets/Resources/audios/Of course we need some fruits and vegetables..mp3
 - Assets/Blink/skeleton_hd.atlas.txt
+- Assets/Resources/isRecord.anim
 - Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Tint.shader
 - Assets/Spine/Runtime/spine-unity/Shaders/Utility/HiddenPass.mat
 - Assets/Spine/Runtime/spine-unity/Shaders/Sprite/README.md
 - Assets/Resources/audios/Finally, I will add the dressing..mp3
 - Assets/Spine/Runtime/spine-unity/Materials/SkeletonGraphicDefaultOutline.mat
 - Assets/Prefabs/Story1.prefab
-- Assets/Resources/audios/Don_t forget to add some cheese!.mp3
+- Assets/Resources/Background.controller
 - Assets/Spine/package.json
 - Assets/Spine/Runtime/spine-unity/SkeletonDataModifierAssets/BlendModeMaterials/SkeletonPMAMultiply.mat
+- Assets/Resources/audios/Don_t forget to add some cheese!.mp3
 - Assets/Resources/audios/cucumber.mp3
 - Assets/Spine/Editor/spine-unity/Editor/Resources/SpineAssetDatabaseMarker.txt
 - Assets/Spine/Runtime/spine-unity/Shaders/Outline/Spine-Skeleton-Outline.shader
@@ -272,7 +276,7 @@ Assets:
 - Assets/Resources/audios/salad bowl.mp3
 - Assets/Spine/Runtime/spine-unity/Shaders/Utility/HiddenPass.shader
 - Assets/Resources/images/mTslr1cBESgjHOKfuCbXVL1672904703734_trong.png
-- Assets/Resources/istockphoto-1193300702-612x612.png
+- Assets/Resources/Images 2/istockphoto-1193300702-612x612.png
 - Assets/Resources/Images 1/Share.png
 - Assets/Resources/images/j2FtITkWXWvEA2eeiolqNH1672904703836_trong.png
 Dependencies:

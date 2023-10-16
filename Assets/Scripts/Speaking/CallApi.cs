@@ -9,13 +9,13 @@ using UnityEngine.Networking;
 
 public class CallApi : ICallApi
 {
+    private string url = "https://app.monkeyuni.net/lesson/api/v1/speech/verification?app_id=2&is_web=1";
+    private string profileId = "11111";
+    private  string lessonId = "0";
     [System.Obsolete]
     public IEnumerator PostApiRequest(string Audiofile,string sentence,TextMeshProUGUI scoreTxt)
     {
-        string url = "https://app.monkeyuni.net/lesson/api/v1/speech/verification?app_id=2&is_web=1";
-        string profileId = "11111";
-        string lessonId = "0";
-
+        
         // Tạo một form để chứa thông tin của yêu cầu POST
         WWWForm form = new WWWForm();
         form.AddField("profile_id", profileId);

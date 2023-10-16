@@ -28,21 +28,16 @@ public class Timer :ITimer
         if (currentIndex < txtContents.Count)
         {
             time += Time.deltaTime;
+            timeSync = syncData[currentIndex - 1].timeEnd / 1000 - syncData[currentIndex - 1].timeStart / 1000;
         }
     }
 
-    public void ResetTime()
+    public void Reset()
     {
+        currentIndex++;
         time = 0.0f;
     }
 
-    public void UpdateTimeSync()
-    {
-        if (currentIndex < txtContents.Count)
-        {
-            timeSync = syncData[currentIndex-1].timeEnd / 1000 - syncData[currentIndex-1].timeStart / 1000;
-        }
-    }
 
     public bool CanSync()
     {
@@ -51,10 +46,6 @@ public class Timer :ITimer
     public float TimeSyncFinal()
     {
         return syncData[txtContents.Count - 1].timeEnd / 1000 - syncData[txtContents.Count - 1].timeStart / 1000;
-    }
-    public void IncreateIndex()
-    {
-        currentIndex++;
     }
 
     public void Reload()

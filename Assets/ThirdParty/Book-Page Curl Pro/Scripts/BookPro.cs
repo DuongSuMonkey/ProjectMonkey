@@ -3,6 +3,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using NUnit.Framework;
+
 namespace BookCurlPro
 {
     public enum FlipMode
@@ -312,7 +314,7 @@ namespace BookCurlPro
             Left.rectTransform.pivot = new Vector2(0, 0);
             Left.transform.position = RightPageTransform.transform.position;
             Left.transform.localEulerAngles = new Vector3(0, 0, 0);
-
+           
             Right = papers[currentPaper - 1].Back.GetComponent<Image>();
             BookUtility.ShowPage(Right.gameObject);
             Right.gameObject.SetActive(true);
@@ -371,13 +373,16 @@ namespace BookCurlPro
                 {
                     papers[currentPaper].Front.gameObject.SetActive(true);
                     papers[currentPaper-1].Front.gameObject.SetActive(false);
-                    papers[currentPaper-1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake = false;
                     IPageController pageController = papers[currentPaper].Front.GetComponent<IPageController>();
                     pageController.ReLoad();
+                    papers[currentPaper - 1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake = false;
                 }
                 else
                 {
+                    papers[currentPaper - 1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake = false;
                     papers[currentPaper - 1].Front.gameObject.SetActive(false);
+                    papers[currentPaper-1].Back.GetComponent<IPageController>().ReLoad();
+                    papers[currentPaper - 1].Back.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake = false;
                 }
             }
             else
@@ -385,13 +390,14 @@ namespace BookCurlPro
                 if (currentPaper < papers.Length)
                 {
                     papers[currentPaper].Front.gameObject.SetActive(false);
-                    papers[currentPaper].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake= false;
                     papers[currentPaper - 1].Front.gameObject.SetActive(true);
                     IPageController pageController = papers[currentPaper - 1].Front.GetComponent<IPageController>();
                     pageController.ReLoad();
+                    papers[currentPaper - 1].Front.GetComponentInChildren<SyncTextController>().GetComponent<AudioSource>().playOnAwake = false;
                 }
                 else
                 {
+                    papers[currentPaper - 1].Front.GetComponent<IPageController>().ReLoad();
                     papers[currentPaper-1].Back.gameObject.SetActive(false);
                 }
             }

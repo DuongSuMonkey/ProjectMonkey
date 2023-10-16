@@ -25,23 +25,24 @@ public class SyncTextColor : ISyncTextColor
 
     public void TextColorSync(MonoBehaviour obj)
     {
-        time.Sync();
-        time.UpdateTimeSync();
-        if (time.CanSync())
+        if (!isFinish)
         {
-            foreach (var txtContent in txtContents)
+            time.Sync();
+            if (time.CanSync())
             {
-                txtContent.color = Color.black;
-            }
+                foreach (var txtContent in txtContents)
+                {
+                    txtContent.color = Color.black;
+                }
 
-            txtContents[currentIndex].color = targetColor;
-            currentIndex++;
-            time.IncreateIndex();
-            time.ResetTime();
-        }
-        else if (currentIndex == txtContents.Count && !isFinish)
-        {
-            obj.StartCoroutine(SyncFinalTextColor());
+                txtContents[currentIndex].color = targetColor;
+                currentIndex++;
+                time.Reset();
+            }
+            else if (currentIndex == txtContents.Count)
+            {
+                obj.StartCoroutine(SyncFinalTextColor());
+            }
         }
     }
     IEnumerator SyncFinalTextColor() {

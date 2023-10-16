@@ -1,3 +1,4 @@
+using BookCurlPro;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -93,15 +94,20 @@ public class MenuController : MonoBehaviour
     private IMenuOptionHandler autoFlipOptionHandler;
     private IMenuOptionHandler shareOptionHandler;
     private IMenuOptionHandler exitOptionHandler;
-
+    
+   [SerializeField] private BookPro bookPro;
+    [SerializeField] private DetailMenu detailMenu;
     private void Start()
     {
+        bookPro = FindAnyObjectByType<BookPro>();
+        detailMenu = FindAnyObjectByType<DetailMenu>();
+
         // Create instances of the handler classes
         pauseOptionHandler = new PauseOptionHandler(pauseBtn, pauseImage);
         startAgainOptionHandler = new StartAgainOptionHandler();
         autoFlipOptionHandler = new AutoFlipOptionHandler(autoFlipBtn,flipImage);
         shareOptionHandler = new ShareOptionHandler();
-        exitOptionHandler = new ExitOptionHandler();
+        exitOptionHandler = new ExitOptionHandler(bookPro,detailMenu);
         autoFlipBtn.GetComponentInChildren<TextMeshProUGUI>().text = "Auto Flip:On";
         // Add the handlers to the buttons' click events
         pauseBtn.onClick.AddListener(() => pauseOptionHandler.HandleOption());

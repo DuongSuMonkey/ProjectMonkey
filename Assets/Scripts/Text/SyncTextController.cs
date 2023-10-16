@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SyncTextController :Texts, ISyncTextController
+public class SyncTextController :MonoBehaviour, ISyncTextController
 {
     [SerializeField] private Color targetColor=Color.red;
     [SerializeField] public List<SyncData> syncData;
     [SerializeField] private ISyncTextColor syncTextColor;
+    [SerializeField] public List<TextMeshProUGUI> txtContents;
     void Awake()
     {
         syncTextColor = new SyncTextColor(txtContents, targetColor, syncData);
@@ -21,7 +22,7 @@ public class SyncTextController :Texts, ISyncTextController
     {
        LoadTexts();
     }
-    public override void LoadTexts()
+    public  void LoadTexts()
     {
         TextMeshProUGUI[] texts = GetComponentsInChildren<TextMeshProUGUI>();
         txtContents.AddRange(texts);

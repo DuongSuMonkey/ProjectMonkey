@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ public class SpeakingController : MonoBehaviour
     private IPlayBackAudio playBackAudio;
     private IGenerateRandomName generateRandomName;
     private IRecodingAudio recodingAudio;
+
 
     [System.Obsolete]
     void Start()
@@ -48,11 +50,13 @@ public class SpeakingController : MonoBehaviour
     {
         if (!isRecording)
         {
+            recordButton.GetComponentInChildren<Animator>().SetBool("isRecord", true);
             recordedClip = recodingAudio.StartRecord(generateRandomName);
 
         }
         else
         {
+            recordButton.GetComponentInChildren<Animator>().SetBool("isRecord", false);
             filePath = recodingAudio.StopRecord();
             playButton.gameObject.SetActive(true);
             StartCoroutine(callApi.PostApiRequest(filePath + ".wav","dog",score));

@@ -1,10 +1,8 @@
 ﻿public interface ITimer
 {
     void Sync();
-    void ResetTime();
-    void UpdateTimeSync();
+    void Reset();
     bool CanSync();
-    void IncreateIndex();
     float TimeSyncFinal();
     void Reload();
 }

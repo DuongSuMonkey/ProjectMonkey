@@ -11,24 +11,21 @@ public class SyncTextColor : ISyncTextColor
     private Color targetColor;
     private bool isFinish;
     private int currentIndex;
-    private ITimer time;
 
-    public SyncTextColor(List<TextMeshProUGUI> txtContents, Color targetColor,
-        List<SyncData> syncData)
+    public SyncTextColor(List<TextMeshProUGUI> txtContents, Color targetColor)
     {
         this.txtContents = txtContents;
         this.targetColor = targetColor;
         this.currentIndex = 1;
-        time = new Timer(txtContents, syncData);
         isFinish = false;
     }
 
-    public void TextColorSync(MonoBehaviour obj)
+    public void TextColorSync(MonoBehaviour obj,ITimeSync timeSync)
     {
         if (!isFinish)
         {
-            time.Sync();
-            if (time.CanSync())
+            timeSync.Sync();
+            if (timeSync.CanSync())
             {
                 foreach (var txtContent in txtContents)
                 {
@@ -37,16 +34,16 @@ public class SyncTextColor : ISyncTextColor
 
                 txtContents[currentIndex].color = targetColor;
                 currentIndex++;
-                time.Reset();
+                timeSync.Reset();
             }
             else if (currentIndex == txtContents.Count)
             {
-                obj.StartCoroutine(SyncFinalTextColor());
+                obj.StartCoroutine(SyncFinalTextColor(timeSync));
             }
         }
     }
-    IEnumerator SyncFinalTextColor() {
-        yield return new WaitForSeconds(time.TimeSyncFinal());
+    IEnumerator SyncFinalTextColor(ITimeSync timeSync) {
+        yield return new WaitForSeconds(timeSync.TimeSyncFinal());
         txtContents[currentIndex - 1].color = Color.black;
         isFinish = true;
     }
@@ -55,7 +52,6 @@ public class SyncTextColor : ISyncTextColor
     {
         isFinish= false;
         currentIndex = 1;
-        time.Reload();
         txtContents[0].color = targetColor;
     }
 

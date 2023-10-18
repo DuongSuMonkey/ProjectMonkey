@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAsset: {fileID: 0}
-  path: https://drive.google.com/u/0/uc?id=1jHbFmh5Om1tXaJqMrUYAr95_9dbdpX3z&export=download
+  path: https://drive.google.com/u/0/uc?id=1CXEpzEsrFYPiccvMul0lKzhUASLATE9p&export=download
   loadType: 1
   singleAssetName: Story1
   multipleAssetNames:

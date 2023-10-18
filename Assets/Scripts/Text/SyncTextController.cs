@@ -9,10 +9,12 @@ public class SyncTextController :MonoBehaviour, ISyncTextController
     [SerializeField] private Color targetColor=Color.red;
     [SerializeField] public List<SyncData> syncData;
     [SerializeField] private ISyncTextColor syncTextColor;
+    [SerializeField] private ITimeSync timeSync;
     [SerializeField] public List<TextMeshProUGUI> txtContents;
     void Awake()
     {
-        syncTextColor = new SyncTextColor(txtContents, targetColor, syncData);
+        syncTextColor = new SyncTextColor(txtContents, targetColor);
+        timeSync = new TimeSync(txtContents, syncData);
     }
     private void Reset()
     {
@@ -29,17 +31,19 @@ public class SyncTextController :MonoBehaviour, ISyncTextController
     }
     private void Update()
     {
-        syncTextColor.TextColorSync(this);
+        syncTextColor.TextColorSync(this,timeSync);
     }
     public void Reload()
     {
-        if (syncTextColor != null)
-        {
-            syncTextColor.Reload();
-            AudioSource audioSource = GetComponent<AudioSource>();
-            audioSource.playOnAwake = true;
-            audioSource.PlayOneShot(audioSource.clip);
-        }
+        syncTextColor.Reload();
+        timeSync.Reload();
+        ReloadAudio();
+    }
+    public void ReloadAudio()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = true;
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     public bool IsFinishSync()

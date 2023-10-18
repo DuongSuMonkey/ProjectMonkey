@@ -1,4 +1,4 @@
-﻿public interface ITimer
+﻿public interface ITimeSync
 {
     void Sync();
     void Reset();

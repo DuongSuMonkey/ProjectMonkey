@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ISyncTextColor 
 {
-    void TextColorSync(MonoBehaviour obj);
+    void TextColorSync(MonoBehaviour obj, ITimeSync timeSync);
     void Reload();
     bool IsFinish();
 }
